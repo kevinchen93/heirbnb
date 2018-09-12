@@ -8,8 +8,8 @@ class SignupForm extends React.Component {
     super(props);
     this.state = {
       email: '',
-      firstName: '',
-      lastName: '',
+      first_name: '',
+      last_name: '',
       password: '',
     };
     this.handleChange = this.handleChange.bind(this);
@@ -35,24 +35,28 @@ class SignupForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <input
               type="email"
-              placeholder="Email"
+              placeholder="Email address"
               onChange={this.handleChange('email')}
               value={this.state.email} />
+            <br />
             <input
               type="text"
               placeholder="First name"
-              onChange={this.handleChange('firstName')}
+              onChange={this.handleChange('first_name')}
               value={this.state.firstName} />
+            <br />
             <input
               type="text"
               placeholder="Last name"
-              onChange={this.handleChange('lastName')}
+              onChange={this.handleChange('last_name')}
               value={this.state.lastName} />
+            <br />
             <input
               type="password"
               placeholder="Create a Password"
               onChange={this.handleChange('password')}
               value={this.state.password} />
+            <br />
             <div>
               <button>Sign up</button>
             </div>

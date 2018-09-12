@@ -6,7 +6,7 @@ const Header = (props) => {
   if (props.currentUser) {
     headerInfo = (
       <div>
-        <h2>What can we help you find, {props.currentUser.username}?</h2>
+        <h2>What can we help you find, {props.currentUser.first_name}?</h2>
       </div>
     );
   } else {
@@ -14,6 +14,7 @@ const Header = (props) => {
       <div>
         <h2>Explore Heirbnb</h2>
         <Link to='/signup'>Sign Up</Link>
+        <br />
         <Link to='/login'>Login</Link>
       </div>
     );

@@ -30,12 +30,14 @@ class LoginForm extends React.Component {
       <div>
         <Link to="/">Heirbnb</Link>
         <div>
+          <p>Log in to continue</p>
           <form onSubmit={this.handleSubmit}>
             <input
               type="text"
               placeholder="Email Address"
               onChange={this.handleChange('email')}
               value={this.state.name_or_email} />
+            <br />
             <input
               type="password"
               placeholder="Password"
