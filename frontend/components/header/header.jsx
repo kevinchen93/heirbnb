@@ -12,7 +12,7 @@ const Header = (props) => {
   } else {
     headerInfo = (
       <div>
-        <h2>Explore Heirbnb</h2>
+        <h2>Explore New York</h2>
         <Link to='/signup'>Sign Up</Link>
         <br />
         <Link to='/login'>Login</Link>
