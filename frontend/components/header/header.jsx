@@ -7,6 +7,7 @@ const Header = (props) => {
     headerInfo = (
       <div>
         <div className="subheading">What can we help you find, {props.currentUser.first_name}?</div>
+        <button onClick={props.logout}>Log out</button>
       </div>
     );
   } else {
