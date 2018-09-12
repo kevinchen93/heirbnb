@@ -1,0 +1,54 @@
+// NAV BAR
+.navBarHeader {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  border-bottom: 1px solid gray;
+  font-family: 'Circular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.navBarContainer {
+  display: table;
+  align-items: center;
+  height: 81px;
+  width: 100%;
+  margin: auto;
+}
+
+.navbar-logo {
+  display: table-cell;
+  margin-left: 15px;
+}
+
+// SEARCH BAR
+.searchBarContainer{
+  display: table-cell;
+}
+
+.searchBar {
+  font-size: 17px;
+  font-weight: 800px;
+}
+
+// NAV RIGHT
+.nav-right {
+  display: table;
+  justify-content: space-between;
+}
+
+.nav-right li {
+  display: table-cell;
+  padding: 0 5px;
+}
+
+.nav-right li:hover {
+  border-bottom: 2px solid #767676;
+}
+
+.searchBar {
+  width: 200px;
+}
+// #heirbnbSVG {
+//   width: 50px;
+//   height: 50px;
+// }
