@@ -30,7 +30,6 @@ class LoginForm extends React.Component {
   render () {
     return (
       <div>
-        <Link to="/">Heirbnb</Link>
         <div>
           <p>Log in to continue</p>
           <form onSubmit={this.handleSubmit}>
@@ -51,6 +50,7 @@ class LoginForm extends React.Component {
           </form>
 
           <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+          <Link to="/">Heirbnb</Link>
         </div>
       </div>
     );

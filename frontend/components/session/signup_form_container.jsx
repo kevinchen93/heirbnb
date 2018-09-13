@@ -31,7 +31,6 @@ class SignupForm extends React.Component {
   render () {
     return (
       <div>
-        <Link to="/">Heirbnb</Link>
         <div>
           <form onSubmit={this.handleSubmit}>
             <input
@@ -64,6 +63,7 @@ class SignupForm extends React.Component {
           </form>
 
           <p>Already have an Heirbnb account? <Link to="/login">Log in</Link></p>
+          <Link to="/">Heirbnb</Link>
         </div>
       </div>
     );
