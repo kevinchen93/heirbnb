@@ -15,8 +15,7 @@ export default class NavBar extends React.Component {
             <div className="nav-bar-logo">
                 <div className="svg-container">
                   <a href="#">
-                  <div>
-                    <img className="hero-logo" src="./../../../app/assets/images/hero.svg" alt="heirbnb"></img>
+                  <div className="hero-logo">
                   </div>
                 </a>
                 </div>
@@ -48,7 +47,7 @@ export default class NavBar extends React.Component {
 
               <li>
                 <div>
-                  <button onClick>Sign up</button>
+                  <button>Sign up</button>
                 </div>
               </li>
 

@@ -24,7 +24,7 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className="search-bar-container">
-        <img className="search-icon" src="/assets/search-icon.svg" alt="search"></img>
+        <div className="search-icon"></div>
 
         <input className="search-bar"
           type="search"

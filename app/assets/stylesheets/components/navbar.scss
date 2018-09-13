@@ -42,6 +42,11 @@
 .hero-logo {
   height: 34px;
   width: 34px;
+  background-image: image_url(hero);
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  background-size: 34px 34px;
   padding: 24px;
 }
 
@@ -63,12 +68,16 @@
 .search-icon {
   height: 26px;
   width: 26px;
+  background-image: image_url(search_icon);
+  background-repeat: no-repeat;
+  background-position: center;
+  box-sizing: border-box;
+  background-size: 26px 26px;
   position: relative;
   justify-content: flex-start;
   align-self: center;
   padding-left: 5px;
-  margin-right: 5px;
-  fill: rgb(72, 72, 72);
+  margin: 0 7px;
 }
 
 .search-bar {
