@@ -15,6 +15,12 @@ const App = (props) => {
       <Route exact path="/" render={() => <HeaderContainer />} />
       <AuthRoute path="/login" component={LoginFormContainer} />
       <AuthRoute path="/signup" component={SignupFormContainer} />
+      <div id="footer">
+        <div className="footer-container">
+          <div className="footer-icon"></div>
+          <button>Terms, Privacy, Currency & More</button>
+        </div>
+      </div>
     </div>
   )
 }
