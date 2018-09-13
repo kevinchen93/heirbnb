@@ -9,25 +9,58 @@ export default class NavBar extends React.Component {
 
   render() {
     return (
-      <header className="navBarHeader">
-        <nav className="navBarContainer">
-          <div className="navbar-logo">
-            <Link to={"/"}>Logo</Link>
-          </div>
+      <header className="nav-bar-header">
+        <nav className="nav-bar-container">
+          <div className="nav-bar-left">
+            <div className="nav-bar-logo">
+                <div className="svg-container">
+                  <a href="#">
+                  <div>
+                    <img className="hero-logo" src="/assets/hero.svg" alt="heirbnb"></img>
+                  </div>
+                </a>
+                </div>
+            </div>
 
-          <div className="searchBarContainer">
             <SearchBarContainer />
           </div>
 
-          <div>
-            <ul className="nav-right">
-              <li><Link to='/'>Become a host</Link></li>
-              <li><Link to='/'>Earn credit</Link></li>
-              <li><Link to={'/'}>Help</Link></li>
-              <li><Link to={'/signup'}>Sign up</Link></li>
-              <li><Link to='/login'>Log in</Link></li>
+          <nav className="nav-bar-right">
+            <ul>
+
+              <li>
+                <div>
+                  <button>Become a host</button>
+                </div>
+              </li>
+
+              <li>
+                <div>
+                  <button>Earn credit</button>
+                </div>
+              </li>
+
+              <li>
+                <div>
+                  <button>Help</button>
+                </div>
+              </li>
+
+              <li>
+                <div>
+                  <button>Sign up</button>
+                </div>
+              </li>
+
+              <li>
+                <div>
+                  <button>Log in</button>
+                </div>
+              </li>
+
             </ul>
-          </div>
+
+          </nav>
         </nav>
       </header>
     )

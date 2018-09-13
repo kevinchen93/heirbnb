@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { login } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -22,7 +23,8 @@ class LoginForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state);
+    const user = Object.assign({}, this.state);
+    this.props.processForm(user).then(this.props.closeModal);
   }
 
   render () {
@@ -55,8 +57,20 @@ class LoginForm extends React.Component {
   }
 }
 
+const mapStateToProps = ({ errors }) => {
+  return {
+    errors: errors.session,
+    formType: 'login',
+  };
+};
 const mapDispatchToProps = dispatch => ({
-  login: user => dispatch(login(user))
+  processForm: (user) => dispatch(login(user)),
+  otherForm: (
+  <button onClick={() => dispatch(openModal('signup'))}>
+    Signup
+  </button>
+  ),
+  closeModal: () => dispatch(closeModal())
 });
 
-export default connect(null, mapDispatchToProps)(LoginForm);
+export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);

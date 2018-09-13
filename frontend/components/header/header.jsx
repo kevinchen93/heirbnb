@@ -13,10 +13,10 @@ const Header = (props) => {
   } else {
     headerInfo = (
       <div>
-        <div className="header-info">Explore Airbnb</div>
-        <Link to='/signup'>Sign Up</Link>
+        <div className="header-info subheading">Explore Heirbnb</div>
+        <Link to='/signup'>Sign up</Link>
         <br />
-        <Link to='/login'>Login</Link>
+        <Link to='/login'>Log in</Link>
       </div>
     );
   }

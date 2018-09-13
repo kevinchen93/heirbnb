@@ -24,7 +24,8 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.signup(this.state);
+    const user = Object.assign({}, this.state);
+    this.props.processForm(user).then(this.props.closeModal);
   }
 
   render () {
@@ -69,8 +70,20 @@ class SignupForm extends React.Component {
   }
 }
 
+const mapStateToProps = ({ errors }) => {
+  return {
+    errors: errors.session,
+    formType: 'signup',
+  };
+};
 const mapDispatchToProps = dispatch => ({
-  signup: user => dispatch(signup(user))
+  signup: user => dispatch(signup(user)),
+  otherForm: (
+  <button onClick={() => dispatch(openModal('signup'))}>
+    Signup
+  </button>
+  ),
+  closeModal: () => dispatch(closeModal())
 });
 
 export default connect(null, mapDispatchToProps)(SignupForm);

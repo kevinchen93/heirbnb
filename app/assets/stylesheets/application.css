@@ -10,36 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require reset.css
  *= require_tree .
  *= require_self
  */
-
- body {
-   font-family: 'Circular', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-   font-size: 14px;
-   line-height: 1.43;
- }
-
- header {
-   font-weight: 600;
- }
-
-a {
-  text-decoration: none;
-}
-
-.header-info {
-  margin-top: 32px;
-  margin-bottom: 32px;
-}
-
-.subheading {
-   font-size: 24px;
-   font-weight: 800;
-   margin-bottom: 0;
-   color: #484848;
-   margin-top: 32px;
-   margin-bottom: 32px;
-   padding-top: 2px;
-   padding-bottom: 2px;
- }

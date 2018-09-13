@@ -5,10 +5,12 @@ import SignupFormContainer from './session/signup_form_container';
 import HeaderContainer from './header/header_container';
 import NavBarContainer from './nav/navbar_container';
 import { AuthRoute, ProtectedRoute } from './../util/route_api_util';
+import Modal from './modal/modal';
 
 const App = (props) => {
   return (
     <div>
+      <Modal />
       <NavBarContainer />
       <Route exact path="/" render={() => <HeaderContainer />} />
       <AuthRoute path="/login" component={LoginFormContainer} />
