@@ -47,13 +47,13 @@ export default class NavBar extends React.Component {
 
               <li>
                 <div>
-                  <button>Sign up</button>
+                  <button onClick={() => this.props.openModal('signup')}>Sign up</button>
                 </div>
               </li>
 
               <li>
                 <div>
-                  <button>Log in</button>
+                  <button onClick={() => this.props.openModal('login')}>Log in</button>
                 </div>
               </li>
 

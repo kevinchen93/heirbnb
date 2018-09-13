@@ -31,13 +31,14 @@ class LoginForm extends React.Component {
     return (
       <div>
         <div>
-          <p>Log in to continue</p>
           <form onSubmit={this.handleSubmit}>
+            <button type="button" id="close-x" onClick={this.props.closeModal}>X</button>
+            <h2 className="login-modal-header">Log in to continue</h2>
             <input
               type="text"
               placeholder="Email Address"
               onChange={this.handleChange('email')}
-              value={this.state.name_or_email} />
+              value={this.state.email} />
             <br />
             <input
               type="password"
@@ -47,10 +48,10 @@ class LoginForm extends React.Component {
             <div>
               <button>Log in</button>
             </div>
+            { this.props.errors }
           </form>
 
           <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
-          <Link to="/">Heirbnb</Link>
         </div>
       </div>
     );

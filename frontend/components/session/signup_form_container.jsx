@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { signup } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -33,6 +34,7 @@ class SignupForm extends React.Component {
       <div>
         <div>
           <form onSubmit={this.handleSubmit}>
+            <button type="button" id="close-x" onClick={this.props.closeModal}>X</button>
             <input
               type="email"
               placeholder="Email address"
@@ -63,7 +65,6 @@ class SignupForm extends React.Component {
           </form>
 
           <p>Already have an Heirbnb account? <Link to="/login">Log in</Link></p>
-          <Link to="/">Heirbnb</Link>
         </div>
       </div>
     );
