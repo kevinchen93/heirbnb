@@ -81,7 +81,9 @@
 }
 
 .search-bar-wrapper {
+  padding-right: 7px;
   padding-left: 5px;
+  width: 100%;
 }
 
 .search-bar {
@@ -94,6 +96,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  -webkit-appearance: textfield;
 }
 
 .search-bar-container:hover {
