@@ -48,7 +48,7 @@ class SignupForm extends React.Component {
       <div>
         <div>
           <form onSubmit={this.handleSubmit}>
-            <button type="button" id="close-x" onClick={() => this.closeModal()}>X</button>
+            <button type="button" id="close-x" onClick={() => this.closeModal}>X</button>
             <button type="button" id="demo-user-button" onClick={() => this.signUpDemoUser()}>Sign up as demo user</button>
             <input
               type="email"
