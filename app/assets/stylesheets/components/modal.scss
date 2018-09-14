@@ -10,6 +10,7 @@
 
 .modal-child {
   width: 568px;
+  height: 811px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -33,7 +34,7 @@
   margin-bottom: 16px;
 }
 
-.modal-child input:hover {
+.modal-child input:focus {
   border: 1px solid #00b699;
 }
 
@@ -69,4 +70,22 @@
   font-size: 24px;
   font-weight: 800;
   margin-bottom: 24px;
+}
+
+#demo-user-button {
+  background-color: #00b699;
+}
+
+.modal-nav-link-text {
+  font-weight: 350;
+  font-size: 16px;
+}
+
+.modal-nav-link-text a {
+  color: rgb(0, 132, 137);
+  font-weight: 475;
+}
+
+.modal-nav-link-text a:hover {
+  text-decoration: underline;
 }

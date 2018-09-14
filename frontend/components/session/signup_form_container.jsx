@@ -35,9 +35,15 @@ class SignupForm extends React.Component {
     this.props.otherForm();
   }
 
-  // signUpDemoUser() {
-  //   const demoUser = {}
-  // }
+  signUpDemoUser() {
+    const demoUser = {
+      email: 'demoUser@heirbeenbee.herokuapp.com',
+      first_name: 'Demo User',
+      last_name: 'd e m o',
+      password: 'password',
+    };
+    this.props.processForm(demoUser).then(this.props.closeModal);
+  }
 
   render () {
     return (
@@ -45,6 +51,7 @@ class SignupForm extends React.Component {
         <div>
           <form onSubmit={this.handleSubmit}>
             <button type="button" id="close-x" onClick={() => this.closeModal()}>X</button>
+            <button type="button" id="demo-user-button" onClick={() => this.signUpDemoUser()}>Sign up as demo user</button>
             <input
               type="email"
               placeholder="Email address"
@@ -72,9 +79,9 @@ class SignupForm extends React.Component {
             <div>
               <button>Sign up</button>
             </div>
+            {this.props.errors}
+            <p className="modal-nav-link-text">Already have an Heirbnb account? <Link to={"/"} onClick={() => this.changeModal()}>Log in</Link></p>
           </form>
-
-          <p>Already have an Heirbnb account? <Link to={"/"} onClick={() => this.changeModal()}>Log in</Link></p>
         </div>
       </div>
     );

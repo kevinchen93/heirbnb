@@ -27,10 +27,19 @@ class LoginForm extends React.Component {
     this.props.otherForm();
   }
 
+
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(this.props.closeModal);
+  }
+
+  logInDemoUser() {
+    const demoUser = {
+      email: 'demoUser@heirbeenbee.herokuapp.com',
+      password: 'password',
+    };
+    this.props.processForm(demoUser).then(this.props.closeModal);
   }
 
   render () {
@@ -39,6 +48,7 @@ class LoginForm extends React.Component {
         <div>
           <form onSubmit={this.handleSubmit}>
             <button type="button" id="close-x" onClick={this.props.closeModal}>X</button>
+            <button type="button" id="demo-user-button" onClick={() => this.logInDemoUser()}>Log in as demo user</button>
             <h2 className="login-modal-header">Log in to continue</h2>
             <input
               type="text"
@@ -54,9 +64,9 @@ class LoginForm extends React.Component {
             <div>
               <button>Log in</button>
             </div>
+            {this.props.errors}
+            <p className="modal-nav-link-text">Don't have an account? <Link to={"/"} onClick={() => this.changeModal()}>Sign up</Link></p>
           </form>
-
-          <p>Don't have an account? <Link to={"/"} onClick={() => this.changeModal()}>Sign up</Link></p>
         </div>
       </div>
     );
