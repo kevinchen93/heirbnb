@@ -54,7 +54,7 @@
 // SEARCH BAR
 .search-bar-container {
   width: 460px;
-  height: 48px;
+  height: 45px;
   display: flex;
   align-self: center;
   vertical-align: middle;
@@ -78,6 +78,10 @@
   align-self: center;
   padding-left: 5px;
   margin: 0 7px;
+}
+
+.search-bar-wrapper {
+  padding-left: 5px;
 }
 
 .search-bar {

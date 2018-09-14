@@ -25,13 +25,14 @@ class SearchBar extends React.Component {
     return (
       <div className="search-bar-container">
         <div className="search-icon"></div>
-
-        <input className="search-bar"
-          type="search"
-          maxLength="100"
-          value={this.state.body}
-          onChange={this.handleChange}
-          placeholder='Try "New York"' />
+        <div className="search-bar-wrapper">
+          <input className="search-bar"
+            type="search"
+            maxLength="100"
+            value={this.state.body}
+            onChange={this.handleChange}
+            placeholder='Try "New York"' />
+        </div>
       </div>
     )
   }
