@@ -24,8 +24,9 @@ a {
   background-repeat: no-repeat;
   box-sizing: border-box;
   height: 900px;
-  z-index: 1;
+  z-index: -500;
 }
+
 
 .header-info {
  margin-top: 32px;
@@ -41,4 +42,10 @@ a {
   margin-bottom: 32px;
   padding-top: 2px;
   padding-bottom: 2px;
+  padding: 17px 0 0 17px;
+}
+
+.header-background-image-text {
+
+  color: white;
 }
