@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { signup } from '../../actions/session_actions';
+import { signup, login } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 class SignupForm extends React.Component {
@@ -38,11 +38,9 @@ class SignupForm extends React.Component {
   signUpDemoUser() {
     const demoUser = {
       email: 'demoUser@heirbeenbee.herokuapp.com',
-      first_name: 'Demo User',
-      last_name: 'd e m o',
       password: 'password',
     };
-    this.props.processForm(demoUser).then(this.props.closeModal);
+    this.props.login(demoUser).then(this.props.closeModal);
   }
 
   render () {
@@ -76,7 +74,7 @@ class SignupForm extends React.Component {
               onChange={this.handleChange('password')}
               value={this.state.password} />
             <br />
-            <div>
+            <div className="form-submit-button">
               <button>Sign up</button>
             </div>
             {this.props.errors}
@@ -95,6 +93,7 @@ const mapStateToProps = ({ errors }) => {
   };
 };
 const mapDispatchToProps = dispatch => ({
+  login: user => dispatch(login(user)),
   processForm: user => dispatch(signup(user)),
   otherForm: () => dispatch(openModal('login')),
   closeModal: () => dispatch(closeModal())

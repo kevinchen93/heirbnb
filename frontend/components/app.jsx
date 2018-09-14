@@ -9,7 +9,7 @@ import Modal from './modal/modal';
 
 const App = (props) => {
   return (
-    <div>
+    <div className="main-content-container">
       <Modal />
       <NavBarContainer />
       <Route exact path="/" render={() => <HeaderContainer />} />
