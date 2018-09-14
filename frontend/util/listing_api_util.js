@@ -1,6 +1,6 @@
 export const fetchListings = data => {
   return $.ajax({
-    method: 'POST',
+    method: 'GET',
     url: 'api/listings',
     data
   });

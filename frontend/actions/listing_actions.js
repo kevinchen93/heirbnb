@@ -5,17 +5,17 @@ export const RECEIVE_LISTING = 'RECEIVE_LISTING';
 export const REMOVE_LISTING = 'REMOVE_LISTING';
 
 // Regular Actions
-const receiveListings = listings => ({
+export const receiveListings = listings => ({
   type: RECEIVE_LISTINGS,
   listings,
 });
 
-const receiveListing = listing => ({
+export const receiveListing = listing => ({
   type: RECEIVE_LISTING,
   listing,
 });
 
-const removeListing = listingId => ({
+export const removeListing = listingId => ({
   type: REMOVE_LISTING,
   listingId,
 });
@@ -25,7 +25,7 @@ const removeListing = listingId => ({
 export const fetchListings = filters => {
   return dispatch => {
     return ListingAPIUtil.fetchListings(filters).then(listings => {
-      return dispatch(receiveLiistings(listings));
+      return dispatch(receiveListings(listings));
     });
   };
 };
