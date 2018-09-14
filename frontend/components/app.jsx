@@ -6,9 +6,9 @@ import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import NavBarContainer from './nav/navbar_container';
 import HeaderContainer from './header/header_container';
-import ListingIndexContainer from './listings/listing_index_container';
-import ListingShowContainer from './listings/listing_show_container';
-import EditListingFormContainer from './listings/edit_listing_form_container';
+import ListingIndexContainer from './listing/listing_index_container';
+import ListingShowContainer from './listing/listing_show_container';
+import EditListingFormContainer from './listing/edit_listing_form_container';
 
 const App = (props) => {
   return (
