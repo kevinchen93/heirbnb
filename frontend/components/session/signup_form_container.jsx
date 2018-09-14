@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { signup } from '../../actions/session_actions';
 import { Link } from 'react-router-dom';
+import { signup } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 class SignupForm extends React.Component {
@@ -79,6 +79,7 @@ const mapStateToProps = ({ errors }) => {
 };
 const mapDispatchToProps = dispatch => ({
   signup: user => dispatch(signup(user)),
+  processForm: (user) => dispatch(signup(user)),
   otherForm: (
   <button onClick={() => dispatch(openModal('signup'))}>
     Signup
