@@ -14,6 +14,7 @@ class SignupForm extends React.Component {
       password: '',
     };
     this.handleChange = this.handleChange.bind(this);
+    this.changeModal = this.changeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -29,12 +30,17 @@ class SignupForm extends React.Component {
     this.props.processForm(user).then(this.props.closeModal);
   }
 
+  changeModal() {
+    this.props.closeModal();
+    this.props.otherForm();
+  }
+
   render () {
     return (
       <div>
         <div>
           <form onSubmit={this.handleSubmit}>
-            <button type="button" id="close-x" onClick={this.props.closeModal}>X</button>
+            <button type="button" id="close-x" onClick={() => this.closeModal()}>X</button>
             <input
               type="email"
               placeholder="Email address"
@@ -64,7 +70,7 @@ class SignupForm extends React.Component {
             </div>
           </form>
 
-          <p>Already have an Heirbnb account? <Link to="/login">Log in</Link></p>
+          <p>Already have an Heirbnb account? <Link to={"/"} onClick={() => this.changeModal()}>Log in</Link></p>
         </div>
       </div>
     );
@@ -78,14 +84,9 @@ const mapStateToProps = ({ errors }) => {
   };
 };
 const mapDispatchToProps = dispatch => ({
-  signup: user => dispatch(signup(user)),
-  processForm: (user) => dispatch(signup(user)),
-  otherForm: (
-  <button onClick={() => dispatch(openModal('signup'))}>
-    Signup
-  </button>
-  ),
+  processForm: user => dispatch(signup(user)),
+  otherForm: () => dispatch(openModal('login')),
   closeModal: () => dispatch(closeModal())
 });
 
-export default connect(null, mapDispatchToProps)(SignupForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SignupForm);

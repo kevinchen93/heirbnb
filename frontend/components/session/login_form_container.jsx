@@ -12,6 +12,7 @@ class LoginForm extends React.Component {
       password: ''
     };
     this.handleChange = this.handleChange.bind(this);
+    this.changeModal = this.changeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -19,6 +20,11 @@ class LoginForm extends React.Component {
     return e => {
       this.setState({ [field]: e.target.value });
     };
+  }
+
+  changeModal() {
+    this.props.closeModal();
+    this.props.otherForm();
   }
 
   handleSubmit(e) {
@@ -51,7 +57,7 @@ class LoginForm extends React.Component {
             { this.props.errors }
           </form>
 
-          <p>Don't have an account? <Link to="/signup">Sign up</Link></p>
+          <p>Don't have an account? <Link to={"/"} onClick={() => this.changeModal()}>Sign up</Link></p>
         </div>
       </div>
     );
@@ -66,11 +72,7 @@ const mapStateToProps = ({ errors }) => {
 };
 const mapDispatchToProps = dispatch => ({
   processForm: user => dispatch(login(user)),
-  otherForm: (
-  <button onClick={() => dispatch(openModal('signup'))}>
-    Signup
-  </button>
-  ),
+  otherForm: () => dispatch(openModal('signup')),
   closeModal: () => dispatch(closeModal())
 });
 

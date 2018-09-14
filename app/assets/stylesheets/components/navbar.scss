@@ -116,6 +116,10 @@
   display: flex;
 }
 
+.nav-bar-right ul div {
+  display: flex;
+}
+
 .nav-bar-right li {
   padding: 0 15px;
 }
@@ -127,4 +131,20 @@
 
 .nav-bar-right li:hover {
   border-bottom: 2px solid black;
+}
+
+.nav-bar-right .dropdown {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  left: 0;
+  display: none;
+}
+
+.nav-bar-right .dropdown:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
 }
