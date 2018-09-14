@@ -13,8 +13,8 @@ const App = (props) => {
       <Modal />
       <NavBarContainer />
       <Route exact path="/" render={() => <HeaderContainer />} />
-      <AuthRoute path="/login" component={LoginFormContainer} />
-      <AuthRoute path="/signup" component={SignupFormContainer} />
+      // <AuthRoute path="/login" component={LoginFormContainer} />
+      // <AuthRoute path="/signup" component={SignupFormContainer} />
       <div id="footer">
         <div className="footer-container">
           <div className="footer-icon"></div>

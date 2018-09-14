@@ -35,6 +35,10 @@ class SignupForm extends React.Component {
     this.props.otherForm();
   }
 
+  // signUpDemoUser() {
+  //   const demoUser = {}
+  // }
+
   render () {
     return (
       <div>

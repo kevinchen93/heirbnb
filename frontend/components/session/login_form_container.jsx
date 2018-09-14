@@ -54,7 +54,6 @@ class LoginForm extends React.Component {
             <div>
               <button>Log in</button>
             </div>
-            { this.props.errors }
           </form>
 
           <p>Don't have an account? <Link to={"/"} onClick={() => this.changeModal()}>Sign up</Link></p>
