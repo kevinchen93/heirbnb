@@ -17,6 +17,15 @@ a {
 
 }
 
+.header-background {
+  background-image: url('https://a0.muscache.com/4ea/air/r:w3100-h2074-sfit,e:fjpg-c80/pictures/0ffd8594-f123-43f0-85bb-7ef88c6f0624.jpg');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  height: 900px;
+  z-index: -1;
+}
 
 .header-info {
  margin-top: 32px;

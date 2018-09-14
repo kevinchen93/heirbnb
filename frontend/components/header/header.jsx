@@ -6,17 +6,15 @@ const Header = (props) => {
   if (props.currentUser) {
     headerInfo = (
       <div>
-        <div className="subheading">What can we help you find, {props.currentUser.first_name}?</div>
-        <button onClick={props.logout}>Log out</button>
+        <div className="header-background"></div>
+        <div className="subheading" >What can we help you find, {props.currentUser.first_name}?</div>
       </div>
     );
   } else {
     headerInfo = (
       <div>
-        <div className="header-info subheading">Explore Heirbnb</div>
-        <Link to='/signup'>Sign up</Link>
-        <br />
-        <Link to='/login'>Log in</Link>
+        <div className="header-info subheading">Explore Heirbnb
+        </div>
       </div>
     );
   }

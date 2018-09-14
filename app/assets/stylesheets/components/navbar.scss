@@ -135,16 +135,17 @@
 }
 
 .nav-bar-right .dropdown {
+  border: 1px solid #e4e4e4;
+  min-width: 250px;
   visibility: hidden;
   opacity: 0;
   position: absolute;
-  transition: all 0.5s ease;
-  margin-top: 1rem;
-  left: 0;
+  right: 0;
+  transform: translateY(80px);
   display: none;
 }
 
-.nav-bar-right .dropdown:hover {
+.nav-bar-right:hover .dropdown {
   visibility: visible;
   opacity: 1;
   display: block;

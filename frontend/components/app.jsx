@@ -10,11 +10,10 @@ import Modal from './modal/modal';
 const App = (props) => {
   return (
     <div className="main-content-container">
+      
       <Modal />
       <NavBarContainer />
       <Route exact path="/" render={() => <HeaderContainer />} />
-      // <AuthRoute path="/login" component={LoginFormContainer} />
-      // <AuthRoute path="/signup" component={SignupFormContainer} />
       <div id="footer">
         <div className="footer-container">
           <div className="footer-icon"></div>
