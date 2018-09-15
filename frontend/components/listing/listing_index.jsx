@@ -27,7 +27,6 @@ class ListingIndex extends React.Component {
         <ul>
           {listings}
         </ul>
-        <CreateListingFormContainer />
       </div>
     );
   }

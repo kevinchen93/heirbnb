@@ -9,6 +9,9 @@ import HeaderContainer from './header/header_container';
 import ListingIndexContainer from './listing/listing_index_container';
 import ListingShowContainer from './listing/listing_show_container';
 import EditListingFormContainer from './listing/edit_listing_form_container';
+import BookingIndexContainer from './booking/booking_index_container';
+import BookingShowContainer from './booking/booking_show_container';
+import EditBookingFormContainer from './booking/edit_booking_form_container';
 
 const App = (props) => {
   return (
@@ -22,6 +25,7 @@ const App = (props) => {
         <Route exact path="/listings/:listingId" component={ListingShowContainer} />
         <Route exact path="/listings/:listingId/edit" component={EditListingFormContainer} />
       </Switch>
+
       <div id="footer">
         <div className="footer-container">
           <div className="footer-icon"></div>

@@ -6,9 +6,9 @@ const Header = (props) => {
   if (props.currentUser) {
     headerInfo = (
       <div>
-        <div className="header-background">
+
           <div className="subheading header-background-image-text" >What can we help you find, {props.currentUser.first_name}?</div>
-        </div>
+        
       </div>
     );
   } else {
