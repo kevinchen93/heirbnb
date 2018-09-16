@@ -4,7 +4,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @user = User.includes(:bookings, :listings, :reviews ).find_by(id: params[:id])
+    @user = User.includes(:bookings, :listings, :reviews).find_by(id: params[:id])
     if @user
       render 'api/users/show'
     else

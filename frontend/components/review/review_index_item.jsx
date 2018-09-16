@@ -1,17 +1,18 @@
-import { connect } from 'react-redux';
-import ReviewIndexItem from './review_index_item';
-import { fetchReviews, fetchReview, deleteReview } from '../../actions/review_actions';
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const mapStateToProps = (state, ownProps) => {
-  return {
-    review: ownProps.review,
-  };
+const ReviewIndexItem = ({ review, deleteReview }) => {
+  return (
+    <li>
+      <Link to={`/reviews/${review.id}`}>
+        {review.reviewer_id}
+      </Link>
+      <Link to={`/reviews/${review.id}/edit`}>&nbsp;
+        Edit
+      </Link>
+      <button onClick={()=> deleteReview(review.id)}>Delete</button>
+    </li>
+  );
 };
 
-const mapDispatchToProps = dispatch => ({
-  fetchReviews: () => dispatch(fetchReviews()),
-  fetchReview: id => dispatch(fetchReview(id)),
-  deleteReview: id => dispatch(deleteReview(id))
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(ReviewIndexItem);
+export default ReviewIndexItem;

@@ -36,7 +36,7 @@ class Api::ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find_by(id: params[:id])
-    if own_review? 
+    if own_review?
       @review.destroy
       render 'api/reviews/show'
     else

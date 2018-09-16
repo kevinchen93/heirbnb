@@ -43,6 +43,18 @@ class SignupForm extends React.Component {
     this.props.login(demoUser).then(this.props.closeModal);
   }
 
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render () {
     return (
       <div>
@@ -50,6 +62,7 @@ class SignupForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <button type="button" id="close-x" onClick={() => this.closeModal}>X</button>
             <button type="button" id="demo-user-button" onClick={() => this.signUpDemoUser()}>Sign up as demo user</button>
+            {this.renderErrors()}
             <input
               type="email"
               placeholder="Email address"

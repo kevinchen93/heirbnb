@@ -5,11 +5,11 @@ import { RECEIVE_REVIEWS, RECEIVE_REVIEW, REMOVE_REVIEW } from '../actions/revie
 const reviewsReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type) {
-    case RECEIVE_BOOKINGS:
+    case RECEIVE_REVIEWS:
       return action.reviews || {};
-    case RECEIVE_BOOKING:
+    case RECEIVE_REVIEW:
       return merge({}, state, { [action.review.id]: action.review });
-    case REMOVE_BOOKING:
+    case REMOVE_REVIEW:
       let newState = merge({}, state);
       delete newState[action.reviewId];
       return newState;

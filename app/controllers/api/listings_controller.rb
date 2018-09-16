@@ -23,8 +23,9 @@ class Api::ListingsController < ApplicationController
   end
 
   def update
-    @listing = Listing.find_by(id: params[:id])
-    if @listing.update(listing_params)
+    @listing = current_user.listings.find_by(id: params[:id])
+    if own_listing?
+      @listing.update(listing_params)
       render 'api/listings/show'
     else
       render json: @listing.errors.full_messages, status: 422
@@ -44,6 +45,10 @@ class Api::ListingsController < ApplicationController
 
   def listing_params
     params.require(:listing).permit(:host_id, :title, :description, :lat, :lng)
+  end
+
+  def own_listing?
+    !!current_user.id == @listing.host_id
   end
 
 end

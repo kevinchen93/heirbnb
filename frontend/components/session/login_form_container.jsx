@@ -42,6 +42,18 @@ class LoginForm extends React.Component {
     this.props.processForm(demoUser).then(this.props.closeModal);
   }
 
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
   render () {
     return (
       <div>
@@ -50,6 +62,9 @@ class LoginForm extends React.Component {
             <button type="button" id="close-x" onClick={this.props.closeModal}>X</button>
             <button type="button" id="demo-user-button" onClick={() => this.logInDemoUser()}>Log in as demo user</button>
             <h2 className="login-modal-header">Log in to continue</h2>
+            <div>
+              {this.renderErrors()}
+            </div>
             <input
               type="text"
               placeholder="Email Address"
