@@ -30,3 +30,6 @@
 bundle.js
 bundle.js.map
 .gitignore
+
+# Ignore application configuration
+/config/application.yml
