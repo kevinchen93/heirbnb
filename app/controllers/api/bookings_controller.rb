@@ -18,7 +18,8 @@ class Api::BookingsController < ApplicationController
 
   def update
     @booking = current_user.bookings.find_by(id: params[:id])
-    if @booking.update(booking_params)
+    if own_booking?
+      @booking.update(booking_params)
       render 'api/bookings'
     else
       render json: @booking.errors.full_messages, status: 422

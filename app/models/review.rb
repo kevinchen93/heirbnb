@@ -9,10 +9,9 @@ class Review < ApplicationRecord
     foreign_key: :booking_id,
     class_name: "Booking"
 
-  has_many :reviewer,
+  belongs_to :reviewer,
     primary_key: :id,
     foreign_key: :reviewer_id,
     class_name: "User"
-
 
 end

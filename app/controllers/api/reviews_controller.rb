@@ -1,4 +1,6 @@
 class Api::ReviewsController < ApplicationController
+  before_action :require_logged_in, except: [:index]
+
   def index
     @reviews = Review.all
   end
@@ -24,7 +26,8 @@ class Api::ReviewsController < ApplicationController
 
   def update
     @review = current_user.reviews.find_by(id: params[:id])
-    if @review.update(review_params)
+    if own_review?
+      @review.update(review_params)
       render 'api/reviews/show'
     else
       render json: @review.errors.full_messages, status: 422
@@ -33,7 +36,8 @@ class Api::ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find_by(id: params[:id])
-    if @review.destroy
+    if own_review? 
+      @review.destroy
       render 'api/reviews/show'
     else
       render json: @review.errors.full_messages, status: 422
@@ -44,6 +48,10 @@ class Api::ReviewsController < ApplicationController
 
   def review_params
     params.require(:review).permit(:booking_id, :reviewer_id, :body, :rating)
+  end
+
+  def own_review?
+    !!current_user.id == @review.reviewer_id
   end
 
 end
