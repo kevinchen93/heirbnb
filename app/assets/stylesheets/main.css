@@ -30,6 +30,7 @@ input[type="search"]::-webkit-search-cancel-button {
   box-sizing: border-box;
   height: 900px;
   z-index: -500;
+  margin-top: -82px;
 }
 
 

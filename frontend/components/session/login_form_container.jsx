@@ -62,7 +62,7 @@ class LoginForm extends React.Component {
             <button type="button" id="close-x" onClick={this.props.closeModal}>X</button>
             <button type="button" id="demo-user-button" onClick={() => this.logInDemoUser()}>Log in as demo user</button>
             <h2 className="login-modal-header">Log in to continue</h2>
-            <div>
+            <div className="errors-div">
               {this.renderErrors()}
             </div>
             <input

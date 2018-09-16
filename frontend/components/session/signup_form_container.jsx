@@ -62,7 +62,7 @@ class SignupForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <button type="button" id="close-x" onClick={this.props.closeModal}>X</button>
             <button type="button" id="demo-user-button" onClick={() => this.signUpDemoUser()}>Sign up as demo user</button>
-            <div>
+            <div className="errors-div">
               {this.renderErrors()}
             </div>
             <input
