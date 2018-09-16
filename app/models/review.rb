@@ -2,7 +2,7 @@ class Review < ApplicationRecord
 
   validates :booking_id, :reviewer_id, :body, :rating, presence: true
   validates :rating, inclusion: { in: 1..5, },
-    message: "%must have a rating" }
+    message: { "%must have a rating" }
 
   belongs_to :booking,
     primary_key: :id,
