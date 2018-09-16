@@ -79,7 +79,6 @@ class LoginForm extends React.Component {
             <div className="form-submit-button">
               <button>Log in</button>
             </div>
-            {this.props.errors}
             <p className="modal-nav-link-text">Don't have an account? <Link to={"/"} onClick={() => this.changeModal()}>Sign up</Link></p>
           </form>
         </div>

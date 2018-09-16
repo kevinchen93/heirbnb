@@ -60,9 +60,11 @@ class SignupForm extends React.Component {
       <div>
         <div>
           <form onSubmit={this.handleSubmit}>
-            <button type="button" id="close-x" onClick={() => this.closeModal}>X</button>
+            <button type="button" id="close-x" onClick={this.props.closeModal}>X</button>
             <button type="button" id="demo-user-button" onClick={() => this.signUpDemoUser()}>Sign up as demo user</button>
-            {this.renderErrors()}
+            <div>
+              {this.renderErrors()}
+            </div>
             <input
               type="email"
               placeholder="Email address"
@@ -90,7 +92,6 @@ class SignupForm extends React.Component {
             <div className="form-submit-button">
               <button>Sign up</button>
             </div>
-            {this.props.errors}
             <p className="modal-nav-link-text">Already have an Heirbnb account? <Link to={"/"} onClick={() => this.changeModal()}>Log in</Link></p>
           </form>
         </div>
