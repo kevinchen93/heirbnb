@@ -12,6 +12,9 @@ import EditListingFormContainer from './listing/edit_listing_form_container';
 import BookingIndexContainer from './booking/booking_index_container';
 import BookingShowContainer from './booking/booking_show_container';
 import EditBookingFormContainer from './booking/edit_booking_form_container';
+import ReviewIndexContainer from './review/review_index_container';
+import ReviewShowContainer from './review/review_show_container';
+import EditReviewFormContainer from './review/edit_review_form_container';
 
 const App = (props) => {
   return (

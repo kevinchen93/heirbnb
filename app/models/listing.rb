@@ -12,5 +12,8 @@ class Listing < ApplicationRecord
     foreign_key: :host_id,
     class_name: "Booking"
 
+  has_many :reviews,
+    through: :bookings,
+    source: :review
 
 end

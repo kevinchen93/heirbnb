@@ -5,7 +5,7 @@ class Booking < ApplicationRecord
   has_one :host,
     through: :listing,
     source: :host
-    
+
   belongs_to :guest,
     primary_key: :id,
     foreign_key: :guest_id,
@@ -15,5 +15,10 @@ class Booking < ApplicationRecord
     primary_key: :id,
     foreign_key: :listing_id,
     class_name: "Listing"
+
+  has_one :review,
+    primary_key: :id,
+    foreign_key: :booking_id,
+    class_name: "Review"
 
 end
