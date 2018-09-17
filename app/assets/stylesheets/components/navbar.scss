@@ -85,7 +85,7 @@
 .search-bar-wrapper {
   padding-right: 7px;
   padding-left: 5px;
-  // width: 100%;
+  width: 100%;
 }
 
 .search-bar {
@@ -171,6 +171,9 @@
 
 .nav-bar-right li .dropdown {
   background-color: white;
+}
+.nav-bar-right li .dropdown:hover {
+  border-bottom: 1px solid black;
 }
 
 .nav-bar-right li .dropdown-button {
