@@ -6,7 +6,7 @@ class BookingShow extends React.Component {
     this.props.fetchBooking(this.props.match.params.bookingId);
   }
 
-  componentWillReceiveProps(nextPros) {
+  componentWillReceiveProps(nextProps) {
     if (this.props.booking.id != nextProps.match.params.bookingId) {
       this.props.fetchBooking(nextProps.match.params.bookingId);
     }

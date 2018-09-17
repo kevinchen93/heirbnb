@@ -6,6 +6,7 @@ class Api::ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     @listing.host_id = current_user.id
+    debugger
     if @listing.save
       render 'api/listings/show'
     else
@@ -14,9 +15,10 @@ class Api::ListingsController < ApplicationController
   end
 
   def show
-    @listing = Listing.find_by(id: params[:id])
+    debugger
+    @listing = Listing.includes(:reviews).find_by(id: params[:id])
     if @listing
-      render 'api/listings/show'
+      render :show
     else
       render json:['Listing could not be found'], status: 404
     end

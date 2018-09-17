@@ -25,8 +25,8 @@ const App = (props) => {
       <Route exact path="/" render={() => <HeaderContainer />} />
       <Switch>
         <Route exact path="/" component={ListingIndexContainer}/>
-        <Route exact path="/listings/:listingId" component={ListingShowContainer} />
-        <Route exact path="/listings/:listingId/edit" component={EditListingFormContainer} />
+        <Route exact path="/api/listings/:listingId" component={ListingShowContainer} />
+        <Route exact path="/api/listings/:listingId/edit" component={EditListingFormContainer} />
       </Switch>
 
       <div id="footer">

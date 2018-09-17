@@ -3,7 +3,7 @@ class User < ApplicationRecord
 
   validates :first_name, :last_name, :email, presence: true
   validates :email, uniqueness: true
-  
+
   validates :session_token, :password_digest, presence: true
   validates :password, length: { minimum: 8 }, allow_nil: true
 
@@ -23,6 +23,13 @@ class User < ApplicationRecord
     primary_key: :id,
     foreign_key: :reviewer_id,
     class_name: "Review"
+
+  has_many :photos,
+    primary_key: :id,
+    foreign_key: :poster_id,
+    class_name: "Photo"
+
+
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

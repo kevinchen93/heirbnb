@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Vacation Rentals, Homes, Experiences & Places - Heirbnb</title>
+    <% if logged_in? %>
+      <title>Heirbnb</title>
+    <% else %>
+      <title>Vacation Rentals, Homes, Experiences & Places - Heirbnb</title>
+    <% end %>
+
     <%= csrf_meta_tags %>
     <%= favicon_link_tag asset_path('heirbnb10.ico') %>
     <%= csp_meta_tag %>
