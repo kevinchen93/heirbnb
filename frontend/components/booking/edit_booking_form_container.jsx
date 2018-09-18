@@ -9,7 +9,7 @@ const mapStateToProps = (state, ownProps) => {
     start_date: '',
     end_date: ''
   };
-  const booking = state.bookings[ownProps.match.params.bookingId] || defaultBooking;
+  const booking = state.entities.bookings[ownProps.match.params.bookingId] || defaultBooking;
   const formType = 'Update Booking';
 
   return { booking, formType };

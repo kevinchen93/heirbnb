@@ -2,16 +2,16 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ListingIndexItem = ({ listing, deleteListing }) => {
+
   return (
-    <li>
-      <Link to={`/listings/${listing.id}`}>
-        {listing.title}
+      <li key={listing.id} className="listing-item-container">
+        <Link to={`/api/listings/${listing.id}`}>
+        <div className="listing-image"></div>
+        <div className="listing-content">
+          <div className="listing-item-title">{listing.title}</div>
+        </div>
       </Link>
-      <Link to={`/listings/${listing.id}/edit`}>&nbsp;
-        Edit
-      </Link>
-      <button onClick={()=> deleteListing(listing.id)}>Delete</button>
-    </li>
+      </li>
   );
 };
 

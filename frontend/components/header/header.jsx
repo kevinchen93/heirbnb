@@ -20,9 +20,6 @@ const Header = (props) => {
     <div>
       {headerInfo}
       <div className="header-info subheading">Explore Heirbnb</div>
-      <div className="header-info subheading">Introducing Heirbnb Plus</div>
-      <div className="header-info subheading">Homes Around The World</div>
-      <div className="header-info subheading">Top-rated Experiences</div>
     </div>
   );
 }

@@ -36,8 +36,8 @@ class LoginForm extends React.Component {
 
   logInDemoUser() {
     const demoUser = {
-      email: 'demoUser@heirbeenbee.herokuapp.com',
-      password: 'password',
+      email: 'demo@demo',
+      password: 'hunter12',
     };
     this.props.processForm(demoUser).then(this.props.closeModal);
   }

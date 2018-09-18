@@ -37,8 +37,8 @@ class SignupForm extends React.Component {
 
   signUpDemoUser() {
     const demoUser = {
-      email: 'demoUser@heirbeenbee.herokuapp.com',
-      password: 'password',
+      email: 'demo@demo',
+      password: 'hunter12',
     };
     this.props.login(demoUser).then(this.props.closeModal);
   }

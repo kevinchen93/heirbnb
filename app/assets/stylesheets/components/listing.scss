@@ -1,0 +1,80 @@
+.listing-index-container {
+  margin-top: 7px;
+  box-sizing: border-box;
+}
+
+.listing-ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.listing-item-container {
+  color: #484848;
+  padding-left: 8px;
+  padding-right: 8px;
+  margin-bottom: 30px;
+}
+
+.listing-image {
+  height: 200px;
+  width: 300px;
+  background-image: image-url('plant-room.jpeg');
+  background-size: 300px 200px;
+  background-repeat: no-repeat;
+  border-radius: 3px;
+  border: 1px solid white;
+}
+
+.listing-content {
+  max-height: 42px;
+}
+
+.listing-item-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 22px;
+  margin: 5px 0;
+}
+
+.listing-item-description {
+  display: block;
+  max-height: 300px;
+  max-width: 300px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 349;
+}
+
+// LISTING SHOW
+
+
+.listing-show-image {
+  max-width: 100vw;
+  height: 100vh;
+  background-image: image-url('plant-room.jpeg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding:0;
+}
+
+.listing-show-container {
+  margin-top: 14px;
+  padding-right: 24px;
+  padding-left: 24px;
+  // margin-left: auto;
+  // margin-right: auto;
+  width: 45%;
+}
+
+.listing-show-title {
+  color: #484848;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.listing-show-description {
+  font-size: 18px;
+  font-weight: 400;
+}

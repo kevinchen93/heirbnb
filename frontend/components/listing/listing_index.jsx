@@ -23,8 +23,8 @@ class ListingIndex extends React.Component {
     });
 
     return (
-      <div>
-        <ul>
+      <div className="listing-index-container">
+        <ul className="listing-ul">
           {listings}
         </ul>
       </div>

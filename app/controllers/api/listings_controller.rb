@@ -1,12 +1,12 @@
 class Api::ListingsController < ApplicationController
+
   def index
-    @listings = Listing.all
+    @listings = Listing.includes(:photos).all
   end
 
   def create
     @listing = Listing.new(listing_params)
     @listing.host_id = current_user.id
-    debugger
     if @listing.save
       render 'api/listings/show'
     else
@@ -15,7 +15,6 @@ class Api::ListingsController < ApplicationController
   end
 
   def show
-    debugger
     @listing = Listing.includes(:reviews).find_by(id: params[:id])
     if @listing
       render :show

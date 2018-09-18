@@ -9,14 +9,14 @@ export const fetchBooking = id => {
   return $.ajax({
     method: 'GET',
     url: `api/bookings/${id}`,
-    data
   });
 };
+
 export const createBooking = booking => {
   return $.ajax({
     method: 'POST',
     url: 'api/bookings',
-    data: { booking }
+    data: { booking: booking }
   });
 };
 
@@ -24,7 +24,7 @@ export const updateBooking = booking => {
   return $.ajax({
     method: 'PATCH',
     url: `api/booking/${booking.id}`,
-    data: { booking }
+    data: { booking: booking }
   });
 };
 

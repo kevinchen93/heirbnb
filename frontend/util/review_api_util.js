@@ -9,14 +9,14 @@ export const fetchReview = id => {
   return $.ajax({
     method: 'GET',
     url: `api/reviews/${id}`,
-    data
   });
 };
+
 export const createReview = review => {
   return $.ajax({
     method: 'POST',
     url: 'api/reviews',
-    data: { review }
+    data: { review: review }
   });
 };
 
@@ -24,7 +24,7 @@ export const updateReview = review => {
   return $.ajax({
     method: 'PATCH',
     url: `api/review/${review.id}`,
-    data: { review }
+    data: { review: review }
   });
 };
 
