@@ -22,6 +22,11 @@ input[type="search"]::-webkit-search-cancel-button {
 
 }
 
+.index-splash-container {
+  margin: 0 auto;
+  width: 65%;
+}
+
 .header-background {
   background-image: url('https://a0.muscache.com/4ea/air/r:w3100-h2074-sfit,e:fjpg-c80/pictures/0ffd8594-f123-43f0-85bb-7ef88c6f0624.jpg');
   background-size: 100% 100%;
@@ -44,7 +49,7 @@ input[type="search"]::-webkit-search-cancel-button {
   font-weight: 800;
   color: #484848;
   margin-bottom: 32px;
-  padding: 17px 0 0 17px;
+  padding-left: 8px;
 }
 
 .header-background-image-text {

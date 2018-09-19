@@ -1,4 +1,5 @@
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions';
+import { RECEIVE_LISTING } from '../actions/listing_actions';
 import { merge } from 'lodash';
 
 const usersReducer = ( state = {}, action ) => {

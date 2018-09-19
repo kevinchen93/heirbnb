@@ -1,6 +1,7 @@
 import merge from 'lodash/merge';
 
 import { RECEIVE_REVIEWS, RECEIVE_REVIEW, REMOVE_REVIEW } from '../actions/review_actions';
+import { RECEIVE_LISTING } from '../actions/listing_actions';
 
 const reviewsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -13,6 +14,8 @@ const reviewsReducer = (state = {}, action) => {
       let newState = merge({}, state);
       delete newState[action.reviewId];
       return newState;
+    // case RECEIVE_LISTING:
+    //   return newState = merge({}, state, );
     default:
       return state;
   }

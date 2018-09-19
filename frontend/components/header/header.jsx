@@ -12,7 +12,7 @@ const Header = (props) => {
   } else {
     headerInfo = (
       <div>
-        <div className="header-background"></div>
+        
       </div>
     );
   }

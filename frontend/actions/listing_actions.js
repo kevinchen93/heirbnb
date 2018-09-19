@@ -10,10 +10,12 @@ export const receiveListings = listings => ({
   listings,
 });
 
-export const receiveListing = listing => ({
+export const receiveListing = (listing) => {
+  return {
   type: RECEIVE_LISTING,
-  listing,
-});
+  listing
+  };
+};
 
 export const removeListing = listingId => ({
   type: REMOVE_LISTING,
@@ -32,8 +34,8 @@ export const fetchListings = filters => {
 
 export const fetchListing = id => {
   return dispatch => {
-    return ListingAPIUtil.fetchListing(id).then(listing => {
-      return dispatch(receiveListing(listing));
+    return ListingAPIUtil.fetchListing(id).then(data => {
+      return dispatch(receiveListing(data));
     });
   };
 };

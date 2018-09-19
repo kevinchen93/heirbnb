@@ -22,8 +22,12 @@ const App = (props) => {
       <Modal />
       <NavBarContainer />
 
-      <Route exact path="/" render={() => <HeaderContainer />} />
-      <Route exact path="/" render={() => <ListingIndexContainer/>} />
+      <Route exact path="/" render={() => <div className="header-background"></div>} />
+      <div className="index-splash-container">
+        <Route exact path="/" render={() => <HeaderContainer />} />
+        <Route exact path="/" render={() => <ListingIndexContainer/>} />
+      </div>
+
       <Route exact path="/api/listings/:listingId" component={ListingShowContainer} />
       <Switch>
         <Route exact path="/api/listings" render={() => <ListingIndexContainer/>} />
