@@ -10,10 +10,12 @@ export const receiveListings = listings => ({
   listings,
 });
 
-export const receiveListing = (listing) => {
+export const receiveListing = ( { listing, reviews, users } ) => {
   return {
   type: RECEIVE_LISTING,
-  listing
+  listing,
+  reviews,
+  users
   };
 };
 
@@ -21,7 +23,6 @@ export const removeListing = listingId => ({
   type: REMOVE_LISTING,
   listingId,
 });
-
 
 // Thunk Actions
 export const fetchListings = filters => {
@@ -35,6 +36,7 @@ export const fetchListings = filters => {
 export const fetchListing = id => {
   return dispatch => {
     return ListingAPIUtil.fetchListing(id).then(data => {
+
       return dispatch(receiveListing(data));
     });
   };

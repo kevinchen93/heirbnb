@@ -31,17 +31,11 @@ export default class NavBar extends React.Component {
           </li>
           <li>
             <div>
-              <button>Credit</button>
-            </div>
-          </li>
-          <li>
-            <div>
-              <button>Help</button>
-            </div>
-          </li>
-          <li>
-            <div>
-              <button>{this.props.currentUser.first_name}</button>
+              <a>
+                <button>
+                  {this.props.currentUser.first_name}
+                </button>
+              </a>
               <ul className="dropdown">
                 <li>
                   <button className="dropdown-button" onClick={() => this.props.logout()}>Log Out</button>
@@ -57,16 +51,6 @@ export default class NavBar extends React.Component {
           <li>
             <div>
               <button>Become a host</button>
-            </div>
-          </li>
-          <li>
-            <div>
-              <button>Earn credit</button>
-            </div>
-          </li>
-          <li>
-            <div>
-              <button>Help</button>
             </div>
           </li>
           <li>

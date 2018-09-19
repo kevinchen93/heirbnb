@@ -17,17 +17,21 @@ class ListingShow extends React.Component {
   }
 
   render() {
-    const { listing, users } = this.props;
+    const { listing, reviews, users } = this.props;
     if (!listing) {
       return <div>Loading...</div>;
     };
 
     let reviewHeaderContainer;
-    if (listing.reviews.length > 0) {
-      reviewHeaderContainer = (<div className="review-length-header">{listing.reviews.length} Reviews</div>)
+    if (listing.review_ids.length > 0) {
+      reviewHeaderContainer = (<div className="review-length-header">{listing.review_ids.length} Reviews</div>)
     }
 
-    const reviews = listing.reviews.map( review => {
+    const reviewElements = listing.review_ids.map( reviewId => {
+      const review = reviews[reviewId];
+      if (!review) return null;
+
+      const reviewer = users[review.reviewer_id];
 
       const monthsArray = ['Jan', 'Feb', 'Mar', 'April', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
       const date = new Date (Date.parse(review.created_at));
@@ -35,20 +39,21 @@ class ListingShow extends React.Component {
       const year = date.getFullYear();
 
       let reviewHeading;
-      if (listing.reviews.length === 1) {
+      if (listing.review_ids.length === 1) {
         reviewHeading = "Review"
       } else {
         reviewHeading = "Reviews"
       }
 
       return (
-        <div className="review-container">
+        <div className="review-container" key={review.id}>
           <div className="review-content-container">
             <div className="review-header">
               <div className="user-icon"></div>
               <div className="review-user-date-container">
                 <div className="review-user-text">
-                  Reviewer ID: {review.reviewer_id}</div>
+                  {reviewer.first_name}
+                </div>
                 <div className="review-content-text">{month} {year}</div>
               </div>
             </div>
@@ -73,7 +78,7 @@ class ListingShow extends React.Component {
             </div>
             {reviewHeaderContainer}
             <div className="separator"></div>
-            {reviews}
+            {reviewElements}
           </div>
 
         </div>

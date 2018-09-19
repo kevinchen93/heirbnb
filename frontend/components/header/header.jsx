@@ -12,7 +12,6 @@ const Header = (props) => {
   } else {
     headerInfo = (
       <div>
-        
       </div>
     );
   }

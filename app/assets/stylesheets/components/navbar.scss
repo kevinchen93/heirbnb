@@ -138,7 +138,7 @@
   // padding: 0 15px;
 }
 
-.nav-bar-right button {
+.nav-bar-right button{
   height: 80px;
   // margin: 0 15px;
   padding: 0 15px;
@@ -156,25 +156,25 @@
   border: 1px solid #e4e4e4;
   min-width: 250px;
   visibility: hidden;
-  opacity: 0;
   position: absolute;
   right: 0;
   transform: translateY(81px);
-  display: none;
-}
-
-.nav-bar-right ul div li div:hover .dropdown {
-  visibility: visible;
-  opacity: 1;
-  display: block;
-}
-
-.nav-bar-right li .dropdown {
+  // display: none;
   background-color: white;
 }
 
-.nav-bar-right li .dropdown:hover {
+.nav-bar-right div a:hover + .dropdown {
+  visibility: visible;
+  // display: block;
+}
+
+.nav-bar-right .dropdown:hover{
+  visibility: visible;
+}
+
+.nav-bar-right .dropdown button:hover {
   border-bottom: 1px solid #767676;
+  visibility: visible;
 }
 
 .nav-bar-right li .dropdown-button {

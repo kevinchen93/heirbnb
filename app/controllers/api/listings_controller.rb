@@ -14,7 +14,6 @@ class Api::ListingsController < ApplicationController
   end
 
   def show
-
     @listing = Listing.includes(:reviews).find_by(id: params[:id])
     if @listing
       render :show
