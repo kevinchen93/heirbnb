@@ -44,8 +44,14 @@ class ListingShow extends React.Component {
       return (
         <div className="review-container">
           <div className="review-content-container">
-            <div className="review-user-text">Reviewer ID: {review.reviewer_id}</div>
-            <div className="review-content-text">{month} {year}</div>
+            <div className="review-header">
+              <div className="user-icon"></div>
+              <div className="review-user-date-container">
+                <div className="review-user-text">
+                  Reviewer ID: {review.reviewer_id}</div>
+                <div className="review-content-text">{month} {year}</div>
+              </div>
+            </div>
             <div key={review.id} className="review-content-text review-content-body">{review.body}</div>
             <div className="review-content-text">Rating: {review.rating}</div>
           </div>
