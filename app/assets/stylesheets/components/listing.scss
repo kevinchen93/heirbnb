@@ -6,6 +6,7 @@
 .listing-ul {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
 
 .listing-item-container {
