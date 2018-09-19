@@ -1,7 +1,6 @@
 class Api::ListingsController < ApplicationController
-
   def index
-    @listings = Listing.includes(:photos).all
+    @listings = Listing.all
   end
 
   def create

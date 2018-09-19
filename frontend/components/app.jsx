@@ -25,7 +25,6 @@ const App = (props) => {
       <Route exact path="/" render={() => <HeaderContainer />} />
       <Route exact path="/" render={() => <ListingIndexContainer/>} />
       <Route exact path="/api/listings/:listingId" component={ListingShowContainer} />
-
       <Switch>
         <Route exact path="/api/listings" render={() => <ListingIndexContainer/>} />
         <Route exact path="/api/listings/:listingId/edit" component={EditListingFormContainer} />

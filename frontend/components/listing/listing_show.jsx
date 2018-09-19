@@ -50,14 +50,17 @@ class ListingShow extends React.Component {
     return (
       <div>
         <div className="listing-show-image"></div>
+
         <div className="listing-show-container">
-          <div className="listing-show-title">{listing.title}</div><br />
+
+          <div className="listing-show-title">{listing.title}</div>
           <div className="listing-show-content">
             <div className="listing-show-description">
               {listing.description}
             </div>
             {reviews}
           </div>
+
         </div>
       </div>
     );

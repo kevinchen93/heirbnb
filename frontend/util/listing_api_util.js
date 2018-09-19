@@ -2,7 +2,7 @@ export const fetchListings = props => {
   return $.ajax({
     method: 'GET',
     url: 'api/listings',
-    data: { props: props}
+    data: { props: props }
   });
 };
 
@@ -29,9 +29,9 @@ export const updateListing = listing => {
   });
 };
 
-export const deleteListing = id => {
+export const deleteListing = listingId => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/listings/${id}`
+    url: `api/listings/${listingId}`
   });
 };
