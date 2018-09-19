@@ -120,7 +120,7 @@
 }
 
 .nav-bar-not-logged-in {
-  color: white;
+  color: orange;
 }
 
 .nav-bar-right ul {
@@ -149,7 +149,7 @@
 }
 
 .nav-bar-logged-in > li:hover {
-  border-bottom: 2px solid #e4e4e4;
+  border-bottom: 2px solid #767676;
 }
 
 .nav-bar-right .dropdown {
@@ -173,7 +173,7 @@
   background-color: white;
 }
 .nav-bar-right li .dropdown:hover {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #767676;
 }
 
 .nav-bar-right li .dropdown-button {

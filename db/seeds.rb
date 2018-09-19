@@ -35,10 +35,14 @@ bookings = Booking.create!([
   { guest_id: users[0].id, listing_id: listings[1].id, start_date: 20180912, end_date: 20180919 },
   { guest_id: users[1].id, listing_id: listings[0].id, start_date: 20180913, end_date: 20180920 },
   { guest_id: users[2].id, listing_id: listings[0].id, start_date: 20180914, end_date: 20180921 },
+  { guest_id: users[3].id, listing_id: listings[4].id, start_date: 20180914, end_date: 20180921 },
 ]);
 
 reviews = Review.create!([
-  { booking_id: bookings[1].id, reviewer_id: users[1].id, body: 'Redonkulous!', rating: 5 }
+  { booking_id: bookings[1].id, reviewer_id: users[0].id, body: 'Amazing!', rating: 5 },
+  { booking_id: bookings[1].id, reviewer_id: users[1].id, body: 'The location was great and the price was right. It saved us from spending hundreds more on getting 2 NYC hotel rooms. We enjoyed getting to meet the very friendly hosts and I’m a big fan of the modern style and furnishings in their apartment. Thanks again.!', rating: 5 },
+  { booking_id: bookings[1].id, reviewer_id: users[2].id, body: 'Best neighborhood in Manhattan for independent coffee shops, cozy wine bars, up-and-coming restaurants (the area has 4 out of the top 10 best places to eat in this years NY magazine list) , intimate music venues, and interesting owner-operated shops. Like no other area in the city. A very peaceful cool neighborhood, yet just a short trip to all the action!', rating: 5 },
+  { booking_id: bookings[3].id, reviewer_id: users[3].id, body: 'Maria’s place is just what we were hoping for our stay in Williamsburg. The apartment has just the right “patina” for its age and it is stylishly appointed. She really has thought of everything! Great touches and conveniences throughout down to reusable grocery bags and plenty of hangars. The rooftop was a definite perk with nice views. There about a million “3rd wave” coffee places within a stone’s throw and Domino Park right across the street is jaw droppingly amazing with its views of Manhattan. Loved everything!', rating: 5 },
 ]);
 
 photos = Photo.create!([

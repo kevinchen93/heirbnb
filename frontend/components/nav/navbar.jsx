@@ -24,7 +24,9 @@ export default class NavBar extends React.Component {
           </li>
           <li>
             <div>
-              <button>Trips</button>
+              <Link to={'/api/trips'}>
+                <button>Trips</button>
+              </Link>
             </div>
           </li>
           <li>
