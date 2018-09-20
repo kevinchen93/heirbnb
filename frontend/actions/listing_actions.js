@@ -25,9 +25,9 @@ export const removeListing = listingId => ({
 });
 
 // Thunk Actions
-export const fetchListings = filters => {
+export const fetchListings = () => {
   return dispatch => {
-    return ListingAPIUtil.fetchListings(filters).then(listings => {
+    return ListingAPIUtil.fetchListings().then(listings => {
       return dispatch(receiveListings(listings));
     });
   };

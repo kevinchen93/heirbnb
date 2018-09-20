@@ -19,7 +19,6 @@
 .listing-image {
   height: 200px;
   width: 300px;
-  background-image: image-url('plant-room.jpeg');
   background-size: 300px 200px;
   background-repeat: no-repeat;
   border-radius: 3px;
@@ -30,10 +29,20 @@
   max-height: 42px;
 }
 
+.listing-item-prices {
+  margin-top: -3px;
+  font-size: 14px;
+}
+
 .listing-item-title {
+  margin-top: 5px;
   font-size: 16px;
   font-weight: 600;
   line-height: 22px;
+}
+
+.listing-show-commodities {
+  font-size: 16px;
   margin: 5px 0;
 }
 

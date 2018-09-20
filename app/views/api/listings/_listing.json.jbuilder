@@ -1,1 +1,1 @@
-json.extract! listing, :id, :host_id, :title, :description, :lat, :lng, :review_ids
+json.extract! listing, :id, :host_id, :title, :description, :lat, :lng, :guests, :bedrooms, :baths, :beds, :prices, :img_url, :review_ids

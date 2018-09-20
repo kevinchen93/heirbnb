@@ -6,10 +6,16 @@ import { fetchListing, updateListing } from '../../actions/listing_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const defaultListing = {
-    title: '',
-    description: '',
-    lat: '',
-    lng: '',
+    title: 'Default listing',
+    description: 'Default description',
+    lat: '37.7758',
+    lng: '-122.435',
+    guests: 1,
+    baths: 1,
+    beds: 1,
+    bedrooms: 1,
+    prices: 1,
+    img_url: 'https://a0.muscache.com/im/pictures/6061582/a643208f_original.jpg?aki_policy=xx_large'
   };
   const listing = state.listings[ownProps.match.params.listingId] || defaultListing;
   const formType = 'Update Listing';

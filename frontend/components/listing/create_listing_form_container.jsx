@@ -9,6 +9,12 @@ const mapStateToProps = (state, ownProps) => {
     description: '',
     lat: '',
     lng: '',
+    guests: 1,
+    baths: 1,
+    beds: 1,
+    bedrooms: 1,
+    prices: 1,
+    img_url: ''
   };
   const formType = 'Create Listing';
 

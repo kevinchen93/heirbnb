@@ -17,7 +17,7 @@ class ListingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state).then(() => this.props.history.push(`/`)).then(this.props.closeModal);
+    this.props.action(this.state).then(() => this.props.history.push('/')).then(this.props.closeModal);
   }
 
   render() {
@@ -56,6 +56,41 @@ class ListingForm extends React.Component {
               type="text"
               value={this.state.lng}
               onChange={this.update('lng')} />
+          </label>
+
+          <label>Guests
+            <input
+              type="text"
+              value={this.state.guests}
+              onChange={this.update('guests')} />
+          </label>
+
+          <label>Beds
+            <input
+              type="text"
+              value={this.state.beds}
+              onChange={this.update('beds')} />
+          </label>
+
+          <label>Bedrooms
+            <input
+              type="text"
+              value={this.state.bedrooms}
+              onChange={this.update('bedrooms')} />
+          </label>
+
+          <label>Baths
+            <input
+              type="text"
+              value={this.state.baths}
+              onChange={this.update('baths')} />
+          </label>
+
+          <label>Price
+            <input
+              type="text"
+              value={this.state.prices}
+              onChange={this.update('prices')} />
           </label>
 
           <input className="listing-submit-button" type="submit" value={this.props.formType} />

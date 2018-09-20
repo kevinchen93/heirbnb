@@ -17,6 +17,7 @@ import EditBookingFormContainer from './booking/edit_booking_form_container';
 import ReviewIndexContainer from './review/review_index_container';
 import ReviewShowContainer from './review/review_show_container';
 import EditReviewFormContainer from './review/edit_review_form_container';
+import SearchContainer from './search/search_container';
 
 const App = (props) => {
   return (
@@ -25,7 +26,8 @@ const App = (props) => {
       <NavBarContainer />
 
       <Route exact path="/" render={() => <HeaderContainer />} />
-      <Route exact path="/" render={() => <ListingIndexContainer/>} />
+      <Route exact path="/" render={() => <SearchContainer/>} />
+
 
       <Route exact path="/trips" component={BookingIndexContainer} />
 

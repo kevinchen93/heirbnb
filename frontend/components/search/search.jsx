@@ -1,13 +1,13 @@
 import React from 'react';
-import ListingIndex from './../listing/listing_index';
+import ListingIndexContainer from './../listing/listing_index_container';
 import ListingMap from './../listing_map/listing_map';
 
 class Search extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
     this.state = {
-      location: "New York"
+      location: "New York",
     };
   }
 
@@ -20,11 +20,11 @@ class Search extends React.Component {
 
   render(){
     return (
-      <div>
+      <div style={{ paddingRight: "450px" }}>
         <input type="text" placeholder="Search Listings" />
         <div>
-          <ListingMap listings={this.props.listings} updateFilter={this.props.updateFilter} />
-          <ListingIndex listings={this.props.listings}/>
+          <ListingMap style={{ position: "absolute" }} listings={this.props.listings} updateFilter={this.props.updateFilter} />
+          <ListingIndexContainer />
         </div>
       </div>
     );

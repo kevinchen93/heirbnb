@@ -1,6 +1,6 @@
 class Listing < ApplicationRecord
 
-  validates :host_id, :title, :description, :lat, :lng, presence: true
+  validates :host_id, :title, :description, :lat, :lng, :guests, :bedrooms, :baths, :beds, :prices, :img_url, presence: true
 
   belongs_to :host,
     primary_key: :id,
