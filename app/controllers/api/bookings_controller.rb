@@ -10,7 +10,7 @@ class Api::BookingsController < ApplicationController
     @booking.guest_id = current_user.id
     if @booking.save
       @bookings = Booking.where(guest_id: current_user.id)
-      render 'api/bookings'
+      render 'api/bookings/show'
     else
       render json: @booking.errors.full_messages, status: 422
     end

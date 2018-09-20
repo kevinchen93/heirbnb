@@ -14,7 +14,10 @@ const mapStateToProps = (state, ownProps) => {
   const listing = state.listings[ownProps.match.params.listingId] || defaultListing;
   const formType = 'Update Listing';
 
-  return { listing, formType };
+  return {
+    listing,
+    formType,
+    currentUser: state.entities.users[state.session.currentUserId] };
 };
 
 const mapDispatchToProps = dispatch => {

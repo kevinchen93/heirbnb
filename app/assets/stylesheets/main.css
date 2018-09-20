@@ -27,6 +27,15 @@ input[type="search"]::-webkit-search-cancel-button {
   width: 65%;
 }
 
+.logged-in-index-container {
+  width: 100%
+}
+
+.not-logged-in-index-container {
+  margin: 0 auto;
+  width: 65%;
+}
+
 .header-background {
   background-image: url('https://a0.muscache.com/4ea/air/r:w3100-h2074-sfit,e:fjpg-c80/pictures/0ffd8594-f123-43f0-85bb-7ef88c6f0624.jpg');
   background-size: 100% 100%;
@@ -38,7 +47,6 @@ input[type="search"]::-webkit-search-cancel-button {
   margin-top: -82px;
 }
 
-
 .header-info {
   margin-top: 32px;
   margin-bottom: 32px;
@@ -48,10 +56,17 @@ input[type="search"]::-webkit-search-cancel-button {
   font-size: 24px;
   font-weight: 800;
   color: #484848;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   padding-left: 8px;
 }
 
 .header-background-image-text {
   color: #484848;
+}
+
+.centered-heading {
+  width: 65%;
+  padding-left: 14px;
+  margin-left: auto;
+  margin-right: auto;
 }

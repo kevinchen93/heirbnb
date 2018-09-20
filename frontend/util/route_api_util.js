@@ -15,9 +15,17 @@ const Protected = ({ component: Component, path, loggedIn, exact }) => (
   />
 );
 
+const ProtectedRender = ({ component: Component, path, loggedIn, exact }) => (
+  <Route path={path} exact={exact} render={(props) => (
+      !loggedIn ? null : ( <Component {...props} /> )
+    )}
+    />
+);
+
 const mapStateToProps = state => ({
   loggedIn: Boolean(state.session.currentUserId),
 });
 
 export const AuthRoute = withRouter(connect(mapStateToProps, null)(Auth));
 export const ProtectedRoute = withRouter(connect(mapStateToProps, null)(Protected));
+export const ProtectedRenderRoute = withRouter(connect(mapStateToProps, null)(ProtectedRender));

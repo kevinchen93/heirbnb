@@ -23,7 +23,7 @@ export const removeBooking = bookingId => ({
 // Thunk Actions
 export const fetchBookings = () => {
   return dispatch => {
-    return BookingAPIUtil.fetchBookings(filters).then(bookings => {
+    return BookingAPIUtil.fetchBookings().then(bookings => {
       return dispatch(receiveBookings(bookings));
     });
   };
@@ -37,9 +37,9 @@ export const fetchBooking = id => {
   };
 };
 
-export const createBooking = id => {
+export const createBooking = booking => {
   return dispatch => {
-    return BookingAPIUtil.createBooking(id).then(booking => {
+    return BookingAPIUtil.createBooking(booking).then(booking => {
       return dispatch(receiveBooking(booking));
     });
   };

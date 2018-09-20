@@ -12,7 +12,11 @@ const mapStateToProps = (state, ownProps) => {
   };
   const formType = 'Create Listing';
 
-  return { listing, formType };
+  return {
+    listing,
+    formType,
+    currentUser: state.entities.users[state.session.currentUserId],
+  };
 };
 
 const mapDispatchToProps = dispatch => {

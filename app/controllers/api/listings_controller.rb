@@ -1,6 +1,7 @@
 class Api::ListingsController < ApplicationController
   def index
     @listings = Listing.all
+    current_user.listings 
   end
 
   def create

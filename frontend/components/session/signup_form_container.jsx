@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { signup, login } from '../../actions/session_actions';
+import { signup, login, clearErrors } from '../../actions/session_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 class SignupForm extends React.Component {
@@ -31,6 +31,7 @@ class SignupForm extends React.Component {
   }
 
   changeModal() {
+    this.props.clearErrors();
     this.props.closeModal();
     this.props.otherForm();
   }
@@ -110,7 +111,8 @@ const mapDispatchToProps = dispatch => ({
   login: user => dispatch(login(user)),
   processForm: user => dispatch(signup(user)),
   otherForm: () => dispatch(openModal('login')),
-  closeModal: () => dispatch(closeModal())
+  closeModal: () => dispatch(closeModal()),
+  clearErrors: () => dispatch(clearErrors()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignupForm);

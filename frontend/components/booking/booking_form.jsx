@@ -22,12 +22,11 @@ class BookingForm extends React.Component {
   render() {
     return (
       <div>
-        <h3>{this.props.formType}</h3>
-        <form onSubmit={this.handleSubmit}>
+        <form className="booking-form-container" onSubmit={this.handleSubmit}>
           <label>Start Date
             <input
               type="text"
-              value={this.state.title}
+              value={this.state.start_date}
               onChange={this.update('start_date')} />
           </label>
 
@@ -38,7 +37,7 @@ class BookingForm extends React.Component {
               onChange={this.update('end_date')} />
           </label>
 
-          <input type="submit" value={this.props.formType} />
+          <input className="listing-submit-button" type="submit" value="Book" />
         </form>
       </div>
     )

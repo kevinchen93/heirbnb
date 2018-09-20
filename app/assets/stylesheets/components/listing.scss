@@ -49,8 +49,6 @@
 }
 
 // LISTING SHOW
-
-
 .listing-show-image {
   max-width: 100vw;
   height: 100vh;
@@ -80,4 +78,24 @@
   font-weight: 400;
   margin-top: 10px;
   margin-bottom: 10px;
+}
+
+.listing-h1-container {
+  margin-top: 17px;
+  margin-left: 20px;
+}
+
+.listing-h1 {
+  font-size: 22px;
+  color: #484848;
+  font-weight: 500;
+}
+
+.current-user-listings-container {
+  position: absolute;
+  // right: 108px;
+  right: 3px;
+  top: 105px;
+  // width: 872px;
+  width: 996px;
 }

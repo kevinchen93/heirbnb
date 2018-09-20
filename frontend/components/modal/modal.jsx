@@ -3,6 +3,9 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
+import CreateListingFormContainer from '../listing/create_listing_form_container';
+import EditListingFormContainer from '../listing/edit_listing_form_container';
+
 
 const mapStateToProps = state => {
   return {
@@ -28,6 +31,10 @@ function Modal({modal, closeModal}) {
     case 'signup':
       component = <SignupFormContainer />;
       break;
+    case 'create listing':
+      component = <CreateListingFormContainer />
+    case 'update listing':
+      component = <EditListingFormContainer />
     default:
       return null;
   }

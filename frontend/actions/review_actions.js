@@ -37,9 +37,9 @@ export const fetchReview = id => {
   };
 };
 
-export const createReview = id => {
+export const createReview = review => {
   return dispatch => {
-    return ReviewAPIUtil.createReview(id).then(review => {
+    return ReviewAPIUtil.createReview(review).then(review => {
       return dispatch(receiveReview(review));
     });
   };

@@ -6,8 +6,9 @@ import { createBooking } from '../../actions/booking_actions';
 const mapStateToProps = (state, ownProps) => {
   const booking = {
     start_date: '',
-    end_date: ''
+    end_date: '',
   };
+
   const formType = 'Create Booking';
 
   return { booking, formType };

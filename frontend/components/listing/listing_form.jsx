@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 class ListingForm extends React.Component {
   constructor(props) {
@@ -16,14 +17,17 @@ class ListingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state).then(() => this.props.history.push('/'));
+    this.props.action(this.state).then(() => this.props.history.push(`/`)).then(this.props.closeModal);
   }
 
   render() {
     return (
       <div>
-        <h3>{this.props.formType}</h3>
-        <form onSubmit={this.handleSubmit}>
+        <div className="listing-h1-container">
+          <div className="listing-h1">Hi, {this.props.currentUser.first_name}!</div>
+          <div className="listing-h1">Let's get started listing your space!</div>
+        </div>
+        <form className="listing-form-container" onSubmit={this.handleSubmit}>
           <label>Title
             <input
               type="text"
@@ -31,11 +35,14 @@ class ListingForm extends React.Component {
               onChange={this.update('title')} />
           </label>
 
-          <label>Description
+          <div>Description
+            <br />
             <textarea
               value={this.state.description}
-              onChange={this.update('description')} />
-          </label>
+              onChange={this.update('description')}>
+            </textarea>
+          </div>
+          <br />
 
           <label>Latitude
             <input
@@ -51,8 +58,13 @@ class ListingForm extends React.Component {
               onChange={this.update('lng')} />
           </label>
 
-          <input type="submit" value={this.props.formType} />
+          <input className="listing-submit-button" type="submit" value={this.props.formType} />
         </form>
+
+        <div className="current-user-listings-container">
+          <h1 className="listing-h1">Your Listings</h1>
+          <div className="separator"></div>
+        </div>
       </div>
     )
   }

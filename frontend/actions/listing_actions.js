@@ -36,15 +36,14 @@ export const fetchListings = filters => {
 export const fetchListing = id => {
   return dispatch => {
     return ListingAPIUtil.fetchListing(id).then(data => {
-
       return dispatch(receiveListing(data));
     });
   };
 };
 
-export const createListing = id => {
+export const createListing = listing => {
   return dispatch => {
-    return ListingAPIUtil.createListing(id).then(listing => {
+    return ListingAPIUtil.createListing(listing).then(listing => {
       return dispatch(receiveListing(listing));
     });
   };

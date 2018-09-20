@@ -120,7 +120,7 @@
 }
 
 .nav-bar-not-logged-in {
-  color: orange;
+  color: white;
 }
 
 .nav-bar-right ul {
@@ -138,7 +138,7 @@
   // padding: 0 15px;
 }
 
-.nav-bar-right button{
+.nav-bar-right button {
   height: 80px;
   // margin: 0 15px;
   padding: 0 15px;
@@ -154,7 +154,7 @@
 
 .nav-bar-right .dropdown {
   border: 1px solid #e4e4e4;
-  min-width: 250px;
+  min-width: 150px;
   visibility: hidden;
   position: absolute;
   right: 0;
@@ -168,12 +168,12 @@
   // display: block;
 }
 
-.nav-bar-right .dropdown:hover{
+.nav-bar-right .dropdown:hover {
   visibility: visible;
+  border-bottom: 1px solid black;
 }
 
 .nav-bar-right .dropdown button:hover {
-  border-bottom: 1px solid #767676;
   visibility: visible;
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import ListingIndexItem from './listing_index_item';
+import HeaderContainer from './../header/header_container';
 import CreateListingFormContainer from './create_listing_form_container';
 
 class ListingIndex extends React.Component {
@@ -22,8 +23,14 @@ class ListingIndex extends React.Component {
       );
     });
 
+    let indexClass;
+    if (this.props.currentUser) {
+      indexClass="logged-in-index-container";
+    } else {
+      indexClass="not-logged-in-index-container";
+    }
     return (
-      <div className="listing-index-container">
+      <div className={indexClass}>
         <ul className="listing-ul">
           {listings}
         </ul>

@@ -14,17 +14,21 @@ export default class NavBar extends React.Component {
         <div className="nav-bar-logged-in">
           <li>
             <div>
-              <button>Become a host</button>
+              <Link to={'/become-a-host'}>
+                <button>Become a host</button>
+              </Link>
             </div>
           </li>
           <li>
             <div>
-              <button>Saved</button>
+              <Link to={'/saved'}>
+                <button>Saved</button>
+              </Link>
             </div>
           </li>
           <li>
             <div>
-              <Link to={'/api/trips'}>
+              <Link to={'/trips'}>
                 <button>Trips</button>
               </Link>
             </div>
@@ -50,17 +54,23 @@ export default class NavBar extends React.Component {
         <div className="nav-bar-not-logged-in">
           <li>
             <div>
-              <button>Become a host</button>
+              <a>
+                <button onClick={() => this.props.openModal('login')}>Become a host</button>
+              </a>
             </div>
           </li>
           <li>
             <div>
-              <button onClick={() => this.props.openModal('signup')}>Sign up</button>
+              <a>
+                <button onClick={() => this.props.openModal('signup')}>Sign up</button>
+              </a>
             </div>
           </li>
           <li>
             <div>
-              <button onClick={() => this.props.openModal('login')}>Log in</button>
+              <a>
+                <button onClick={() => this.props.openModal('login')}>Log in</button>
+              </a>
             </div>
           </li>
         </div>

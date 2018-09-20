@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { AuthRoute, ProtectedRoute } from './../util/route_api_util';
+import { AuthRoute, ProtectedRoute, ProtectedRenderRoute } from './../util/route_api_util';
 import Modal from './modal/modal';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
@@ -23,19 +23,20 @@ const App = (props) => {
     <div className="main-content-container">
       <Modal />
       <NavBarContainer />
-      <div className="header-background"></div>
-      
-      <div className="index-splash-container">
-        <Route exact path="/" render={() => <HeaderContainer />} />
-        <Route exact path="/" render={() => <ListingIndexContainer/>} />
-      </div>
 
-      <Route exact path="/api/listings/:listingId" component={ListingShowContainer} />
-      <ProtectedRoute exact path="/api/trips" component={CreateListingFormContainer} />
-      <ProtectedRoute exact path="/api/listings/:listingId" component={CreateBookingFormContainer} />
+      <Route exact path="/" render={() => <HeaderContainer />} />
+      <Route exact path="/" render={() => <ListingIndexContainer/>} />
+
+      <Route exact path="/trips" component={BookingIndexContainer} />
+
+      <ProtectedRoute exact path="/listings/:listingId/edit" component={EditListingFormContainer} />
+
+      <ProtectedRoute exact path="/become-a-host" component={CreateListingFormContainer} />
+      <ProtectedRenderRoute exact path="/listings/:listingId" component={CreateBookingFormContainer} />
+
       <Switch>
-        <Route exact path="/api/listings" render={() => <ListingIndexContainer/>} />
-        <Route exact path="/api/listings/:listingId/edit" component={EditListingFormContainer} />
+        <Route exact path="/listings/:listingId" component={ListingShowContainer} />
+        <Route exact path="/listings" render={() => <ListingIndexContainer/>} />
       </Switch>
 
       <div id="footer">
