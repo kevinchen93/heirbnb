@@ -31,6 +31,12 @@ input[type="search"]::-webkit-search-cancel-button {
   width: 100%
 }
 
+.logged-in-index-container .listing-ul {
+  margin-right: 400px;
+}
+
+
+
 .not-logged-in-index-container {
   margin: 0 auto;
   width: 65%;

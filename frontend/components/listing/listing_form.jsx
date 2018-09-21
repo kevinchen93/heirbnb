@@ -17,7 +17,7 @@ class ListingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state).then(() => this.props.history.push('/')).then(this.props.closeModal);
+    this.props.action(this.state).then(() => this.props.history.push('/'));
   }
 
   render() {
@@ -91,6 +91,13 @@ class ListingForm extends React.Component {
               type="text"
               value={this.state.prices}
               onChange={this.update('prices')} />
+          </label>
+
+          <label>Image URL
+            <input
+              type="text"
+              value={this.state.img_url}
+              onChange={this.update('img_url')} />
           </label>
 
           <input className="listing-submit-button" type="submit" value={this.props.formType} />

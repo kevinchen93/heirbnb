@@ -20,10 +20,8 @@ class Search extends React.Component {
 
   render(){
     return (
-      <div style={{ paddingRight: "450px" }}>
-        <input type="text" placeholder="Search Listings" />
+      <div>
         <div>
-          <ListingMap style={{ position: "absolute" }} listings={this.props.listings} updateFilter={this.props.updateFilter} />
           <ListingIndexContainer />
         </div>
       </div>

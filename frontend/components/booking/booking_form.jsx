@@ -25,14 +25,14 @@ class BookingForm extends React.Component {
         <form className="booking-form-container" onSubmit={this.handleSubmit}>
           <label>Start Date
             <input
-              type="text"
+              type="date"
               value={this.state.start_date}
               onChange={this.update('start_date')} />
           </label>
 
           <label>End Date
             <input
-              type="text"
+              type="date"
               value={this.state.end_date}
               onChange={this.update('end_date')} />
           </label>

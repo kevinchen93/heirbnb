@@ -1,5 +1,5 @@
 export const userListings = (state) => {
-  let reviews;
+  let listings;
   if (state.session) {
     const user = state.entities.users[state.session.id];
     listings = user.listing_ids.map( id => {
@@ -8,7 +8,7 @@ export const userListings = (state) => {
   } else {
     listings = null;
   }
-
+  
   return listings;
 };
 

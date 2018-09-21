@@ -21,13 +21,6 @@ export default class NavBar extends React.Component {
           </li>
           <li>
             <div>
-              <Link to={'/saved'}>
-                <button>Saved</button>
-              </Link>
-            </div>
-          </li>
-          <li>
-            <div>
               <Link to={'/trips'}>
                 <button>Trips</button>
               </Link>

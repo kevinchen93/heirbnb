@@ -74,7 +74,10 @@ class ListingShow extends React.Component {
           <div className="listing-show-title">{listing.title}</div>
           <div className="listing-show-content">
             <div className="listing-show-commodities">
-              {listing.guests} guests {listing.beds} beds {listing.bedrooms} bedrooms {listing.baths} baths
+              <i style={{ width: "12.5px", height: "19px", paddingRight: "8px" }} className="fas fa-user-friends"></i>&nbsp;{listing.guests}
+              <i style={{ width: "12.5px", height: "19px", paddingRight: "8px", paddingLeft: "12px" }} className="fas fa-warehouse"></i>&nbsp;{listing.bedrooms}
+              <i style={{ width: "12.5px", height: "19px", paddingRight: "8px", paddingLeft: "12px" }} className="fas fa-bed"></i>&nbsp;{listing.beds}
+              <i style={{ width: "12.5px", height: "19px", paddingRight: "8px", paddingLeft: "12px" }} className="fas fa-bath"></i>{listing.baths}
             </div>
             <div className="listing-show-description">
               {listing.description}

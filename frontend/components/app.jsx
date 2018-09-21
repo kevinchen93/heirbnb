@@ -28,12 +28,11 @@ const App = (props) => {
       <Route exact path="/" render={() => <HeaderContainer />} />
       <Route exact path="/" render={() => <SearchContainer/>} />
 
-
       <Route exact path="/trips" component={BookingIndexContainer} />
 
       <ProtectedRoute exact path="/listings/:listingId/edit" component={EditListingFormContainer} />
-
       <ProtectedRoute exact path="/become-a-host" component={CreateListingFormContainer} />
+
       <ProtectedRenderRoute exact path="/listings/:listingId" component={CreateBookingFormContainer} />
 
       <Switch>

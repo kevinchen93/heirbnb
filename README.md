@@ -1,24 +1,51 @@
-# README
+# Welcome to Heirbnb
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[Live!](https://heirbeenbee.herokuapp.com)
 
-Things you may want to cover:
+## Key Features
+Heirbnb is a single-page web application inspired by Airbnb. It allows users to make accommodations for rooms!
 
-* Ruby version
+[Heirbnb Design Documents](https://github.com/kevinchen93/heirbnb/wiki/)
 
-* System dependencies
+### User Authentication
+  * Users can sign up or log in to use the application.
+  * Users can also log in through a demo account.
 
-* Configuration
+### Listings
+  * Listings are displayed on the homepage.
+  * Logged in users can create listings.
+  * A user will be able to edit and delete his or her own listings.
+  * Users will be able to search for listings through listings search (by location and availability) and Google Maps search
 
-* Database creation
+### Bookings
+  * Logged in users will be able to view his or her current and past bookings.
+  * A logged in user will be able to make valid bookings on listings and delete any booking he or she made.
 
-* Database initialization
+### Reviews
+  * A logged in user will be able to leave a review on a booking he or she made.
 
-* How to run the test suite
+### User Profile
+  * A user's profile page displays all of his or her listings and reviews.
+  * A user will be able to edit his or her own profile information from his or her own user page:
+    * Profile photo
 
-* Services (job queues, cache servers, search engines, etc.)
+## Technology Stack
+Heirbnb is a single-page app with one back-end route responsible for rendering HTML. User interactions in the frontend side trigger AJAX requests to the backend, which are responsible for rendering database information in JSON format.
 
-* Deployment instructions
+### Frontend
+#### React
+The response information is taken by the [React JS library](https://reactjs.org/) to update the page.
+  * One of the ways React is a useful tool for frontend development is creating a virtual DOM to make DOM manipulation efficient.
 
-* ...
+#### Redux
+[Redux](https://redux.js.org/) manages the frontend state of Heirbnb. When database information is retrieved, Redux state is updated first and re-renders the appropriate React components.
+
+### Backend
+
+#### Ruby on Rails
+
+Ruby on Rails is the backend framework used to query the database. [Read more](https://rubyonrails.org/)
+
+### Database
+
+Heirbnb uses a [PostgreSQL](https://www.postgresql.org/) database to store its relational data.

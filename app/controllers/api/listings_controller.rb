@@ -44,11 +44,13 @@ class Api::ListingsController < ApplicationController
   private
 
   def listing_params
-    params.require(:listing).permit(:host_id, :title, :description, :lat, :lng)
+    params.require(:listing).permit(:host_id, :title, :description, :lat, :lng, :guests, :bedrooms, :baths, :beds, :prices, :img_url)
   end
 
   def own_listing?
     !!current_user.id == @listing.host_id
   end
+
+  
 
 end
