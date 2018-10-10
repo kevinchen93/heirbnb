@@ -1,6 +1,6 @@
 import React from 'react';
 import ListingIndexContainer from './../listing/listing_index_container';
-import ListingMap from './../listing_map/listing_map';
+import ListingMap from '../listing_map/listing_map';
 
 class Search extends React.Component {
   constructor(props) {

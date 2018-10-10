@@ -1,36 +1,40 @@
 export const userListings = (state) => {
-  let listings;
+  let listings = [];
   if (state.session) {
-    const user = state.entities.users[state.session.id];
-    listings = user.listing_ids.map( id => {
-      return (state.entities.listings[id]);
-    });
+    const user = state.entities.users[state.session.currentUserId];
+    if (user.listing_ids.length !== 0) {
+      listings = user.listing_ids.map( id => {
+        return (state.entities.listings[id]);
+      });
+    }
   } else {
     listings = null;
   }
-  
+
   return listings;
 };
 
 export const userBookings = (state) => {
-  let bookings;
+  let bookings = [];
   if (state.session) {
-    const user = state.entities.users[state.session.id];
-    bookings = user.review_ids.map( id => {
-      return (state.entities.bookings[id]);
-    });
+    const user = state.entities.users[state.session.currentUserId];
+    if (user.booking_ids.length !== 0) {
+      bookings = user.booking_ids.map( id => {
+        return (state.entities.bookings[id]);
+      });
+    }
   } else {
-    reviews = null;
+    bookings = null;
   }
 
-  return reviews;
+  return bookings;
 };
 
 export const userReviews = (state) => {
   let reviews;
   if (state.session) {
-    const user = state.entities.users[state.session.id];
-    reviews = user.review_ids.map( id => {
+    const user = state.entities.users[state.session.currentUserId];
+    reviews = user.reviews.map( id => {
       return (state.entities.reviews[id]);
     });
   } else {

@@ -10,12 +10,6 @@ class ListingShow extends React.Component {
     this.props.fetchListing(this.props.match.params.listingId);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (!this.props.listing || this.props.listing.id !== parseInt(nextProps.match.params.listingId)) {
-      this.props.fetchListing(nextProps.match.params.listingId);
-    }
-  }
-
   render() {
     const { listing, reviews, users } = this.props;
     if (!listing) {

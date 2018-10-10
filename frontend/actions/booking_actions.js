@@ -3,6 +3,7 @@ import * as BookingAPIUtil from '../util/booking_api_util';
 export const RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS';
 export const RECEIVE_BOOKING = 'RECEIVE_BOOKING';
 export const REMOVE_BOOKING = 'REMOVE_BOOKING';
+export const RECEIVE_BOOKING_ERRORS = 'RECEIVE_BOOKING_ERRORS';
 
 // Regular Actions
 export const receiveBookings = bookings => ({
@@ -15,10 +16,19 @@ export const receiveBooking = booking => ({
   booking,
 });
 
-export const removeBooking = bookingId => ({
+export const removeBooking = booking => ({
   type: REMOVE_BOOKING,
-  bookingId,
+  bookingId: booking.id,
+  guestId: booking.guest_id,
+  listingId: booking.listing_id
 });
+
+export const receiveBookingErrors = errors => {
+  return {
+    type: RECEIVE_BOOKING_ERRORS,
+    errors,
+  };
+};
 
 // Thunk Actions
 export const fetchBookings = () => {
@@ -37,13 +47,13 @@ export const fetchBooking = id => {
   };
 };
 
-export const createBooking = booking => {
-  return dispatch => {
-    return BookingAPIUtil.createBooking(booking).then(booking => {
-      return dispatch(receiveBooking(booking));
-    });
-  };
-};
+export const createBooking = booking => dispatch => (
+  BookingAPIUtil.createBooking(booking).then(booking => (
+    dispatch(receiveBooking(booking))
+  ), err => (
+    dispatch(receiveBookingErrors(err.responseJSON))
+  ))
+);
 
 export const updateBooking = booking => {
   return dispatch => {
@@ -53,10 +63,10 @@ export const updateBooking = booking => {
   };
 };
 
-export const deleteBooking = bookingId => {
+export const deleteBooking = booking => {
   return dispatch => {
-    return BookingAPIUtil.deleteBooking(bookingId).then(booking => {
-      return dispatch(removeBooking(bookingId));
+    return BookingAPIUtil.deleteBooking(booking).then(booking => {
+      return dispatch(removeBooking(booking));
     });
   };
 };

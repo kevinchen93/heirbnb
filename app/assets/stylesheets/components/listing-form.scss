@@ -32,6 +32,11 @@
   border: 1px solid #008489;
 }
 
+.listing-form-container .listing-submit-button:focus {
+  background-color: #fc5a5f;
+  border: none;
+}
+
 
 .listing-form-container textarea {
   min-height: 150px;

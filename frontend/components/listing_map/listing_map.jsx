@@ -1,31 +1,56 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { withRouter } from 'react-router-dom';
-import MarkerManager from './../../util/marker_manager';
+import ReactDOM from 'react-dom';
+import MarkerManager from '../../util/marker_manager';
+
+const mapOptions = {
+  center: {
+    lat: 40.715494,
+    lng: -74.002209
+  },
+  zoom: 11
+};
+
+const getCoordsObj = latLng => ({
+  lat: latLng.lat(),
+  lng: latLng.lng()
+})
 
 class ListingMap extends React.Component {
-  componentDidMount() {
-    const mapOptions = {
-      center: { lat: 40.7463094, lng: -73.9969477 },
-      zoom: 13
-    };
 
-    this.map = new google.maps.Map(this.mapNode, mapOptions);
-    this.markers = {};
-    this.MarkerManager = new MarkerManager(this.map);
+  componentDidMount () {
+    const map = this.refs.map;
+    this.map = new google.maps.Map(map, mapOptions);
+    this.MarkerManager = new MarkerManager(
+      this.map,
+      this.handleMarkerClick.bind(this)
+    );
+    this.registerListeners();
     this.MarkerManager.updateMarkers(this.props.listings);
+
+  }
+
+  registerListeners () {
+    google.maps.event.addListener(this.map, 'click', event => {
+      const coords = getCoordsObj(event.latLng);
+    });
   }
 
   componentDidUpdate() {
     this.MarkerManager.updateMarkers(this.props.listings);
   }
 
-  render() {
+  handleMarkerClick (listing) {
+    this.props.history.push(`/listings/${listing.id}`);
+  }
+
+
+  render () {
     return (
-      <div style={{ position: "absolute" }} className="map-container" ref={ map => this.mapNode = map }>
+      <div className='map-container' ref='map'>
         Map
       </div>
-    );
+    )
   }
 }
 

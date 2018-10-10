@@ -1,13 +1,20 @@
 import { connect } from 'react-redux';
 import BookingShow from './booking_show';
-import { fetchBooking } from '../../actions/booking_actions';
+import { fetchBookings, fetchBooking, deleteBooking } from '../../actions/booking_actions';
+import { userBookings } from '../../reducers/selectors';
 
-const mapStateToProps = (state, ownProps) => ({
-  booking: state.bookings[ownProps.match.params.bookingId]
-});
+const mapStateToProps = (state, ownProps) => {
+  return {
+    user: state.entities.users[state.session.currentUserId],
+    bookings: Object.values(state.entities.bookings),
+    userBookings: () => userBookings(state),
+  };
+};
 
 const mapDispatchToProps = dispatch => ({
-  fetchBooking: id => dispatch(fetchBooking(id))
+  fetchBookings: () => dispatch(fetchBookings()),
+  fetchBooking: id => dispatch(fetchBooking(id)),
+  deleteBooking: id => dispatch(deleteBooking(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookingShow);

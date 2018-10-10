@@ -29,9 +29,10 @@ export const updateListing = listing => {
   });
 };
 
-export const deleteListing = listingId => {
+export const deleteListing = listing => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/listings/${listingId}`
+    url: `api/listings/${listing.id}`,
+    data: { listing: listing }
   });
 };

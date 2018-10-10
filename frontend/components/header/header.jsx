@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ListingMap from './../listing_map/listing_map';
+import ListingMap from '../listing_map/listing_map';
 
 class Header extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class Header extends React.Component {
       headerInfo = (
         <div>
           <div className="subheading header-background-image-text">What can we help you find, {this.props.currentUser.first_name}?</div>
-          <ListingMap style={{ position: "absolute" }} listings={this.props.listings} updateFilter={this.props.updateFilter} />
+          <ListingMap listings={this.props.listings} updateFilter={this.props.updateFilter} />
         </div>
       );
     } else {

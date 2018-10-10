@@ -49,3 +49,6 @@ Ruby on Rails is the backend framework used to query the database. [Read more](h
 ### Database
 
 Heirbnb uses a [PostgreSQL](https://www.postgresql.org/) database to store its relational data.
+
+## Future Plans
+In the future, I would like to implement the social aspects of Airbnb, such as messaging between users. Also, I have plans to categorize accommodations to include experiences and restaurants.

@@ -4,8 +4,7 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
 import CreateListingFormContainer from '../listing/create_listing_form_container';
-import EditListingFormContainer from '../listing/edit_listing_form_container';
-
+import EditUserListingFormContainer from '../listing/edit_user_listing_form_container';
 
 const mapStateToProps = state => {
   return {
@@ -24,17 +23,16 @@ function Modal({modal, closeModal}) {
     return null;
   }
   let component;
-  switch (modal) {
+  switch (modal.type) {
     case 'login':
       component = <LoginFormContainer />;
       break;
     case 'signup':
       component = <SignupFormContainer />;
       break;
-    case 'create listing':
-      component = <CreateListingFormContainer />
-    case 'update listing':
-      component = <EditListingFormContainer />
+    case 'edit listing':
+      component = <EditUserListingFormContainer customProps={modal.props}/>;
+      break;
     default:
       return null;
   }

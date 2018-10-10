@@ -6,6 +6,7 @@ class Api::ListingsController < ApplicationController
   def create
     @listing = Listing.new(listing_params)
     @listing.host_id = current_user.id
+
     if @listing.save
       render 'api/listings/show'
     else
@@ -15,6 +16,7 @@ class Api::ListingsController < ApplicationController
 
   def show
     @listing = Listing.includes(:reviews).find_by(id: params[:id])
+
     if @listing
       render :show
     else
@@ -24,6 +26,7 @@ class Api::ListingsController < ApplicationController
 
   def update
     @listing = current_user.listings.find_by(id: params[:id])
+
     if own_listing?
       @listing.update(listing_params)
       render 'api/listings/show'
@@ -34,7 +37,10 @@ class Api::ListingsController < ApplicationController
 
   def destroy
     @listing = Listing.find_by(id: params[:id])
-    if @listing.destroy
+    own_listing = !!(current_user.id == @listing.host_id)
+
+    if own_listing
+      @listing.destroy
       render 'api/listings/show'
     else
       render json: @listing.errors.full_messages, status: 422
@@ -48,9 +54,7 @@ class Api::ListingsController < ApplicationController
   end
 
   def own_listing?
-    !!current_user.id == @listing.host_id
+    !!(current_user.id == @listing.host_id)
   end
-
-  
 
 end

@@ -4,7 +4,7 @@ import { fetchListings, deleteListing } from '../../actions/listing_actions';
 
 const mapStateToProps = state => {
   return {
-    listings: Object.keys(state.entities.listings).map(id => state.entities.listings[id]),
+    listings: Object.values(state.entities.listings),
     currentUser: state.entities.users[state.session.currentUserId],
   };
 };

@@ -8,6 +8,11 @@ class Api::ReviewsController < ApplicationController
   def create
     @review = Review.new(review_params)
     @review.reviewer_id = current_user.id
+
+    # need to assign booking_id or pass in params
+     
+    # @booking_id = Booking
+
     if @review.save
       render 'api/reviews/show'
     else
@@ -17,6 +22,7 @@ class Api::ReviewsController < ApplicationController
 
   def show
     @review = Review.find_by(id: params[:id])
+
     if @review
       render 'api/reviews/show'
     else
@@ -26,6 +32,7 @@ class Api::ReviewsController < ApplicationController
 
   def update
     @review = current_user.reviews.find_by(id: params[:id])
+
     if own_review?
       @review.update(review_params)
       render 'api/reviews/show'
@@ -36,6 +43,7 @@ class Api::ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find_by(id: params[:id])
+
     if own_review?
       @review.destroy
       render 'api/reviews/show'
@@ -51,7 +59,7 @@ class Api::ReviewsController < ApplicationController
   end
 
   def own_review?
-    !!current_user.id == @review.reviewer_id
+    !!(current_user.id == @review.reviewer_id)
   end
 
 end

@@ -19,6 +19,8 @@ class ReviewForm extends React.Component {
     this.props.action(this.state).then(() => this.props.history.push('/'));
   }
 
+  // maybe change line 19 
+
   render() {
     return (
       <div>

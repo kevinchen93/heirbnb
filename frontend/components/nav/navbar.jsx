@@ -33,10 +33,20 @@ export default class NavBar extends React.Component {
                   {this.props.currentUser.first_name}
                 </button>
               </a>
+
               <ul className="dropdown">
+
                 <li>
-                  <button className="dropdown-button" onClick={() => this.props.logout()}>Log Out</button>
+                  <Link to={'/profile/listings'}>
+                    <button className="dropdown-button">Profile</button>
+                  </Link>
                 </li>
+                <li>
+                  <a>
+                    <button className="dropdown-button" onClick={() => this.props.logout()}>Log Out</button>
+                  </a>
+                </li>
+
               </ul>
             </div>
           </li>

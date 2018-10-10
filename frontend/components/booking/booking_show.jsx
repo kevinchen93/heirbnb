@@ -2,29 +2,47 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 class BookingShow extends React.Component {
-  componentDidMount() {
-    this.props.fetchBooking(this.props.match.params.bookingId);
+  constructor(props) {
+    super(props);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.booking.id != nextProps.match.params.bookingId) {
-      this.props.fetchBooking(nextProps.match.params.bookingId);
-    }
+  componentDidMount() {
+    this.props.fetchBookings();
+    this.props.userBookings();
   }
 
   render() {
-    const { booking } = this.props;
-    if (!booking) {
-      return <div>Loading...</div>
+    if (!this.props.userBookings().every( el => Boolean(el)) ) {
+      return <div>Loading...</div>;
     }
+
+    if (this.props.userBookings().length === 0) {
+      return <div>You have no current bookings!</div>
+    }
+
+    const bookings = this.props.userBookings().map( booking => {
+      return (
+        <div key={booking.id}>
+          <p>{booking.start_date}</p>
+          <p>{booking.end_date}</p>
+          <button onClick={ () => this.props.deleteBooking(booking)}>CANCEL</button>
+          <br />
+          <br />
+        </div>
+      )
+    });
 
     return (
       <div>
-        <p>{booking.start_date}</p>
-        <p>{booking.end_date}</p>
-        <Link to={"/"}>Back to Index</Link>
+        <div className="current-user-bookings-container">
+          <h1 className="listing-h1">Your Bookings</h1>
+          <div className="separator"></div>
+        </div>
+        <ul>
+          { bookings }
+        </ul>
       </div>
-    );
+    )
   }
 }
 

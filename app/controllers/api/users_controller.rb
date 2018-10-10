@@ -5,6 +5,10 @@ class Api::UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
+    @listings = @user.listings
+    @bookings = @user.bookings
+    @reviews = @user.reviews
+    
     if @user
       render 'api/users/show'
     else

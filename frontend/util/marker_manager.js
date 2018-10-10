@@ -1,30 +1,32 @@
-export default class MarkerManager {
+class MarkerManager {
   constructor(map, handleClick) {
     this.map = map;
+    this.handleClick = handleClick;
     this.markers = {};
   }
 
   updateMarkers(listings) {
+
     const listingsObj = {};
-    let currentListings = Array.from(listings);
-    if (Object.keys(listings).length === 0) {
-      currentListings = [];
-    }
-
-    currentListings.forEach(listing => listingsObj[listing.id] = listing);
-    currentListings.filter(listing => !this.markers[listing.id]).forEach(newListing => this.createMarkerFromListing(newListing));
-
-    Object.keys(this.markers).filter(listingId => !listingsObj[listingId]).forEach(listingId => this.removeMarker(this.markeres[listingId]));
+    //let currentListings = Array.from(listings);
+    // if (Object.keys(listings).length === 0) {
+    //   currentListings = [];
+    // }
+    listings.forEach(listing => listingsObj[listing.id] = listing);
+    listings.filter(listing => !this.markers[listing.id]).forEach(newListing => this.createMarkerFromlisting(newListing));
+    Object.keys(this.markers).filter(listingId => !listingsObj[listingId]).forEach(listingId => this.removeMarker(this.markers[listingId]));
   }
 
-  createMarkerFromListing(listing) {
-    const listingCoords = new google.maps.LatLng(listing.lat, listing.lng);
+  createMarkerFromlisting(listing) {
+    
+    const listingLatLng = new google.maps.LatLng(parseFloat(listing.lat), parseFloat(listing.lng));
     const marker = new google.maps.Marker({
-      position: listingCoords,
+      position: listingLatLng,
       map: this.map,
       listingId: listing.id
     });
 
+    marker.addListener("click", () => this.handleClick(listing));
     this.markers[marker.listingId] = marker;
   }
 
@@ -33,3 +35,8 @@ export default class MarkerManager {
     delete this.markers[marker.listingId];
   }
 }
+
+
+export default MarkerManager;
+
+// under updateMarkers()

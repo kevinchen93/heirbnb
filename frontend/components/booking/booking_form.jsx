@@ -5,7 +5,11 @@ class BookingForm extends React.Component {
   constructor(props) {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.state = this.props.booking;
+    this.state = {
+      start_date: '',
+      end_date: '',
+      listing_id: parseInt(props.match.params.listingId)
+    };
   }
 
   update(field) {
@@ -16,13 +20,29 @@ class BookingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state).then(() => this.props.history.push('/'));
+    this.props.action(this.state);
+  }
+
+  renderErrors() {
+    return (
+      <ul>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   render() {
     return (
+
       <div>
         <form className="booking-form-container" onSubmit={this.handleSubmit}>
+          <div className="errors-div">
+            {this.renderErrors()}
+          </div>
           <label>Start Date
             <input
               type="date"

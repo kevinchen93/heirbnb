@@ -11,13 +11,13 @@ class ListingForm extends React.Component {
 
   update(field) {
     return (e) => {
-      this.setState({[field]: e.target.value});
+      this.setState( {[field]: e.target.value} );
     };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state).then(() => this.props.history.push('/'));
+    this.props.action(this.state).then(() => this.props.history.push('/profile/listings'));
   }
 
   render() {
@@ -27,6 +27,7 @@ class ListingForm extends React.Component {
           <div className="listing-h1">Hi, {this.props.currentUser.first_name}!</div>
           <div className="listing-h1">Let's get started listing your space!</div>
         </div>
+
         <form className="listing-form-container" onSubmit={this.handleSubmit}>
           <label>Title
             <input
@@ -102,11 +103,6 @@ class ListingForm extends React.Component {
 
           <input className="listing-submit-button" type="submit" value={this.props.formType} />
         </form>
-
-        <div className="current-user-listings-container">
-          <h1 className="listing-h1">Your Listings</h1>
-          <div className="separator"></div>
-        </div>
       </div>
     )
   }
