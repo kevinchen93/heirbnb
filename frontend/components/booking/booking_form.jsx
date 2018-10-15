@@ -20,7 +20,7 @@ class BookingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state);
+    this.props.action(this.state).then( () => this.props.history.push('/trips'));
   }
 
   renderErrors() {
@@ -40,24 +40,27 @@ class BookingForm extends React.Component {
 
       <div>
         <form className="booking-form-container" onSubmit={this.handleSubmit}>
+          <div className="booking-form-price">
+            ${this.props.prices} <span className="booking-form-text">per night</span>
+          </div>
           <div className="errors-div">
             {this.renderErrors()}
           </div>
-          <label>Start Date
+          <label>Check In
             <input
               type="date"
               value={this.state.start_date}
               onChange={this.update('start_date')} />
           </label>
 
-          <label>End Date
+          <label>Check Out
             <input
               type="date"
               value={this.state.end_date}
               onChange={this.update('end_date')} />
           </label>
 
-          <input className="listing-submit-button" type="submit" value="Book" />
+          <button className="listing-submit-button">Request to Book</button>
         </form>
       </div>
     )

@@ -24,7 +24,10 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className="search-bar-container">
-        <i className="search-icon fa fa-search" aria-hidden="true"></i>
+        <div className="icon-container">
+          <i className="search-icon fa fa-search" aria-hidden="true"></i>
+        </div>
+
         <div className="search-bar-wrapper">
           <input className="search-bar"
             type="search"
@@ -33,6 +36,8 @@ class SearchBar extends React.Component {
             onChange={this.handleChange}
             placeholder='Try "New York"' />
         </div>
+
+
       </div>
     )
   }

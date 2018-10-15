@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ListingMap from '../listing_map/listing_map';
+
 
 // /profile/listings
 
@@ -18,31 +20,44 @@ class UserListingShow extends React.Component {
       return <div>Loading...</div>;
     }
 
-    if (this.props.userListings().length === 0) {
-      return <h1>You have no current listings!</h1>
+    let userListingHeaderInfo;
+    if (this.props.userListings().length > 0) {
+      userListingHeaderInfo = (
+        <div>
+          <div className="subheading header-background-image-text">Here are your listings, {this.props.currentUser.first_name}!</div>
+        </div>
+      );
+    } else {
+      userListingHeaderInfo = (
+        <div>
+          <div className="subheading header-background-image-text">You have no listings, {this.props.currentUser.first_name}!</div>
+        </div>
+      );
     }
 
     const listings = this.props.userListings().map( listing => {
       return (
-        <div key={listing.id}>
-          <li>
-            <Link to={`/profile/listings/${listing.id}`}>
-              <img className="listing-image" src={listing.img_url} />
-              <div className="listing-content">
-                <div className="listing-item-title">{listing.title}</div>
-                <div className="listing-item-prices">From ${listing.prices} per night · Free cancellation</div>
-              </div>
-            </Link>
-          </li>
-        </div>
+        <li key={listing.id} className="user-listing-item-container">
+          <Link to={`/profile/listings/${listing.id}`}>
+            <img className="listing-image" src={listing.img_url} />
+            <div className="listing-content">
+              <div className="listing-item-title">{listing.title}</div>
+              <div className="listing-item-prices">From ${listing.prices} per night · Free cancellation</div>
+            </div>
+          </Link>
+        </li>
       )
     });
 
     return (
       <div>
-        <ul>
-          { listings }
-        </ul>
+        <div className="user-listing-index-container">
+          {userListingHeaderInfo}
+          <ul className="user-listing-ul">
+            { listings }
+          </ul>
+          <ListingMap listings={this.props.listings} updateFilter={this.props.updateFilter} />
+        </div>
       </div>
     )
   }

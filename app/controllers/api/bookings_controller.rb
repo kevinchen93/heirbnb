@@ -2,7 +2,7 @@ class Api::BookingsController < ApplicationController
   before_action :require_logged_in, except: [:index]
 
   def index
-    @bookings = Booking.where(guest_id: current_user.id)
+    @bookings = Booking.includes(:listing, :review).where(guest_id: current_user.id)
   end
 
   def create

@@ -5,6 +5,7 @@ import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
 import CreateListingFormContainer from '../listing/create_listing_form_container';
 import EditUserListingFormContainer from '../listing/edit_user_listing_form_container';
+import CreateReviewFormContainer from '../review/create_review_form_container';
 
 const mapStateToProps = state => {
   return {
@@ -32,6 +33,9 @@ function Modal({modal, closeModal}) {
       break;
     case 'edit listing':
       component = <EditUserListingFormContainer customProps={modal.props}/>;
+      break;
+    case 'create review':
+      component = <CreateReviewFormContainer />;
       break;
     default:
       return null;

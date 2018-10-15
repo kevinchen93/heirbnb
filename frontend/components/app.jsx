@@ -31,15 +31,13 @@ const App = (props) => {
       <Route exact path="/" render={() => <SearchContainer/>} />
 
       <ProtectedRoute exact path="/trips" component={BookingShowContainer} />
-      
+
       <ProtectedRoute exact path="/profile/listings" component={UserListingShowContainer} />
       <ProtectedRoute exact path="/profile/listings/:listingId" component={UserListingDetailContainer} />
 
       <Route exact path="/profile/listings/:listingId/edit" component={EditUserListingFormContainer} />
 
       <ProtectedRoute exact path="/become-a-host" component={CreateListingFormContainer} />
-
-      <ProtectedRenderRoute exact path="/listings/:listingId" component={CreateBookingFormContainer} />
 
       <Switch>
         <Route exact path="/listings/:listingId" component={ListingShowContainer} />

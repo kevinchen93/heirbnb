@@ -15,7 +15,7 @@ class Header extends React.Component {
     let headerInfo;
     if (this.props.currentUser) {
       headerInfo = (
-        <div>
+        <div className="ml-135">
           <div className="subheading header-background-image-text">What can we help you find, {this.props.currentUser.first_name}?</div>
           <ListingMap listings={this.props.listings} updateFilter={this.props.updateFilter} />
         </div>
@@ -29,7 +29,7 @@ class Header extends React.Component {
       );
     }
     return (
-      <div>
+      <div className="listing-index-container">
         {headerInfo}
       </div>
     );

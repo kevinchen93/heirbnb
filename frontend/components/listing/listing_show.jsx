@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import ReactStars from 'react-stars';
+import { AuthRoute, ProtectedRoute, ProtectedRenderRoute } from '../../util/route_api_util';
+import CreateBookingFormContainer from '../booking/create_booking_form_container';
 
 class ListingShow extends React.Component {
   constructor(props) {
@@ -32,6 +35,8 @@ class ListingShow extends React.Component {
       const month = monthsArray[parseInt(date.getMonth())];
       const year = date.getFullYear();
 
+      const ratings = review.rating
+
       let reviewHeading;
       if (listing.review_ids.length === 1) {
         reviewHeading = "Review"
@@ -52,7 +57,12 @@ class ListingShow extends React.Component {
               </div>
             </div>
             <div key={review.id} className="review-content-text review-content-body">{review.body}</div>
-            <div className="review-content-text">Rating: {review.rating}</div>
+              <ReactStars
+                value={review.rating ? review.rating : 0}
+                count={5}
+                size={24}
+                edit={review.rating ? false : true}
+                color2={'#ffd700'} />
           </div>
           <div className="separator"></div>
         </div>
@@ -62,6 +72,7 @@ class ListingShow extends React.Component {
     return (
       <div>
         <img className="listing-show-image" src={listing.img_url}></img>
+        <CreateBookingFormContainer prices={listing.prices} />
 
         <div className="listing-show-container">
 

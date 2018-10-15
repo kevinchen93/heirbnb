@@ -1,9 +1,12 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import ReactStars from 'react-stars';
 
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
+    this.update = this.update.bind(this);
+    this.handleRatingChange = this.handleRatingChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = this.props.review;
   }
@@ -14,39 +17,40 @@ class ReviewForm extends React.Component {
     };
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    this.props.action(this.state).then(() => this.props.history.push('/'));
+  handleRatingChange(newRating) {
+    this.setState({ 'rating': newRating });
   }
 
-  // maybe change line 19 
+  handleSubmit(e) {
+    e.preventDefault();
+    this.props.action(this.state).then(() => this.props.closeModal);
+  }
 
   render() {
     return (
       <div>
-        <h3>{this.props.formType}</h3>
-        <form onSubmit={this.handleSubmit}>
-          <label>Body
-            <input
-              type="text"
-              value={this.state.title}
-              onChange={this.update('body')} />
+        <form className="review-form-container" onSubmit={this.handleSubmit}>
+
+          <label>
+            <ReactStars
+              value={ this.state.rating }
+              count={5}
+              size={24}
+              edit={true}
+              color2={'#ffd700'}
+              onChange={this.handleRatingChange} />
+            <br />
           </label>
 
-          <label>Description
+          <div>
+            <br />
             <textarea
-              value={this.state.description}
-              onChange={this.update('description')} />
-          </label>
+              value={this.state.body}
+              onChange={this.update('body')}>
+            </textarea>
+          </div>
 
-          <label>Rating
-            <input
-              type="text"
-              value={this.state.title}
-              onChange={this.update('rating')} />
-          </label>
-
-          <input type="submit" value={this.props.formType} />
+          <button className="listing-submit-button">{this.props.formType}</button>
         </form>
       </div>
     )

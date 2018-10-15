@@ -5,6 +5,7 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 class ListingForm extends React.Component {
   constructor(props) {
     super(props);
+    this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = this.props.listing;
   }
@@ -22,7 +23,7 @@ class ListingForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="create-listing-container">
         <div className="listing-h1-container">
           <div className="listing-h1">Hi, {this.props.currentUser.first_name}!</div>
           <div className="listing-h1">Let's get started listing your space!</div>
@@ -101,7 +102,7 @@ class ListingForm extends React.Component {
               onChange={this.update('img_url')} />
           </label>
 
-          <input className="listing-submit-button" type="submit" value={this.props.formType} />
+          <button className="listing-submit-button">{this.props.formType}</button>
         </form>
       </div>
     )

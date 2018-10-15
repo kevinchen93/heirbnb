@@ -7,6 +7,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     listing: state.entities.listings[ownProps.match.params.listingId],
     id: ownProps.match.params.listingId,
+    reviews: state.entities.reviews,
+    users: state.entities.users,
   };
 };
 

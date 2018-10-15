@@ -22,6 +22,12 @@ li {
   list-style-type: none;
 }
 
+label {
+  position: relative;
+  display: inline-block;
+  width: 34%;
+}
+
 .main-content-container {
 
 }
@@ -33,14 +39,13 @@ li {
 
 .logged-in-index-container {
   width: 100%;
-  margin-top: 64px;
+  margin-left: 135px;
+  /* margin-top: 40px; */
 }
 
 .logged-in-index-container .listing-ul {
   margin-right: 400px;
 }
-
-
 
 .not-logged-in-index-container {
   margin: 0 auto;
@@ -67,8 +72,9 @@ li {
   font-size: 24px;
   font-weight: 800;
   color: #484848;
-  margin-bottom: 24px;
-  padding-left: 8px;
+  margin-top: 27px;
+  margin-bottom: 27px;
+  /* padding-left: 8px; */
 }
 
 .header-background-image-text {
@@ -77,7 +83,11 @@ li {
 
 .centered-heading {
   width: 65%;
-  padding-left: 14px;
+  padding-left: 8px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.mt-27 {
+  margin-top: 27px;
 }

@@ -49,7 +49,6 @@ class EditUserListingForm extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
     if (this.props.listing.id != nextProps.customProps.match.params.listingId) {
       this.props.fetchListing(nextProps.customProps.match.params.listingId);
     }
@@ -143,7 +142,7 @@ class EditUserListingForm extends React.Component {
               onChange={this.handleChange('img_url')} />
           </label>
 
-          <input className="listing-submit-button" type="submit" value={this.props.formType} />
+          <button className="listing-submit-button">{this.props.formType}</button>
         </form>
       </div>
 

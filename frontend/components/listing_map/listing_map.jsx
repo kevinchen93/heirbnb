@@ -44,7 +44,6 @@ class ListingMap extends React.Component {
     this.props.history.push(`/listings/${listing.id}`);
   }
 
-
   render () {
     return (
       <div className='map-container' ref='map'>

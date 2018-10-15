@@ -10,6 +10,7 @@ const mapStateToProps = (state, ownProps) => {
     userId: ownProps.match.params.userId,
     user: state.entities.users[ownProps.match.params.userId],
     listings: Object.values(state.entities.listings),
+    currentUser: state.entities.users[state.session.currentUserId],
     userListings: () => userListings(state),
   };
 };

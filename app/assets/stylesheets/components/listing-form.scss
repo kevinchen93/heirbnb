@@ -1,6 +1,9 @@
+.create-listing-container {
+  display: flex;
+}
+
 .listing-form-container {
   margin-top: 20px;
-  margin-left: 20px;
   width: 500px;
   // position: absolute;
   // top: 50%;
@@ -13,11 +16,12 @@
   margin-bottom: 10px;
 }
 
-.listing-form-container label input {
+.listing-form-container label input,
+.listing-form-container textarea {
   font-size: 16px;
   line-height: 22px;
   letter-spacing: normal;
-  background-color: transparent;
+  // background-color: transparent;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-weight: 300;
   color: #484848;
@@ -37,7 +41,6 @@
   border: none;
 }
 
-
 .listing-form-container textarea {
   min-height: 150px;
   width: 100%;
@@ -55,5 +58,5 @@
   line-height: 22px;
   font-size: 16px;
   margin-top: 16px;
-  margin-bottom: 40px;
+  margin-bottom: 25px;
 }

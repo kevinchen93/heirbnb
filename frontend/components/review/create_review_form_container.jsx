@@ -6,10 +6,10 @@ import { createReview } from '../../actions/review_actions';
 const mapStateToProps = (state, ownProps) => {
   const review = {
     body: '',
-    description: '',
-    rating: ''
+    rating: 0
   };
-  const formType = 'Create Review';
+
+  const formType = 'Submit Review';
 
   return { review, formType };
 };

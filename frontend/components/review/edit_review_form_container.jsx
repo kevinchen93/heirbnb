@@ -7,8 +7,7 @@ import { fetchReview, updateReview } from '../../actions/review_actions';
 const mapStateToProps = (state, ownProps) => {
   const defaultReview = {
     body: '',
-    description: '',
-    rating: ''
+    rating: 0
   };
   const review = state.reviews[ownProps.match.params.reviewId] || defaultReview;
   const formType = 'Update Review';

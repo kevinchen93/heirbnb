@@ -1,0 +1,20 @@
+.user-listing-index-container {
+  margin-left: 135px;
+  margin-top: 27px;
+  box-sizing: border-box;
+}
+
+.user-listing-ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  margin-right: 400px;
+}
+
+.user-listing-item-container {
+  color: #484848;
+  // padding-left: 8px;
+  padding-right: 8px;
+  margin-bottom: 30px;
+}
