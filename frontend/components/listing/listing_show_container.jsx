@@ -6,6 +6,7 @@ import { fetchReviews } from '../../actions/review_actions';
 const mapStateToProps = (state, ownProps) => {
   return ({
     listing: state.entities.listings[ownProps.match.params.listingId],
+    listings: state.entities.listings,
     reviews: state.entities.reviews,
     users: state.entities.users,
   });

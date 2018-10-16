@@ -3,15 +3,17 @@ import { OPEN_MODAL, CLOSE_MODAL, SET_CURRENT_BOOKING } from '../actions/modal_a
 export default function modalReducer(state = null, action) {
   switch (action.type) {
     case OPEN_MODAL:
-      let oldState = state;
-      let currentBooking;
-      if (oldState.currentBooking) {
-        currentBooking = oldState.currentBooking;
-      }
-      return {
-        type: action.modal,
-        props: action.ownProps,
-        currentBooking: currentBooking,
+      if (state !== null && state.currentBooking) {
+        return {
+          type: action.modal,
+          props: action.ownProps,
+          currentBooking: state.currentBooking,
+        };
+      } else {
+        return {
+          type: action.modal,
+          props: action.ownProps,
+        };
       }
     case CLOSE_MODAL:
       return null;

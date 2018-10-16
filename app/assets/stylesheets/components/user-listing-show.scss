@@ -6,15 +6,18 @@
 }
 
 .user-listing-ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-right: 400px;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: flex-start;
+  grid-template-columns: repeat(3, minmax(375px, 1fr));
+  grid-row-gap: 55px;
+  display: inline-grid;
+  margin-right: 345px;
 }
 
 .user-listing-item-container {
   color: #484848;
   // padding-left: 8px;
   padding-right: 8px;
-  margin-bottom: 30px;
+  // margin-bottom: 30px;
 }

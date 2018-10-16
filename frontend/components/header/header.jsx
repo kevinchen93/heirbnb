@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ListingMap from '../listing_map/listing_map';
+import ListingIndexContainer from './../listing/listing_index_container';
 
 class Header extends React.Component {
   constructor(props) {
@@ -17,7 +17,6 @@ class Header extends React.Component {
       headerInfo = (
         <div className="ml-135">
           <div className="subheading header-background-image-text">What can we help you find, {this.props.currentUser.first_name}?</div>
-          <ListingMap listings={this.props.listings} updateFilter={this.props.updateFilter} />
         </div>
       );
     } else {
@@ -31,6 +30,9 @@ class Header extends React.Component {
     return (
       <div className="listing-index-container">
         {headerInfo}
+        <div>
+          <ListingIndexContainer />
+        </div>
       </div>
     );
   }

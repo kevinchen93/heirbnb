@@ -8,9 +8,13 @@
 }
 
 .listing-ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: flex-start;
+  grid-template-columns: repeat(3, minmax(375px, 1fr));
+  grid-row-gap: 55px;
+  display: inline-grid;
+  // margin-right: 345px;
 }
 
 .listing-item-container {
@@ -66,7 +70,7 @@
 // LISTING SHOW
 .listing-show-image {
   max-width: 100vw;
-  height: 83vh;
+  height: 79vh;
   background-image: image-url('plant-room.jpeg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -76,10 +80,10 @@
 .listing-show-container {
   margin-top: 14px;
   padding-right: 24px;
-  padding-left: 24px;
+  padding-left: 300px;
   // margin-left: auto;
   // margin-right: auto;
-  width: 50%;
+  width: 40%;
 }
 
 .listing-show-title {

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import ReactStars from 'react-stars';
 import { AuthRoute, ProtectedRoute, ProtectedRenderRoute } from '../../util/route_api_util';
 import CreateBookingFormContainer from '../booking/create_booking_form_container';
+import ListingMap from '../listing_map/listing_map';
 
 class ListingShow extends React.Component {
   constructor(props) {
@@ -60,9 +61,9 @@ class ListingShow extends React.Component {
               <ReactStars
                 value={review.rating ? review.rating : 0}
                 count={5}
-                size={24}
+                size={20}
                 edit={review.rating ? false : true}
-                color2={'#ffd700'} />
+                color2={'#008489'} />
           </div>
           <div className="separator"></div>
         </div>
@@ -91,7 +92,9 @@ class ListingShow extends React.Component {
             <div className="separator"></div>
             {reviewElements}
           </div>
-
+        </div>
+        <div>
+          <ListingMap singleListing={listing} lat={listing.lat} lng={listing.lng} fetchListing={this.props.fetchListing} />
         </div>
       </div>
     );

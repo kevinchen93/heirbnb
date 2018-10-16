@@ -1,8 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { fetchListings } from '../../actions/listing_actions';
 
 const mapStateToProps = state => ({
+  listings: Object.keys(state.entities.listings).map(id => state.entities.listings[id]),
+});
 
+const mapDispatchToProps = dispatch => ({
+  logout: () => dispatch(logout()),
+  openModal: modal => dispatch(openModal(modal)),
+  fetchListings: () => dispatch(fetchListings()),
 });
 
 class SearchBar extends React.Component {
@@ -10,8 +17,14 @@ class SearchBar extends React.Component {
     super(props);
     this.state = {
       body: '',
+      lat: 40.715494,
+      lng: -74.002209,
     };
     this.handleChange = this.handleChange.bind(this);
+  }
+
+  componentDidMount() {
+    this.props.fetchListings();
   }
 
   handleChange(e) {
@@ -37,10 +50,9 @@ class SearchBar extends React.Component {
             placeholder='Try "New York"' />
         </div>
 
-
       </div>
     )
   }
 }
 
-export default connect(mapStateToProps, null)(SearchBar);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);

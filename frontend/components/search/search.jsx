@@ -5,25 +5,30 @@ import ListingMap from '../listing_map/listing_map';
 class Search extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
     this.state = {
-      location: "New York",
+      body: '',
+      lat: 40.715494,
+      lng: -74.002209,
     };
+
+    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleClick(e){
+  componentDidMount() {
+    this.props.fetchListings();
+  }
+
+  handleChange(e) {
     e.preventDefault();
     this.setState({
-      location: e.target.value
+      body: e.target.value
     });
   }
 
   render(){
     return (
       <div>
-        <div>
-          <ListingIndexContainer />
-        </div>
+        <ListingMap className="show-page-map" listings={this.props.listings} updateFilter={this.props.updateFilter} lat={this.state.lat} lng={this.state.lng} />
       </div>
     );
   }

@@ -65,7 +65,7 @@ class UserListingDetail extends React.Component {
   return (
     <div>
       <img className="listing-show-image" src={listing.img_url}></img>
-      <ProtectedRoute exact path="/profile/listings/:listingId" component={CreateBookingFormContainer} />
+      <CreateBookingFormContainer prices={listing.prices} />
 
       <div className="listing-show-container">
 

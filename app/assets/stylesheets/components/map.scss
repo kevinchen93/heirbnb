@@ -1,8 +1,19 @@
 .map-container {
   position: absolute;
-  right: 35px;
-  top: 182px;
   height: 500px;
   width: 350px;
+  right: 35px;
+  top: 182px;
+  padding: 35px;
+}
+
+// fix styling for map on show pages
+
+.show-page-map {
+  position: absolute;
+  height: 500px;
+  width: 350px;
+  right: 35px;
+  top: 182px;
   padding: 35px;
 }

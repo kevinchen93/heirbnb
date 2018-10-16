@@ -14,7 +14,7 @@ Heirbnb is a single-page web application inspired by Airbnb. It allows users to 
 ### Listings
   * Listings are displayed on the homepage.
   * Logged in users can create listings.
-  * A user will be able to edit and delete his or her own listings.
+  * A user is able to edit and delete his or her own listings.
   * Users will be able to search for listings through listings search (by location and availability) and Google Maps search
 
 ### Bookings
@@ -22,7 +22,8 @@ Heirbnb is a single-page web application inspired by Airbnb. It allows users to 
   * A logged in user will be able to make valid bookings on listings and delete any booking he or she made.
 
 ### Reviews
-  * A logged in user will be able to leave a review on a booking he or she made.
+  * A logged in user will be able to leave a review on a past booking.
+  * A logged in user will be able to edit an existing review.
 
 ### User Profile
   * A user's profile page displays all of his or her listings and reviews.

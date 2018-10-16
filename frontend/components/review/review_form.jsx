@@ -33,14 +33,15 @@ class ReviewForm extends React.Component {
     return (
       <div>
         <form className="review-form-container" onSubmit={this.handleSubmit}>
-
+          <button type="button" id="close-x" onClick={this.props.closeModal}>X</button>
+          <div className="review-form-h1">Tell us about your trip</div>
           <label>
             <ReactStars
               value={ this.state.rating }
               count={5}
-              size={24}
+              size={20}
               edit={true}
-              color2={'#ffd700'}
+              color2={'#008489'}
               onChange={this.handleRatingChange} />
             <br />
           </label>

@@ -37,7 +37,6 @@ class BookingForm extends React.Component {
 
   render() {
     return (
-
       <div>
         <form className="booking-form-container" onSubmit={this.handleSubmit}>
           <div className="booking-form-price">
@@ -46,21 +45,38 @@ class BookingForm extends React.Component {
           <div className="errors-div">
             {this.renderErrors()}
           </div>
-          <label>Check In
-            <input
-              type="date"
-              value={this.state.start_date}
-              onChange={this.update('start_date')} />
-          </label>
+          <div className="calendar-input">
+            <label>
+              <div>
+                <input
+                  className="check-in"
+                  type="date"
+                  value={ this.state.start_date }
+                  onChange={this.update('start_date')} />
+              </div>
+            </label>
 
-          <label>Check Out
-            <input
-              type="date"
-              value={this.state.end_date}
-              onChange={this.update('end_date')} />
-          </label>
 
-          <button className="listing-submit-button">Request to Book</button>
+            <div className="arrow">
+              <svg viewBox="0 0 24 24" role="presentation" aria-hidden="true" focusable="false" style={{ height:24+'px',width: 24+'px',display:'inline-block',fill:'currentColor' }}>
+                <path
+                  d="m0 12.5a.5.5 0 0 0 .5.5h21.79l-6.15 6.15a.5.5 0 1 0 .71.71l7-7v-.01a.5.5 0 0 0 .14-.35.5.5 0 0 0 -.14-.35v-.01l-7-7a .5.5 0 0 0 -.71.71l6.15 6.15h-21.79a.5.5 0 0 0 -.5.5z"
+                  fillRule="evenodd">
+                </path>
+              </svg>
+            </div>
+
+            <label>
+              <input
+                className="check-out"
+                type="date"
+                value={ this.state.end_date }
+                onChange={this.update('end_date')} />
+            </label>
+          </div>
+          <div style={{ textAlign: 'center', marginTop: '15px' }}>
+            <button className="booking-submit-button">Book</button>
+          </div>
         </form>
       </div>
     )

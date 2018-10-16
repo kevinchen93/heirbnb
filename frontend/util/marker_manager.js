@@ -18,7 +18,6 @@ class MarkerManager {
   }
 
   createMarkerFromlisting(listing) {
-    
     const listingLatLng = new google.maps.LatLng(parseFloat(listing.lat), parseFloat(listing.lng));
     const marker = new google.maps.Marker({
       position: listingLatLng,

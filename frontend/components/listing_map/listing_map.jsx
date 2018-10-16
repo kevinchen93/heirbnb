@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import MarkerManager from '../../util/marker_manager';
 
-const mapOptions = {
+const oldMapOptions = {
   center: {
     lat: 40.715494,
     lng: -74.002209
@@ -14,20 +14,48 @@ const mapOptions = {
 const getCoordsObj = latLng => ({
   lat: latLng.lat(),
   lng: latLng.lng()
-})
+});
 
 class ListingMap extends React.Component {
 
   componentDidMount () {
     const map = this.refs.map;
-    this.map = new google.maps.Map(map, mapOptions);
-    this.MarkerManager = new MarkerManager(
-      this.map,
-      this.handleMarkerClick.bind(this)
-    );
-    this.registerListeners();
-    this.MarkerManager.updateMarkers(this.props.listings);
+    let mapOptions;
+    // let a = parseFloat(this.props.singleListing.lat);
+    // let b = parseFloat(this.props.singleListing.lng);
+    if (this.props.singleListing) {
 
+      mapOptions = {
+        center: {
+          lat: parseFloat(this.props.singleListing.lat),
+          lng: parseFloat(this.props.singleListing.lng)
+        },
+        zoom: 14,
+      };
+    } else {
+      mapOptions = {
+        center: {
+          lat: this.props.lat,
+          lng: this.props.lng
+        },
+        zoom: 11,
+      };
+    }
+    let searchInput = document.getElementsByClassName('search-bar')[0];
+    this.map = new google.maps.Map(map, mapOptions);
+
+    this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+
+    if (this.props.singleListing) {
+      this.props.fetchListing(this.props.singleListing.id);
+    } else {
+      this.registerListeners();
+      this.MarkerManager.updateMarkers(this.props.listings);
+    }
+  }
+
+  handleMarkerClick(listing) {
+    this.props.history.push(`/listings/${listing.id}`);
   }
 
   registerListeners () {
@@ -37,11 +65,11 @@ class ListingMap extends React.Component {
   }
 
   componentDidUpdate() {
-    this.MarkerManager.updateMarkers(this.props.listings);
-  }
-
-  handleMarkerClick (listing) {
-    this.props.history.push(`/listings/${listing.id}`);
+    if (this.props.singleListing) {
+      this.MarkerManager.updateMarkers([this.props.singleListing]);
+    } else {
+      this.MarkerManager.updateMarkers(this.props.listings);
+    }
   }
 
   render () {

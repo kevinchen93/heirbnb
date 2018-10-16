@@ -47,7 +47,7 @@ class BookingShow extends React.Component {
                 <img className="booking-image" src={booking.img_url}></img>
               </Link>
             </div>
-            <div>
+            <div style={{ boxSizing: 'unset' }}>
               <div className="booking-show-title">{booking.title}</div>
               <div className="review-user-text">Check In: {booking.start_date}</div>
               <div className="review-user-text">Check Out: {booking.end_date}</div>

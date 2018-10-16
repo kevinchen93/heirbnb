@@ -12,34 +12,85 @@
 }
 
 .booking-form-container label {
-  font-size: 22px;
+  font-size: 17px;
   width: 50%;
 }
 
 .booking-form-price {
-  font-size: 18px;
+  font-size: 22px;
+  font-weight: 800;
   margin-bottom: 17px;
 }
 
 .booking-form-text {
-  font-size: 14px;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .booking-form-container label input {
-  font-size: 22px;
-  line-height: 22px;
+  font-size: 17px;
+  line-height: 20px;
   letter-spacing: normal;
   background-color: transparent;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-weight: 300;
   color: #484848;
   width: 100%;
-  border: 1px solid #e4e4e4;
-  padding: 11px;
-  margin-bottom: 17px;
+  // border: 1px solid #e4e4e4;
+  padding: 7px;
 }
 
-.booking-form-container input:focus,
-.booking-form-container textarea:focus {
-  border: 1px solid #008489;
+.booking-form-container .check-in:focus {
+  color: #007a87;
+  background-color: #99ede6;
+  border-radius: 3px;
+  border-top: 1px solid #008489;
+  border-left: 1px solid #008489;
+  border-bottom: 1px solid #008489;
+}
+
+.booking-form-container .check-out:focus {
+  color: #007a87;
+  background-color: #99ede6;
+  border-radius: 3px;
+  border-top: 1px solid #008489;
+  border-right: 1px solid #008489;
+  border-bottom: 1px solid #008489;
+}
+
+.calendar-input {
+  display: flex;
+  border: 1px solid #e4e4e4;
+  text-align: center;
+}
+
+.arrow {
+  align-self: center;
+  padding-top: 5px;
+}
+
+// .check-in {
+  // border-top: 1px solid #e4e4e4;
+  // border-left: 1px solid #e4e4e4;
+  // border-bottom: 1px solid #e4e4e4;
+// }
+//
+// .check-out {
+//   border-top: 1px solid #e4e4e4;
+//   border-right: 1px solid #e4e4e4;
+//   border-bottom: 1px solid #e4e4e4;
+// }
+
+.booking-submit-button {
+  background-color: #ff5a5f;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  width: 100%;
+  text-align: center;
+  font-weight: 450;
+  line-height: 22px;
+  font-size: 16px;
+  margin-top: 20px;
+  margin-bottom: 25px;
 }

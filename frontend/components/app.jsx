@@ -28,7 +28,7 @@ const App = (props) => {
       <NavBarContainer />
 
       <Route exact path="/" render={() => <HeaderContainer />} />
-      <Route exact path="/" render={() => <SearchContainer/>} />
+      <ProtectedRoute exact path="/" component={SearchContainer} />
 
       <ProtectedRoute exact path="/trips" component={BookingShowContainer} />
 
@@ -40,7 +40,7 @@ const App = (props) => {
       <ProtectedRoute exact path="/become-a-host" component={CreateListingFormContainer} />
 
       <Switch>
-        <Route exact path="/listings/:listingId" component={ListingShowContainer} />
+        <ProtectedRoute exact path="/listings/:listingId" component={ListingShowContainer} />
         <Route exact path="/listings" render={() => <ListingIndexContainer/>} />
       </Switch>
 

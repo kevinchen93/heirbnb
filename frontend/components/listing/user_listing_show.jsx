@@ -2,12 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import ListingMap from '../listing_map/listing_map';
 
-
-// /profile/listings
-
 class UserListingShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      body: '',
+      lat: 40.715494,
+      lng: -74.002209,
+    };
   }
 
   componentDidMount() {
@@ -52,11 +54,11 @@ class UserListingShow extends React.Component {
     return (
       <div>
         <div className="user-listing-index-container">
-          {userListingHeaderInfo}
+          { userListingHeaderInfo }
           <ul className="user-listing-ul">
             { listings }
           </ul>
-          <ListingMap listings={this.props.listings} updateFilter={this.props.updateFilter} />
+          <ListingMap listings={this.props.userListings()} updateFilter={this.props.updateFilter} lat={this.state.lat} lng={this.state.lng}/>
         </div>
       </div>
     )
