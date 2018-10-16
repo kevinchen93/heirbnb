@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import ReactStars from 'react-stars';
+import merge from 'lodash/merge';
 
 class ReviewForm extends React.Component {
   constructor(props) {
@@ -23,7 +24,9 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.action(this.state).then(() => this.props.closeModal);
+    const reviewData = merge({}, this.state);
+    reviewData.booking_id = this.props.currentBooking.id;
+    this.props.action(reviewData).then(this.props.closeModal);
   }
 
   render() {

@@ -16,8 +16,21 @@
   margin-bottom: 10px;
 }
 
+.listing-form-container-title {
+  width: 100%;
+}
+
+.user-listing-params-container {
+  text-align: center;
+}
+
+.listing-form-container div label {
+  margin-right: 20px;
+}
+
 .listing-form-container label input,
 .listing-form-container textarea {
+  text-align: left;
   font-size: 16px;
   line-height: 22px;
   letter-spacing: normal;
@@ -29,6 +42,11 @@
   border: 1px solid #e4e4e4;
   padding: 11px;
   margin-bottom: 14px;
+}
+
+.listing-form-container-label {
+  width: 100%;
+  display: block;
 }
 
 .listing-form-container input:focus,

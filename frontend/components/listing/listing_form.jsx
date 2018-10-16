@@ -30,7 +30,7 @@ class ListingForm extends React.Component {
         </div>
 
         <form className="listing-form-container" onSubmit={this.handleSubmit}>
-          <label>Title
+          <label className="listing-form-container-title">Title
             <input
               type="text"
               value={this.state.title}
@@ -46,6 +46,7 @@ class ListingForm extends React.Component {
           </div>
           <br />
 
+        <div className="user-listing-params-container">
           <label>Latitude
             <input
               type="text"
@@ -95,12 +96,13 @@ class ListingForm extends React.Component {
               onChange={this.update('prices')} />
           </label>
 
-          <label>Image URL
+          <label className="listing-form-container-label">Image URL
             <input
               type="text"
               value={this.state.img_url}
               onChange={this.update('img_url')} />
           </label>
+        </div>
 
           <button className="listing-submit-button">{this.props.formType}</button>
         </form>

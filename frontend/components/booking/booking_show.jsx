@@ -1,16 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { openModal, closeModal } from '../../actions/modal_actions';
 import CreateReviewFormContainer from '../review/create_review_form_container';
 
 class BookingShow extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClickLeaveAReview = this.handleClickLeaveAReview.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchBookings();
     this.props.userBookings();
+  }
+
+  handleClickLeaveAReview(booking) {
+    this.props.setCurrentBooking(booking);
+    this.props.openModal();
   }
 
   render() {
@@ -46,7 +51,7 @@ class BookingShow extends React.Component {
               <div className="booking-show-title">{booking.title}</div>
               <div className="review-user-text">Check In: {booking.start_date}</div>
               <div className="review-user-text">Check Out: {booking.end_date}</div>
-              <button className="booking-submit-button" onClick={ this.props.openModal }>Leave a Review</button>
+              <button className="booking-submit-button" onClick={ () => this.handleClickLeaveAReview(booking) }>Leave a Review</button>
               <button className="booking-submit-button" onClick={ () => this.props.deleteBooking(booking) }>Cancel</button>
             </div>
           </li>

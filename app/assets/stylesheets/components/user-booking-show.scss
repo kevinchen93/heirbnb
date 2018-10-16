@@ -13,11 +13,11 @@
 }
 
 .user-booking-ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  grid-row-gap: 55px;
+  grid-template-columns: repeat(3, minmax(375px, 1fr));
+  grid-column-gap: 80px;
+  display: inline-grid;
 }
-
 
 .booking-show-title {
   max-width: 95%;

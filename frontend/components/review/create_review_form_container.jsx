@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import ReviewForm from './review_form';
 import { createReview } from '../../actions/review_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const review = {
@@ -10,13 +11,19 @@ const mapStateToProps = (state, ownProps) => {
   };
 
   const formType = 'Submit Review';
+  const currentBooking = state.ui.modal.currentBooking;
 
-  return { review, formType };
+  return {
+    review,
+    formType,
+    currentBooking: currentBooking
+  };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     action: review => dispatch(createReview(review)),
+    closeModal: () => dispatch(closeModal()),
   };
 };
 
