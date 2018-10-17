@@ -44,7 +44,6 @@ class ListingForm extends React.Component {
               onChange={this.update('description')}>
             </textarea>
           </div>
-          <br />
 
         <div className="user-listing-params-container">
           <label>Latitude
