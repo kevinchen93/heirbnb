@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute, ProtectedRenderRoute } from '../../util/route_api_util';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import CreateBookingFormContainer from '../booking/create_booking_form_container';
+import ReactStars from 'react-stars';
 
 class UserListingDetail extends React.Component {
   constructor(props) {
@@ -55,42 +56,46 @@ class UserListingDetail extends React.Component {
             </div>
           </div>
           <div key={review.id} className="review-content-text review-content-body">{review.body}</div>
-          <div className="review-content-text">Rating: {review.rating}</div>
+          <ReactStars
+            value={review.rating ? review.rating : 0}
+            count={5}
+            size={20}
+            edit={review.rating ? false : true}
+            color2={'#008489'} />
         </div>
         <div className="separator"></div>
       </div>
     )
   });
 
-  return (
-    <div>
-      <img className="listing-show-image" src={listing.img_url}></img>
-      <CreateBookingFormContainer prices={listing.prices} />
+    return (
+      <div>
+        <img className="listing-show-image" src={listing.img_url}></img>
+        <CreateBookingFormContainer prices={listing.prices} />
 
-      <div className="listing-show-container">
+        <div className="listing-show-container">
 
-        <div className="listing-show-title">{listing.title}</div>
-        <div className="listing-show-content">
-          <div className="listing-show-commodities">
-            <i style={{ width: "12.5px", height: "19px", paddingRight: "8px" }} className="fas fa-user-friends"></i>&nbsp;{listing.guests}
-            <i style={{ width: "12.5px", height: "19px", paddingRight: "8px", paddingLeft: "12px" }} className="fas fa-warehouse"></i>&nbsp;{listing.bedrooms}
-            <i style={{ width: "12.5px", height: "19px", paddingRight: "8px", paddingLeft: "12px" }} className="fas fa-bed"></i>&nbsp;{listing.beds}
-            <i style={{ width: "12.5px", height: "19px", paddingRight: "8px", paddingLeft: "12px" }} className="fas fa-bath"></i>{listing.baths}
+          <div className="listing-show-title">{listing.title}</div>
+          <div className="listing-show-content">
+            <div className="listing-show-commodities">
+              <i style={{ width: "12.5px", height: "19px", paddingRight: "8px" }} className="fas fa-user-friends"></i>&nbsp;{listing.guests}
+              <i style={{ width: "12.5px", height: "19px", paddingRight: "8px", paddingLeft: "12px" }} className="fas fa-warehouse"></i>&nbsp;{listing.bedrooms}
+              <i style={{ width: "12.5px", height: "19px", paddingRight: "8px", paddingLeft: "12px" }} className="fas fa-bed"></i>&nbsp;{listing.beds}
+              <i style={{ width: "12.5px", height: "19px", paddingRight: "8px", paddingLeft: "12px" }} className="fas fa-bath"></i>{listing.baths}
+            </div>
+            <div className="listing-show-description">
+              {listing.description}
+            </div>
+            {reviewHeaderContainer}
+            <div className="separator"></div>
+            {reviewElements}
           </div>
-          <div className="listing-show-description">
-            {listing.description}
-          </div>
-          {reviewHeaderContainer}
-          <div className="separator"></div>
-          {reviewElements}
+
+          <button className="user-listing-detail-submit-button" onClick={ this.props.openModal }>Edit</button>
+          <button className="user-listing-detail-submit-button" onClick={ () => this.props.deleteListing(this.props.listing).then( () => this.props.history.push('/profile/listings')) }>Delete</button>
         </div>
-
-        <button className="user-listing-detail-submit-button" onClick={ this.props.openModal }>Edit</button>
-        <button className="user-listing-detail-submit-button" onClick={ () => this.props.deleteListing(this.props.listing).then( () => this.props.history.push('/profile/listings')) }>Delete</button>
       </div>
-
-    </div>
-  )
+    )
   }
 }
 

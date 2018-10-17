@@ -1,19 +1,20 @@
 .map-container {
-  position: absolute;
   height: 500px;
   width: 350px;
-  right: 35px;
-  top: 182px;
-  padding: 35px;
+  // right: 35px;
+  // top: 182px;
+  // padding: 35px;
 }
 
 // fix styling for map on show pages
-
+.splash-page-map {
+  position: absolute !important;
+  right: 35px;
+  top: 149px;
+  padding: 35px;
+}
 .show-page-map {
-  position: absolute;
+  position: relative !important;
   height: 500px;
   width: 350px;
-  right: 35px;
-  top: 182px;
-  padding: 35px;
 }

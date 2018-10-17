@@ -74,9 +74,7 @@ class ListingMap extends React.Component {
 
   render () {
     return (
-      <div className='map-container' ref='map'>
-        Map
-      </div>
+      <div className='map-container' ref='map'></div>
     )
   }
 }

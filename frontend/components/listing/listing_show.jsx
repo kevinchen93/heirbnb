@@ -58,12 +58,12 @@ class ListingShow extends React.Component {
               </div>
             </div>
             <div key={review.id} className="review-content-text review-content-body">{review.body}</div>
-              <ReactStars
-                value={review.rating ? review.rating : 0}
-                count={5}
-                size={20}
-                edit={review.rating ? false : true}
-                color2={'#008489'} />
+            <ReactStars
+              value={review.rating ? review.rating : 0}
+              count={5}
+              size={20}
+              edit={review.rating ? false : true}
+              color2={'#008489'} />
           </div>
           <div className="separator"></div>
         </div>
@@ -92,9 +92,9 @@ class ListingShow extends React.Component {
             <div className="separator"></div>
             {reviewElements}
           </div>
-        </div>
-        <div>
-          <ListingMap singleListing={listing} lat={listing.lat} lng={listing.lng} fetchListing={this.props.fetchListing} />
+          <div className="show-page-map">
+            <ListingMap singleListing={listing} lat={listing.lat} lng={listing.lng} fetchListing={this.props.fetchListing} />
+          </div>
         </div>
       </div>
     );

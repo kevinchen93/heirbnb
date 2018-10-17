@@ -40,7 +40,7 @@ const App = (props) => {
       <ProtectedRoute exact path="/become-a-host" component={CreateListingFormContainer} />
 
       <Switch>
-        <ProtectedRoute exact path="/listings/:listingId" component={ListingShowContainer} />
+        <Route exact path="/listings/:listingId" component={ListingShowContainer} />
         <Route exact path="/listings" render={() => <ListingIndexContainer/>} />
       </Switch>
 
