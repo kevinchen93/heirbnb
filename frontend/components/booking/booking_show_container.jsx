@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import BookingShow from './booking_show';
 import { fetchBookings, fetchBooking, deleteBooking } from '../../actions/booking_actions';
-import { createReview } from '../../actions/review_actions';
+import { createReview, updateReview } from '../../actions/review_actions';
 import { userBookings } from '../../reducers/selectors';
 import { openModal, closeModal, setCurrentBooking } from '../../actions/modal_actions';
 
@@ -17,8 +17,10 @@ const mapDispatchToProps = dispatch => ({
   fetchBookings: () => dispatch(fetchBookings()),
   fetchBooking: id => dispatch(fetchBooking(id)),
   deleteBooking: id => dispatch(deleteBooking(id)),
-  openModal: () => dispatch(openModal('create review')),
+  openCreateModal: () => dispatch(openModal('create review')),
+  openEditModal: () => dispatch(openModal('edit review')),
   createReview: (review) => dispatch(createReview(review)),
+  updateReview: (review) => dispatch(updateReview(review)),
   setCurrentBooking: (booking) => dispatch(setCurrentBooking(booking)),
 });
 

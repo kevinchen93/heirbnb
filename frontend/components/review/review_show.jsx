@@ -15,7 +15,7 @@ class ReviewShow extends React.Component {
   render() {
     const { review } = this.props;
     if (!review) {
-      return <div>Loading...</div>
+      return <div className="loading-text">Loading...</div>
     }
 
     return (

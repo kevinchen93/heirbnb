@@ -11,14 +11,20 @@ const mapStateToProps = (state, ownProps) => {
   };
   const review = state.reviews[ownProps.match.params.reviewId] || defaultReview;
   const formType = 'Update Review';
+  const currentBooking = state.ui.modal.currentBooking;
 
-  return { review, formType };
+  return {
+    review,
+    formType,
+    currentBooking: currentBooking
+   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     fetchReview: id => dispatch(fetchReview(id)),
     action: review => dispatch(updateReview(review)),
+    closeModal: () => dispatch(closeModal()),
   };
 };
 

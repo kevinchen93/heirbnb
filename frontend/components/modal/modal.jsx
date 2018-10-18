@@ -37,6 +37,9 @@ function Modal({modal, closeModal}) {
     case 'create review':
       component = <CreateReviewFormContainer />;
       break;
+    case 'edit review':
+      component = <EditReviewFormContainer />;
+      break;
     default:
       return null;
   }

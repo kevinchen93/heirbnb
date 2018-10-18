@@ -91,3 +91,9 @@ label {
 .mt-27 {
   margin-top: 27px;
 }
+
+.loading-text {
+  text-align: center;
+  font-size: 50px;
+  color: #ff5a5f;
+}

@@ -103,8 +103,8 @@ class BookingForm extends React.Component {
           <a href="https://github.com/kevinchen93">
             <i className="far fa-flag"></i>
             <span>
-              <span className="report-link fs-14 fw-300">Report this listing
-              </span>
+              <div className="report-link fs-14 fw-300">Report this listing
+              </div>
             </span>
           </a>
         </div>

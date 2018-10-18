@@ -19,7 +19,7 @@ class UserListingShow extends React.Component {
 
   render() {
     if (!this.props.userListings().every( el => Boolean(el)) ) {
-      return <div>Loading...</div>;
+      return <div className="loading-text">Loading...</div>;
     }
 
     let userListingHeaderInfo;

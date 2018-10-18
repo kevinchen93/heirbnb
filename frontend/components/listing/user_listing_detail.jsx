@@ -18,7 +18,7 @@ class UserListingDetail extends React.Component {
   render() {
     const { listing, reviews, users } = this.props;
     if (!listing) {
-      return <div>Loading...</div>;
+      return <div className="loading-text">Loading...</div>;
     };
 
     let reviewHeaderContainer;
