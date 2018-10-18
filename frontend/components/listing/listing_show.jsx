@@ -88,7 +88,7 @@ class ListingShow extends React.Component {
         <CreateBookingFormContainer prices={listing.prices} numReviews={listing.review_ids.length} />
 
         <div className="listing-show-container">
-          <span style={{ color: "#734f21", fontSize: "14px", fontWeight: "800" }}>PRIVATE ROOM IN APARTMENT</span>
+          <span style={{ color: "#734f21", fontSize: "12px", fontWeight: "800" }}>PRIVATE ROOM IN APARTMENT</span>
           <div className="listing-show-title">{listing.title}</div>
           <span className="listing-show-description">New York</span>
           <div className="listing-show-content">
@@ -113,6 +113,16 @@ class ListingShow extends React.Component {
                 <li>Wifi</li>
                 <li>Cable TV</li>
                 <li>Washer</li>
+              </ul>
+            </div>
+            <div className="separator"></div>
+            <div className="house-rules-header">Accessibility</div>
+            <div className="amenities-container">
+              <ul>
+                <li>Well-lit path to entrance</li>
+              </ul>
+              <ul>
+                <li>Wide hallway clearance</li>
               </ul>
             </div>
             {reviewHeaderContainer}
