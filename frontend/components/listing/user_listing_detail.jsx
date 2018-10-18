@@ -12,6 +12,7 @@ class UserListingDetail extends React.Component {
 
   componentDidMount() {
     this.props.fetchListing(this.props.id).fail( () => this.props.history.push('/profile/listings') );
+    window.scrollTo(0,0);
   }
 
   render() {
@@ -43,6 +44,13 @@ class UserListingDetail extends React.Component {
         reviewHeading = "Reviews"
       }
 
+      let numReviews;
+      if (listing.review_ids.length === 1) {
+        numReviews = 'No reviews';
+      } else {
+        numReviews = listing.review_ids.length;
+      }
+
     return (
       <div className="review-container" key={review.id}>
         <div className="review-content-container">
@@ -54,14 +62,14 @@ class UserListingDetail extends React.Component {
               </div>
               <div className="review-content-text">{month} {year}</div>
             </div>
+            <ReactStars
+              value={review.rating ? review.rating : 0}
+              count={5}
+              size={20}
+              edit={review.rating ? false : true}
+              color2={'#008489'} />
           </div>
           <div key={review.id} className="review-content-text review-content-body">{review.body}</div>
-          <ReactStars
-            value={review.rating ? review.rating : 0}
-            count={5}
-            size={20}
-            edit={review.rating ? false : true}
-            color2={'#008489'} />
         </div>
         <div className="separator"></div>
       </div>
@@ -71,7 +79,7 @@ class UserListingDetail extends React.Component {
     return (
       <div>
         <img className="listing-show-image" src={listing.img_url}></img>
-        <CreateBookingFormContainer prices={listing.prices} />
+        <CreateBookingFormContainer prices={listing.prices} numReviews={listing.review_ids.length}/>
 
         <div className="listing-show-container">
 
@@ -90,6 +98,16 @@ class UserListingDetail extends React.Component {
             <div className="separator"></div>
             {reviewElements}
           </div>
+          <div className="the-neighborhood-header">Policies</div>
+          <div className="house-rules-header">House Rules</div>
+          <div className="review-content-text review-content-body">No pets</div>
+          <div className="review-content-text review-content-body">No parties or events</div>
+          <div className="review-content-text review-content-body">Check-in time is 4PM-7PM</div>
+          <div className="review-content-text review-content-body">Check out by noon</div>
+          <div className="separator"></div>
+          <div className="house-rules-header">Cancellations</div>
+          <div className="strict-text">Strict</div>
+          <div className="review-content-text">Cancel up to 30 days before check-in and get a full refund.</div>
 
           <button className="user-listing-detail-submit-button" onClick={ this.props.openModal }>Edit</button>
           <button className="user-listing-detail-submit-button" onClick={ () => this.props.deleteListing(this.props.listing).then( () => this.props.history.push('/profile/listings')) }>Delete</button>
