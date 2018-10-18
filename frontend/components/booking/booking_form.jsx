@@ -37,8 +37,9 @@ class BookingForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <form className="booking-form-container" onSubmit={this.handleSubmit}>
+
+      <div className="booking-form-container">
+        <form onSubmit={this.handleSubmit}>
           <div className="booking-form-price">
             ${this.props.prices} <span className="booking-form-text">per night</span>
           <div className="booking-form-text">{this.props.numReviews === 0 ? "No reviews" :
@@ -78,10 +79,35 @@ class BookingForm extends React.Component {
                 onChange={this.update('end_date')} />
             </label>
           </div>
+
+          <div className="booking-form-text">Guests</div>
           <div style={{ textAlign: 'center', marginTop: '15px' }}>
             <button className="booking-submit-button">Book</button>
           </div>
+          <div className="you-wont-be-charged-yet">You won't be charged yet</div>
+          <div className="separator"></div>
+          <div className="booking-facts">
+            <div>
+              <div className="mb-5 fs-14 fw-600">
+                This home is on people's minds.
+              </div>
+              <span className="fs-14 fw-400">
+                It’s been viewed 500+ times in the past week.
+              </span>
+            </div>
+            <div className="lightbulb-img"></div>
+          </div>
         </form>
+
+        <div className="report-link-container">
+          <a href="https://github.com/kevinchen93">
+            <i className="far fa-flag"></i>
+            <span>
+              <span className="report-link fs-14 fw-300">Report this listing
+              </span>
+            </span>
+          </a>
+        </div>
       </div>
     )
   }

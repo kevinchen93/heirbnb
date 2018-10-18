@@ -24,7 +24,14 @@
 
 .booking-form-text {
   font-size: 12px;
-  font-weight: 400;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.you-wont-be-charged-yet {
+  text-align: center;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .booking-form-container label input {
@@ -62,6 +69,7 @@
   display: flex;
   border: 1px solid #e4e4e4;
   text-align: center;
+  margin-bottom: 7px;
 }
 
 .arrow {
@@ -93,4 +101,54 @@
   font-size: 16px;
   margin-top: 20px;
   margin-bottom: 25px;
+}
+
+.booking-facts {
+  display: flex;
+}
+
+.mb-5 {
+  margin-bottom: 5px;
+}
+
+.fs-14 {
+  font-size: 14px;
+}
+
+.fw-300 {
+  font-weight: 300;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.fw-600 {
+  font-weight: 600;
+}
+
+.icon-flag:before {
+    content: '\f177'
+}
+
+.lightbulb-img {
+  height: 60px;
+  width: 60px;
+  background-image: url('https://a0.muscache.com/airbnb/static/page3/icon-uc-light-bulb-b34f4ddc543809b3144949c9e8cfcc8d.gif');
+  background-position: center;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  background-size: 60px 60px;
+}
+
+.report-link-container {
+  text-align: center;
+  margin-top: 17px;
+}
+
+.report-link {
+  margin-left: 7px;
+}
+.report-link:hover {
+  text-decoration: underline;
 }
