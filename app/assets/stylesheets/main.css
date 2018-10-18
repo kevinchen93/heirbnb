@@ -39,17 +39,17 @@ label {
 
 .logged-in-index-container {
   width: 100%;
-  margin-left: 135px;
+  margin-left: 35px;
   /* margin-top: 40px; */
 }
 
-.logged-in-index-container .listing-ul {
+/* .logged-in-index-container .listing-ul {
   margin-right: 535px;
-}
+} */
 
 .not-logged-in-index-container {
   margin: 0 auto;
-  width: 65%;
+  width: 95%;
 }
 
 .header-background {
@@ -82,7 +82,7 @@ label {
 }
 
 .centered-heading {
-  width: 65%;
+  width: 95%;
   /* padding-left: 8px; */
   margin-left: auto;
   margin-right: auto;

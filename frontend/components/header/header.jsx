@@ -15,7 +15,7 @@ class Header extends React.Component {
     let headerInfo;
     if (this.props.currentUser) {
       headerInfo = (
-        <div className="ml-135">
+        <div className="ml-35">
           <div className="subheading header-background-image-text">What can we help you find, {this.props.currentUser.first_name}?</div>
         </div>
       );

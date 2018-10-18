@@ -24,14 +24,17 @@ class ListingIndex extends React.Component {
     });
 
     let indexClass;
+    let indexListingClass;
     if (this.props.currentUser) {
       indexClass="logged-in-index-container";
+      indexListingClass="logged-in-listing-ul";
     } else {
       indexClass="not-logged-in-index-container";
+      indexListingClass="not-logged-in-listing-ul";
     }
     return (
       <div className={indexClass}>
-        <ul className="listing-ul">
+        <ul className={indexListingClass}>
           {listings}
         </ul>
       </div>

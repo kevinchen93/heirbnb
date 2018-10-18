@@ -22,8 +22,10 @@ class UserListingDetail extends React.Component {
     };
 
     let reviewHeaderContainer;
-    if (listing.review_ids.length > 0) {
-      reviewHeaderContainer = (<div className="review-length-header">{listing.review_ids.length} Reviews</div>)
+    if (listing.review_ids.length === 1) {
+      reviewHeaderContainer = (<div className="review-length-header">{listing.review_ids.length} Review</div>);
+    } else if (listing.review_ids.length > 1) {
+      reviewHeaderContainer = (<div className="review-length-header">{listing.review_ids.length} Reviews</div>);
     }
 
     const reviewElements = listing.review_ids.map( reviewId => {
@@ -79,11 +81,17 @@ class UserListingDetail extends React.Component {
     return (
       <div>
         <img className="listing-show-image" src={listing.img_url}></img>
+        <div className="user-edit-delete-buttons-container">
+          <button className="user-listing-detail-submit-button" onClick={ this.props.openModal }>Edit</button>
+          <button className="user-listing-detail-submit-button" onClick={ () => this.props.deleteListing(this.props.listing).then( () => this.props.history.push('/profile/listings')) }>Delete</button>
+        </div>
+
         <CreateBookingFormContainer prices={listing.prices} numReviews={listing.review_ids.length}/>
 
         <div className="listing-show-container">
-
+          <span style={{ color: "#734f21", fontSize: "14px", fontWeight: "800" }}>PRIVATE ROOM IN APARTMENT</span>
           <div className="listing-show-title">{listing.title}</div>
+          <span className="listing-show-description">New York</span>
           <div className="listing-show-content">
             <div className="listing-show-commodities">
               <i style={{ width: "12.5px", height: "19px", paddingRight: "8px" }} className="fas fa-user-friends"></i>&nbsp;{listing.guests}
@@ -109,8 +117,6 @@ class UserListingDetail extends React.Component {
           <div className="strict-text">Strict</div>
           <div className="review-content-text">Cancel up to 30 days before check-in and get a full refund.</div>
 
-          <button className="user-listing-detail-submit-button" onClick={ this.props.openModal }>Edit</button>
-          <button className="user-listing-detail-submit-button" onClick={ () => this.props.deleteListing(this.props.listing).then( () => this.props.history.push('/profile/listings')) }>Delete</button>
         </div>
       </div>
     )

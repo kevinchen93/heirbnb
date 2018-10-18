@@ -22,8 +22,10 @@ class ListingShow extends React.Component {
     };
 
     let reviewHeaderContainer;
-    if (listing.review_ids.length > 0) {
-      reviewHeaderContainer = (<div className="review-length-header">{listing.review_ids.length} Reviews</div>)
+    if (listing.review_ids.length === 1) {
+      reviewHeaderContainer = (<div className="review-length-header">{listing.review_ids.length} Review</div>);
+    } else if (listing.review_ids.length > 1) {
+      reviewHeaderContainer = (<div className="review-length-header">{listing.review_ids.length} Reviews</div>);
     }
 
     const reviewElements = listing.review_ids.map( reviewId => {
@@ -86,8 +88,9 @@ class ListingShow extends React.Component {
         <CreateBookingFormContainer prices={listing.prices} numReviews={listing.review_ids.length} />
 
         <div className="listing-show-container">
-
+          <span style={{ color: "#734f21", fontSize: "14px", fontWeight: "800" }}>PRIVATE ROOM IN APARTMENT</span>
           <div className="listing-show-title">{listing.title}</div>
+          <span className="listing-show-description">New York</span>
           <div className="listing-show-content">
             <div className="listing-show-commodities">
               <i style={{ width: "12.5px", height: "19px", paddingRight: "8px" }} className="fas fa-user-friends"></i>&nbsp;{listing.guests}
@@ -97,6 +100,20 @@ class ListingShow extends React.Component {
             </div>
             <div className="listing-show-description">
               {listing.description}
+            </div>
+            <div className="separator"></div>
+            <div className="house-rules-header">Amenities</div>
+            <div className="amenities-container">
+              <ul>
+                <li>Elevator</li>
+                <li>Gym</li>
+                <li>Kitchen</li>
+              </ul>
+              <ul>
+                <li>Wifi</li>
+                <li>Cable TV</li>
+                <li>Washer</li>
+              </ul>
             </div>
             {reviewHeaderContainer}
             <div className="separator"></div>
