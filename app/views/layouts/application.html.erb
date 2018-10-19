@@ -2,9 +2,9 @@
 <html>
   <head>
     <% if logged_in? %>
-      <title>Heirbnb</title>
+    <title>Heirbnb</title>
     <% else %>
-      <title>Vacation Rentals, Homes, Experiences & Places - Heirbnb</title>
+    <title>Vacation Rentals, Homes, Experiences & Places - Heirbnb</title>
     <% end %>
 
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_KEY']}" %>
