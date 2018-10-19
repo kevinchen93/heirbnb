@@ -31,7 +31,7 @@ class SignupForm extends React.Component {
   }
 
   changeModal() {
-    this.props.clearErrors();
+    this.props.clearSessionErrors();
     this.props.closeModal();
     this.props.otherForm();
   }
@@ -112,7 +112,7 @@ const mapDispatchToProps = dispatch => ({
   processForm: user => dispatch(signup(user)),
   otherForm: () => dispatch(openModal('login')),
   closeModal: () => dispatch(closeModal()),
-  clearErrors: () => dispatch(clearErrors()),
+  clearSessionErrors: () => dispatch(clearSessionErrors()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SignupForm);

@@ -4,6 +4,7 @@ export const RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS';
 export const RECEIVE_BOOKING = 'RECEIVE_BOOKING';
 export const REMOVE_BOOKING = 'REMOVE_BOOKING';
 export const RECEIVE_BOOKING_ERRORS = 'RECEIVE_BOOKING_ERRORS';
+export const CLEAR_BOOKING_ERRORS = 'CLEAR_BOOKING_ERRORS';
 
 // Regular Actions
 export const receiveBookings = bookings => ({
@@ -26,6 +27,13 @@ export const removeBooking = booking => ({
 export const receiveBookingErrors = errors => {
   return {
     type: RECEIVE_BOOKING_ERRORS,
+    errors,
+  };
+};
+
+export const clearBookingErrors = errors => {
+  return {
+    type: CLEAR_BOOKING_ERRORS,
     errors,
   };
 };

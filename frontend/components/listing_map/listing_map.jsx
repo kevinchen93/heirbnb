@@ -21,8 +21,6 @@ class ListingMap extends React.Component {
   componentDidMount () {
     const map = this.refs.map;
     let mapOptions;
-    // let a = parseFloat(this.props.singleListing.lat);
-    // let b = parseFloat(this.props.singleListing.lng);
     if (this.props.singleListing) {
 
       mapOptions = {
@@ -41,6 +39,7 @@ class ListingMap extends React.Component {
         zoom: 11,
       };
     }
+
     let searchInput = document.getElementsByClassName('search-bar')[0];
     this.map = new google.maps.Map(map, mapOptions);
 
@@ -49,6 +48,7 @@ class ListingMap extends React.Component {
     if (this.props.singleListing) {
       this.props.fetchListing(this.props.singleListing.id);
     } else {
+      this.searchBox = new google.maps.places.SearchBox(searchInput);
       this.registerListeners();
       this.MarkerManager.updateMarkers(this.props.listings);
     }
@@ -59,8 +59,25 @@ class ListingMap extends React.Component {
   }
 
   registerListeners () {
-    google.maps.event.addListener(this.map, 'click', event => {
-      const coords = getCoordsObj(event.latLng);
+    // google.maps.event.addListener(this.map, 'click', event => {
+    //   const coords = getCoordsObj(event.latLng);
+    // });
+
+    this.searchBox.addListener('places_changed', () => {
+      let places = this.searchBox.getPlaces();
+      let bounds = new google.maps.LatLngBounds();
+      bounds.union(places[0].geometry.viewport);
+      this.map.fitBounds(bounds);
+    });
+
+    google.maps.event.addListener(this.map, 'idle', () => {
+      const { north, south, east, west } = this.map.getBounds().toJSON();
+      const bounds = {
+        northEast: { lat: north, lng: east },
+        southWest: { lat: south, lng: west },
+      };
+
+      this.props.updateFilter('bounds', bounds);
     });
   }
 

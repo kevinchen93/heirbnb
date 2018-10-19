@@ -7,7 +7,7 @@
     <title>Vacation Rentals, Homes, Experiences & Places - Heirbnb</title>
     <% end %>
 
-    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_KEY']}" %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_API_KEY']}&libraries=places"%>
     <%= csrf_meta_tags %>
     <%= favicon_link_tag asset_path('heirbnb10.ico') %>
     <%= csp_meta_tag %>

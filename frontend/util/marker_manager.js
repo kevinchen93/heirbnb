@@ -35,7 +35,4 @@ class MarkerManager {
   }
 }
 
-
 export default MarkerManager;
-
-// under updateMarkers()

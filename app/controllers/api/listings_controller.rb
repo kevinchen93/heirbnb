@@ -1,6 +1,6 @@
 class Api::ListingsController < ApplicationController
   def index
-    @listings = Listing.all
+    @listings = bounds ? House.in_bounds(bounds) : Listing.all
   end
 
   def create
@@ -55,6 +55,10 @@ class Api::ListingsController < ApplicationController
 
   def own_listing?
     !!(current_user.id == @listing.host_id)
+  end
+
+  def bounds
+    params[:bounds]
   end
 
 end

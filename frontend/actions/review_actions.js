@@ -3,6 +3,8 @@ import * as ReviewAPIUtil from '../util/review_api_util';
 export const RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
 export const RECEIVE_REVIEW = 'RECEIVE_REVIEW';
 export const REMOVE_REVIEW = 'REMOVE_REVIEW';
+export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
+export const CLEAR_REVIEW_ERRORS = 'CLEAR_REVIEW_ERRORS';
 
 // Regular Actions
 export const receiveReviews = reviews => ({
@@ -20,10 +22,24 @@ export const removeReview = reviewId => ({
   reviewId,
 });
 
+export const receiveReviewErrors = errors => {
+  return {
+    type: RECEIVE_REVIEW_ERRORS,
+    errors,
+  };
+};
+
+export const clearReviewErrors = errors => {
+  return {
+    type: CLEAR_REVIEW_ERRORS,
+    errors,
+  };
+};
+
 // Thunk Actions
 export const fetchReviews = () => {
   return dispatch => {
-    return ReviewAPIUtil.fetchReviews(filters).then(reviews => {
+    return ReviewAPIUtil.fetchReviews().then(reviews => {
       return dispatch(receiveReviews(reviews));
     });
   };
@@ -37,13 +53,13 @@ export const fetchReview = id => {
   };
 };
 
-export const createReview = review => {
-  return dispatch => {
-    return ReviewAPIUtil.createReview(review).then(review => {
-      return dispatch(receiveReview(review));
-    });
-  };
-};
+export const createReview = review => dispatch => (
+  ReviewAPIUtil.createReview(review).then(review => (
+    dispatch(receiveReview(review))
+  ), err => (
+    dispatch(receiveReviewErrors(err.responseJSON))
+  ))
+);
 
 export const updateReview = review => {
   return dispatch => {
