@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# TODO:
+# have demo user host a few listings
+
 User.destroy_all
 Listing.destroy_all
 Booking.destroy_all
@@ -87,4 +90,4 @@ reviews = Review.create!([
 
 photos = Photo.create!([
   { poster_id: users[0].id, listing_id: listings[0].id, img_url: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=7eb3cf84fa5988885f62b3ee0dfac1fe&auto=format&fit=crop&w=1873&q=80' }
-])
+]);
