@@ -7,8 +7,9 @@ class Api::ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    p @review
     @review.reviewer_id = current_user.id
-
+    p @review
     if @review.save
       render 'api/reviews/show'
     else

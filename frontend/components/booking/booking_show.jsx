@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import CreateReviewFormContainer from '../review/create_review_form_container';
+import EditReviewFormContainer from '../review/edit_review_form_container';
 
 class BookingShow extends React.Component {
   constructor(props) {
@@ -28,7 +29,7 @@ class BookingShow extends React.Component {
     if (!this.props.userBookings().every( el => Boolean(el)) ) {
       return <div className="loading-text">Loading...</div>;
     }
-
+    
     let userBookingHeaderInfo;
     if (this.props.userBookings().length > 0) {
       userBookingHeaderInfo = (
@@ -57,7 +58,6 @@ class BookingShow extends React.Component {
           <button className="booking-submit-button" onClick={ () => this.handleClickLeaveAReview(booking) }>Leave a Review</button>
         )
       }
-      debugger
 
       return (
         <div key={booking.id}>

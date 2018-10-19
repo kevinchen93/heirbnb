@@ -6,6 +6,7 @@ import SignupFormContainer from '../session/signup_form_container';
 import CreateListingFormContainer from '../listing/create_listing_form_container';
 import EditUserListingFormContainer from '../listing/edit_user_listing_form_container';
 import CreateReviewFormContainer from '../review/create_review_form_container';
+import EditReviewFormContainer from '../review/edit_review_form_container';
 
 const mapStateToProps = state => {
   return {

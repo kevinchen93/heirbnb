@@ -3,20 +3,22 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import ReviewForm from './review_form';
 import { fetchReview, updateReview } from '../../actions/review_actions';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const defaultReview = {
-    body: '',
-    rating: 0
-  };
-  const review = state.reviews[ownProps.match.params.reviewId] || defaultReview;
   const formType = 'Update Review';
   const currentBooking = state.ui.modal.currentBooking;
+  const review = {
+    id: currentBooking.review.id,
+    booking_id: currentBooking.id,
+    body: currentBooking.review.body,
+    rating: currentBooking.review.rating
+  };
 
   return {
-    review,
-    formType,
-    currentBooking: currentBooking
+    currentBooking: currentBooking,
+    review: review,
+    formType: formType,
    };
 };
 
@@ -28,26 +30,5 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-class EditReviewForm extends React.Component {
-  componentDidMount() {
-    this.props.fetchReview(this.props.match.params.reviewId);
-  }
 
-  componentWillReceiveProps(nextProps) {
-    if (this.props.review.id != nextProps.match.params.reviewId) {
-      this.props.fetchReview(nextProps.match.params.reviewId);
-    }
-  }
-
-  render() {
-    const { action, formType, review } = this.props;
-    return (
-      <ReviewForm
-        action={action}
-        formType={formType}
-        review={review} />
-    );
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(EditReviewForm);
+export default connect(mapStateToProps, mapDispatchToProps)(ReviewForm);
