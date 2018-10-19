@@ -14,6 +14,7 @@ const mapStateToProps = (state, ownProps) => {
   const currentBooking = state.ui.modal.currentBooking;
 
   return {
+    errors: state.errors.reviews,
     review,
     formType,
     currentBooking: currentBooking

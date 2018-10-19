@@ -12,7 +12,10 @@ const mapStateToProps = (state, ownProps) => {
   const booking = state.entities.bookings[ownProps.match.params.bookingId] || defaultBooking;
   const formType = 'Update Booking';
 
-  return { booking, formType };
+  return {
+    errors: state.errors.bookings,
+    booking,
+    formType };
 };
 
 const mapDispatchToProps = dispatch => {

@@ -23,6 +23,7 @@ class LoginForm extends React.Component {
   }
 
   changeModal() {
+    this.props.clearSessionErrors();
     this.props.closeModal();
     this.props.otherForm();
   }

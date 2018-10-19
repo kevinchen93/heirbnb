@@ -22,6 +22,7 @@ const mapStateToProps = (state, ownProps) => {
   const formType = 'Update Listing';
 
   return {
+    errors: state.errors.listings,
     listing,
     formType,
     currentUser: state.entities.users[state.session.currentUserId] };
