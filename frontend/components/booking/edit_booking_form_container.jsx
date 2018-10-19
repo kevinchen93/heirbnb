@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import BookingForm from './booking_form';
-import { fetchBooking, updateBooking } from '../../actions/booking_actions';
+import { fetchBooking, updateBooking, clearBookingErrors } from '../../actions/booking_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const defaultBooking = {
@@ -22,6 +22,7 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchBooking: id => dispatch(fetchBooking(id)),
     action: booking => dispatch(updateBooking(booking)),
+    clearBookingErrors: () => dispatch(clearBookingErrors()),
   };
 };
 

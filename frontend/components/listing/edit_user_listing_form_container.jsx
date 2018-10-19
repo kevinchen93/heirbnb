@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchListing, updateListing } from '../../actions/listing_actions';
+import { fetchListing, updateListing, clearListingErrors } from '../../actions/listing_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -33,6 +33,7 @@ const mapDispatchToProps = dispatch => {
     fetchListing: id => dispatch(fetchListing(id)),
     updateListing: listing => dispatch(updateListing(listing)),
     deleteListing: listingId => dispatch(deleteListing(listingId)),
+    clearListingErrors: () => dispatch(clearListingErrors()),
     closeModal: () => dispatch(closeModal()),
   };
 };
@@ -64,6 +65,7 @@ class EditUserListingForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.updateListing(this.state).then(this.props.closeModal);
+    this.props.clearListingErrors();
   }
 
   render() {

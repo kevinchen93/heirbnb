@@ -20,13 +20,16 @@
 }
 
 .booking-show-title {
+  overflow: hidden;
+  margin-bottom: 14px;
+  height: 84px;
   max-width: 95%;
   text-align: left;
   color: #484848;
   font-size: 20px;
   font-weight: 700;
   flex-wrap: wrap;
-  // padding-left: 7px;
+  text-overflow: ellipsis;
 }
 
 .booking-submit-button {

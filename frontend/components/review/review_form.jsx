@@ -24,6 +24,7 @@ class ReviewForm extends React.Component {
   }
 
   handleCreateSubmit(e) {
+    this.props.clearReviewErrors();
     e.preventDefault();
     const reviewData = merge({}, this.state);
     reviewData.booking_id = this.props.currentBooking.id;
@@ -31,6 +32,7 @@ class ReviewForm extends React.Component {
   }
 
   handleEditSubmit(e) {
+    this.props.clearReviewErrors();
     e.preventDefault();
     const reviewData = merge({}, this.state);
     this.props.action(reviewData).then(this.props.closeModal);

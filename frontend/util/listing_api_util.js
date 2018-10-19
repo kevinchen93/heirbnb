@@ -1,8 +1,9 @@
-export const fetchListings = props => {
+export const fetchListings = filters => {
+  console.log('THIS IS THE DATA BEING SENT UP', filters);
   return $.ajax({
     method: 'GET',
     url: 'api/listings',
-    data: { props: props }
+    data: { filters: filters }
   });
 };
 

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import BookingForm from './booking_form';
-import { createBooking } from '../../actions/booking_actions';
+import { createBooking, clearBookingErrors } from '../../actions/booking_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const formType = 'Create Booking';
@@ -15,6 +15,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
   return {
     action: booking => dispatch(createBooking(booking)),
+    clearBookingErrors: () => dispatch(clearBookingErrors()),
   };
 };
 

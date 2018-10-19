@@ -12,7 +12,7 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-  fetchListings: () => dispatch(fetchListings()),
+  fetchListings: (filters) => dispatch(fetchListings(filters)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Header);

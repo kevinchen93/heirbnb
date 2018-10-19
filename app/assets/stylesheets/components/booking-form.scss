@@ -13,7 +13,7 @@
 
 .booking-form-container label {
   font-size: 17px;
-  width: 50%;
+  width: calc(50% - 17px);
 }
 
 .booking-form-price {
@@ -35,7 +35,7 @@
 }
 
 .booking-form-container label input {
-  font-size: 17px;
+  font-size: 13px;
   line-height: 20px;
   letter-spacing: normal;
   background-color: transparent;
@@ -43,7 +43,6 @@
   font-weight: 300;
   color: #484848;
   width: 100%;
-  // border: 1px solid #e4e4e4;
   padding: 7px;
 }
 
@@ -70,6 +69,7 @@
   border: 1px solid #e4e4e4;
   text-align: center;
   margin-bottom: 7px;
+  justify-content: space-between;
 }
 
 .arrow {
@@ -154,6 +154,7 @@
   display: inline-block;
   margin-left: 7px;
 }
+
 .report-link:hover {
   text-decoration: underline;
 }

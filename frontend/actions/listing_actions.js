@@ -50,9 +50,10 @@ export const clearListingErrors = errors => {
 };
 
 // Thunk Actions
-export const fetchListings = () => {
+export const fetchListings = (filters) => {
   return dispatch => {
-    return ListingAPIUtil.fetchListings().then(payload => {
+    console.log('THIS IS THE FILTERS FROM THE THUNK ACTIONNNNN', filters);
+    return ListingAPIUtil.fetchListings(filters).then(payload => {
       return dispatch(receiveListings(payload));
     });
   };

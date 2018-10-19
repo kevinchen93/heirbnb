@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import ReviewForm from './review_form';
-import { createReview } from '../../actions/review_actions';
+import { createReview, clearReviewErrors } from '../../actions/review_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -25,6 +25,7 @@ const mapDispatchToProps = dispatch => {
   return {
     action: review => dispatch(createReview(review)),
     closeModal: () => dispatch(closeModal()),
+    clearReviewErrors: () => dispatch(clearReviewErrors()),
   };
 };
 

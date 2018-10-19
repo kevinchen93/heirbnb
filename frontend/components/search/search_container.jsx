@@ -11,7 +11,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   openModal: modal => dispatch(openModal(modal)),
-  fetchListings: () => dispatch(fetchListings()),
+  fetchListings: (filters) => dispatch(fetchListings(filters)),
   updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
 });
 

@@ -17,6 +17,7 @@ class ListingForm extends React.Component {
   }
 
   handleSubmit(e) {
+    this.props.clearListingErrors();
     e.preventDefault();
     this.props.action(this.state).then(() => this.props.history.push('/profile/listings'));
   }

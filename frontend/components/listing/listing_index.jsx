@@ -9,9 +9,9 @@ class ListingIndex extends React.Component {
     this.state = {};
   }
 
-  componentDidMount() {
-    this.props.fetchListings();
-  }
+  // componentDidMount() {
+  //   this.props.fetchListings(filters);
+  // }
 
   render() {
     const listings = this.props.listings.map(listing => {

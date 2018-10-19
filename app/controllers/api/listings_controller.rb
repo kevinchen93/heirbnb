@@ -1,6 +1,9 @@
 class Api::ListingsController < ApplicationController
   def index
-    @listings = bounds ? House.in_bounds(bounds) : Listing.all
+    p 'PARAMSSSSSS'
+    p params
+
+    @listings = bounds ? Listing.in_bounds(bounds) : Listing.all
   end
 
   def create
@@ -58,6 +61,8 @@ class Api::ListingsController < ApplicationController
   end
 
   def bounds
+    p 'BOUNDSSSSSSS'
+    p params[:bounds]
     params[:bounds]
   end
 

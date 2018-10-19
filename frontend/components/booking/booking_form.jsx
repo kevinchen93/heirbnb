@@ -19,6 +19,7 @@ class BookingForm extends React.Component {
   }
 
   handleSubmit(e) {
+    this.props.clearBookingErrors();
     e.preventDefault();
     this.props.action(this.state).then( () => this.props.history.push('/trips'));
   }
