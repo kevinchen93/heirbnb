@@ -96,10 +96,10 @@
 
 .search-bar {
   position: relative;
-  height: 48px;
+  height: 43px;
   width: 100%;
   font-size: 17px;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 17px;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -141,11 +141,14 @@
 }
 
 .nav-bar-right li {
+  font-size: 14px;
   // padding: 0 15px;
 }
 
 .nav-bar-right button {
   height: 80px;
+  font-size: 14px;
+  font-weight: 600;
   // margin: 0 15px;
   padding: 0 15px;
 }
@@ -226,5 +229,5 @@
 }
 
 .hero-svg:active {
-  transform: scale(0.8);
+  transform: scale(0.9);
 }

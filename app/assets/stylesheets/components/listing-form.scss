@@ -16,6 +16,20 @@
   margin-bottom: 10px;
 }
 
+.user-listing-form-container {
+  margin-top: 20px;
+  width: 500px;
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
+  // padding: 24px;
+  background-color: white;
+  box-sizing: border-box;
+  // border: 1px solid #e4e4e4;
+  margin-bottom: 10px;
+}
+
 .listing-form-container-title {
   width: 100%;
 }
@@ -24,18 +38,21 @@
   text-align: center;
 }
 
-.listing-form-container div label {
+.listing-form-container div label,
+.user-listing-form-container div label {
   margin-right: 20px;
 }
 
 .listing-form-container label input,
-.listing-form-container textarea {
+.listing-form-container textarea,
+.user-listing-form-container label input,
+.user-listing-form-container textarea {
   text-align: left;
   font-size: 16px;
   line-height: 16px;
   letter-spacing: normal;
   // background-color: transparent;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   font-weight: 300;
   color: #484848;
   width: 100%;
@@ -44,22 +61,27 @@
   margin-bottom: 14px;
 }
 
-.listing-form-container-label {
+.listing-form-container-label,
+.user-listing-form-container-label {
   width: 100%;
   display: block;
 }
 
 .listing-form-container input:focus,
-.listing-form-container textarea:focus,  {
+.listing-form-container textarea:focus,
+.user-listing-form-container input:focus,
+.user-listing-form-container textarea:focus {
   border: 1px solid #008489;
 }
 
-.listing-form-container .listing-submit-button:focus {
+.listing-form-container .listing-submit-button:focus,
+.user-listing-form-container .listing-submit-button:focus {
   background-color: #fc5a5f;
   border: none;
 }
 
-.listing-form-container textarea {
+.listing-form-container textarea,
+.user-listing-form-container textarea {
   min-height: 150px;
   width: 100%;
   border: 1px solid #e4e4e4;

@@ -121,6 +121,7 @@ class ListingForm extends React.Component {
 
             <div className="listing-button">
               <button className="listing-submit-button">{this.props.formType}</button>
+              <button className="listing-submit-button" onClick={this.props.closeModal}>Cancel</button>
             </div>
 
           </form>

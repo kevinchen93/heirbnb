@@ -76,7 +76,7 @@ class EditUserListingForm extends React.Component {
           <path d="m23.25 24c-.19 0-.38-.07-.53-.22l-10.72-10.72-10.72 10.72c-.29.29-.77.29-1.06 0s-.29-.77 0-1.06l10.72-10.72-10.72-10.72c-.29-.29-.29-.77 0-1.06s.77-.29 1.06 0l10.72 10.72 10.72-10.72c.29-.29.77-.29 1.06 0s .29.77 0 1.06l-10.72 10.72 10.72 10.72c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22" fillRule="evenodd">
           </path>
         </svg>
-        <form className="listing-form-container" onSubmit={this.handleSubmit}>
+        <form className="user-listing-form-container" onSubmit={this.handleSubmit}>
           <label className="listing-form-container-title">Title
             <input
               type="text"
@@ -93,65 +93,67 @@ class EditUserListingForm extends React.Component {
           </div>
           <br />
 
-        <div className="user-listing-params-container">
-          <label>Latitude
-            <input
-              type="text"
-              value={this.state.lat}
-              onChange={this.handleChange('lat')} />
-          </label>
+          <div className="user-listing-params-container">
+            <label>Latitude
+              <input
+                type="text"
+                value={this.state.lat}
+                onChange={this.handleChange('lat')} />
+            </label>
 
-          <label>Longitude
-            <input
-              type="text"
-              value={this.state.lng}
-              onChange={this.handleChange('lng')} />
-          </label>
+            <label>Longitude
+              <input
+                type="text"
+                value={this.state.lng}
+                onChange={this.handleChange('lng')} />
+            </label>
 
-          <label>Guests
-            <input
-              type="text"
-              value={this.state.guests}
-              onChange={this.handleChange('guests')} />
-          </label>
+            <label>Guests
+              <input
+                type="text"
+                value={this.state.guests}
+                onChange={this.handleChange('guests')} />
+            </label>
 
-          <label>Beds
-            <input
-              type="text"
-              value={this.state.beds}
-              onChange={this.handleChange('beds')} />
-          </label>
+            <label>Beds
+              <input
+                type="text"
+                value={this.state.beds}
+                onChange={this.handleChange('beds')} />
+            </label>
 
-          <label>Bedrooms
-            <input
-              type="text"
-              value={this.state.bedrooms}
-              onChange={this.handleChange('bedrooms')} />
-          </label>
+            <label>Bedrooms
+              <input
+                type="text"
+                value={this.state.bedrooms}
+                onChange={this.handleChange('bedrooms')} />
+            </label>
 
-          <label>Baths
-            <input
-              type="text"
-              value={this.state.baths}
-              onChange={this.handleChange('baths')} />
-          </label>
+            <label>Baths
+              <input
+                type="text"
+                value={this.state.baths}
+                onChange={this.handleChange('baths')} />
+            </label>
 
-          <label>Price
-            <input
-              type="text"
-              value={this.state.prices}
-              onChange={this.handleChange('prices')} />
-          </label>
+            <label>Price
+              <input
+                type="text"
+                value={this.state.prices}
+                onChange={this.handleChange('prices')} />
+            </label>
 
-          <label className="listing-form-container-label">Image URL
-            <input
-              type="text"
-              value={this.state.img_url}
-              onChange={this.handleChange('img_url')} />
-          </label>
-        </div>
-
-          <button className="listing-submit-button">{this.props.formType}</button>
+            <label className="listing-form-container-label">Image URL
+              <input
+                type="text"
+                value={this.state.img_url}
+                onChange={this.handleChange('img_url')} />
+            </label>
+          </div>
+          <div className="listing-button">
+            <button className="listing-submit-button">{this.props.formType}</button>
+            <button className="listing-submit-button" onClick={this.props.closeModal}>Cancel</button>
+          </div>
         </form>
       </div>
 

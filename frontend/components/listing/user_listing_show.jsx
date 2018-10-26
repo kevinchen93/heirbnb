@@ -44,7 +44,7 @@ class UserListingShow extends React.Component {
             <img className="listing-image" src={listing.img_url} />
             <div className="listing-content">
               <div className="listing-item-title">{listing.title}</div>
-              <div className="listing-item-prices">From ${listing.prices} per night · Free cancellation</div>
+              <div className="listing-item-prices">${listing.prices} per night · Free cancellation</div>
             </div>
           </Link>
         </li>

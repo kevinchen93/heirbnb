@@ -7,13 +7,13 @@ span, article, footer, time, small {
   padding: 0;
   border: 0;
   outline: 0;
-  font: inherit;
-  color: inherit;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   text-align: inherit;
   text-decoration: inherit;
   vertical-align: inherit;
   box-sizing: inherit;
   background: transparent;
+  color: #484848;
 }
 
 ul {
