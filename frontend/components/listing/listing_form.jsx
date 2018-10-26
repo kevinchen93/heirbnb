@@ -40,7 +40,7 @@ class ListingForm extends React.Component {
         <div className="create-listing-container">
           <div className="listing-h1-container">
             <div className="listing-h1">Hi, {this.props.currentUser.first_name}!</div>
-            <div className="listing-h1">Let's get started listing your space!</div>
+            <div className="listing-h1">Let's get started listing your space.</div>
           </div>
           <form className="listing-form-container" onSubmit={this.handleSubmit}>
             <div className="errors-div">
