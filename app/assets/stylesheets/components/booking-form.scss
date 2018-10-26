@@ -103,8 +103,15 @@
   font-weight: 450;
   line-height: 22px;
   font-size: 16px;
-  margin-top: 20px;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
+
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.booking-submit-button:hover {
+  background-color: #d13e43;
 }
 
 .booking-facts {
