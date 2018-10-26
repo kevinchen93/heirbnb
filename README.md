@@ -1,6 +1,6 @@
 # Welcome to Heirbnb
 
-Heirbnb is a single-page web application inspired by Airbnb. Users can view, create and book listings, and search for listings by location. Users can also review their stay! <a href="https://heirbeenbee.herokuapp.com" target="_blank">Visit Heirbnb here!</a>
+Heirbnb is a single-page, full stack web application inspired by Airbnb. It utilizes Ruby on Rails with a PostgreSQL database on the backend, and React.js and Redux on the frontend. Users can view, create and book listings, and search for listings by location. Users can also review their stay! <a href="https://heirbeenbee.herokuapp.com" target="_blank">Visit Heirbnb here!</a>
 
 ## Key Features
 
