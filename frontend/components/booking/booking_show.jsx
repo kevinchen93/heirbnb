@@ -48,7 +48,7 @@ class BookingShow extends React.Component {
 
     const bookings = this.props.userBookings().map( booking => {
       let reviewButton;
-      
+
       if (Boolean(booking.review)) {
         reviewButton = (
           <button className="booking-submit-button" onClick={ () => this.handleClickEditAReview(booking) }>Edit Review</button>
@@ -69,8 +69,10 @@ class BookingShow extends React.Component {
             </div>
             <div>
               <div className="booking-show-title">{booking.title}</div>
-              <div className="review-user-text">Check In: {booking.start_date}</div>
-              <div className="review-user-text">Check Out: {booking.end_date}</div>
+              <div className="review-user-booking-dates-container">
+                <div className="review-user-text">Check In: {booking.start_date}</div>
+                <div className="review-user-text">Check Out: {booking.end_date}</div>
+              </div>
               <div className="booking-buttons-container">
                 {reviewButton}
                 <button className="booking-submit-button" onClick={ () => this.props.deleteBooking(booking) }>Cancel</button>

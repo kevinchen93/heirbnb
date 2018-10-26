@@ -13,10 +13,11 @@
 }
 
 .user-booking-ul {
+  justify-items: center;
   grid-row-gap: 55px;
   grid-template-columns: repeat(3, minmax(375px, 1fr));
   grid-column-gap: 80px;
-  display: inline-grid;
+  display: grid;
 }
 
 .booking-show-title {
