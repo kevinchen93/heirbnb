@@ -13,6 +13,10 @@ class ListingIndex extends React.Component {
   //   this.props.fetchListings(filters);
   // }
 
+  // componentWillUpdate() {
+  //
+  // }
+
   render() {
     const listings = this.props.listings.map(listing => {
       return (

@@ -27,7 +27,7 @@ class BookingIndex extends React.Component {
       <div>
         <div className="current-user-bookings-container">
           <h1 className="listing-h1">Your Bookings</h1>
-          <div className="separator"></div>
+          <div className="separator-24"></div>
         </div>
         <ul>
           {bookings}

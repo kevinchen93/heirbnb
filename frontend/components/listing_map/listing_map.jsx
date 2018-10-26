@@ -33,8 +33,8 @@ class ListingMap extends React.Component {
     } else {
       mapOptions = {
         center: {
-          lat: this.props.lat,
-          lng: this.props.lng
+          lat: parseFloat(this.props.lat),
+          lng: parseFloat(this.props.lng)
         },
         zoom: 11,
       };
@@ -78,7 +78,7 @@ class ListingMap extends React.Component {
         southWest: { lat: south, lng: west },
       };
       console.log('THIS IS THE BOUNDS OBJECT RIGHT HURRR', bounds);
-      this.props.updateFilter('bounds', bounds);
+      this.props.changeFilter('bounds', bounds);
     });
   }
 

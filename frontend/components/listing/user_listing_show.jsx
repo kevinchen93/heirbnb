@@ -58,7 +58,7 @@ class UserListingShow extends React.Component {
           <ul className="user-listing-ul">
             { listings }
           </ul>
-          <ListingMap listings={this.props.userListings()} updateFilter={this.props.updateFilter} lat={this.state.lat} lng={this.state.lng}/>
+          <ListingMap listings={this.props.userListings()} changeFilter={this.props.changeFilter} lat={this.state.lat} lng={this.state.lng}/>
         </div>
       </div>
     )

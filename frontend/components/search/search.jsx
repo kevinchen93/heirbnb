@@ -28,7 +28,7 @@ class Search extends React.Component {
   render(){
     return (
       <div className="splash-page-map" >
-        <ListingMap listings={this.props.listings} updateFilter={this.props.updateFilter} lat={this.state.lat} lng={this.state.lng} />
+        <ListingMap listings={this.props.listings} changeFilter={this.props.changeFilter} lat={this.state.lat} lng={this.state.lng} />
       </div>
     );
   }

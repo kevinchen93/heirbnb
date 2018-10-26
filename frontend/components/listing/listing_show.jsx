@@ -77,7 +77,7 @@ class ListingShow extends React.Component {
             </div>
             <div key={review.id} className="review-content-text review-content-body">{review.body}</div>
           </div>
-          <div className="separator"></div>
+          <div className="separator-24"></div>
         </div>
       )
     });
@@ -101,7 +101,7 @@ class ListingShow extends React.Component {
             <div className="listing-show-description">
               {listing.description}
             </div>
-            <div className="separator"></div>
+            <div className="separator-24"></div>
             <div className="house-rules-header">Amenities</div>
             <div className="amenities-container">
               <ul>
@@ -150,7 +150,7 @@ class ListingShow extends React.Component {
                 </li>
               </ul>
             </div>
-            <div className="separator"></div>
+            <div className="separator-24"></div>
             <div className="house-rules-header">Accessibility</div>
             <div className="amenities-container">
               <ul>
@@ -161,7 +161,7 @@ class ListingShow extends React.Component {
               </ul>
             </div>
             {reviewHeaderContainer}
-            <div className="separator"></div>
+            <div className="separator-24"></div>
             {reviewElements}
           </div>
           <div className="the-neighborhood-header">The neighborhood</div>
@@ -174,7 +174,7 @@ class ListingShow extends React.Component {
           <div className="review-content-text review-content-body">No parties or events</div>
           <div className="review-content-text review-content-body">Check-in time is 4PM-7PM</div>
           <div className="review-content-text review-content-body">Check out by noon</div>
-          <div className="separator"></div>
+          <div className="separator-24"></div>
           <div className="house-rules-header">Cancellations</div>
           <div className="strict-text">Strict</div>
           <div className="review-content-text">Cancel up to 30 days before check-in and get a full refund.</div>

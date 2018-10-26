@@ -2,16 +2,17 @@ import { fetchListings } from './listing_actions';
 
 export const UPDATE_FILTER = "UPDATE_FILTER";
 
-export const changeFilter = (filter, value) => ({
+// Regular action creator
+export const updateFilter = (filter, value) => ({
   type: UPDATE_FILTER,
   filter,
   value
 });
 
-export const updateFilter = (filter, value) => {
-  return (dispatch, getState) => {
-    console.log('GETSTATEEEE', getState);
-    dispatch(changeFilter(filter, value));
-    return fetchListings(getState().ui.filters)(dispatch);
+// Thunk action creator
+export const changeFilter = (filter, value) => {
+  return (dispatch) => {
+    dispatch(updateFilter(filter, value));
+    return dispatch(fetchListings({[filter]: value}));
   };
 };

@@ -58,7 +58,7 @@ label {
   background-position: center;
   background-repeat: no-repeat;
   box-sizing: border-box;
-  height: 900px;
+  height: 100vh;
   z-index: -500;
   margin-top: -82px;
 }
@@ -96,4 +96,23 @@ label {
   text-align: center;
   font-size: 50px;
   color: #ff5a5f;
+}
+
+.separator-12 {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.separator-24 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+
+
+/* TODO: fix line under search bar */
+.pac-container {
+  border-top: none;
 }

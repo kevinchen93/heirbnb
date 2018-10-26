@@ -1,8 +1,5 @@
 class Api::ListingsController < ApplicationController
   def index
-    p 'PARAMSSSSSS'
-    p params
-
     @listings = bounds ? Listing.in_bounds(bounds) : Listing.all
   end
 
@@ -61,9 +58,11 @@ class Api::ListingsController < ApplicationController
   end
 
   def bounds
-    p 'BOUNDSSSSSSS'
-    p params[:bounds]
-    params[:bounds]
+    if !params[:filters]
+      return nil
+    else
+      return params[:filters][:bounds]
+    end
   end
 
 end

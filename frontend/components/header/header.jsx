@@ -38,4 +38,9 @@ class Header extends React.Component {
   }
 }
 
+// have a landing/splash container
+// have a separate other shit container
+// conditionally render either container
+// store a boolean variable in state wrapped within a container
+
 export default Header;

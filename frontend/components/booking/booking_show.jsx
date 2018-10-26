@@ -86,7 +86,7 @@ class BookingShow extends React.Component {
         {userBookingHeaderInfo}
         <div className="current-user-bookings-container">
           <h1 className="listing-h1">Your Current Bookings</h1>
-          <div className="separator"></div>
+          <div className="separator-24"></div>
         </div>
         <ul className="user-booking-ul">
           { bookings }

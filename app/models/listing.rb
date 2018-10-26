@@ -24,9 +24,9 @@ class Listing < ApplicationRecord
   has_many_attached :photos
 
   def self.in_bounds(bounds)
-    self.where("lat < ?", bounds[:northEast][:lat])
-        .where("lat > ?", bounds[:southWest][:lat])
-        .where("lng < ?", bounds[:northEast][:lng])
-        .where("lng > ?", bounds[:southWest][:lng])
+    self.where("lat < ?", bounds[:northEast][:lat].to_f)
+        .where("lat > ?", bounds[:southWest][:lat].to_f)
+        .where("lng < ?", bounds[:northEast][:lng].to_f)
+        .where("lng > ?", bounds[:southWest][:lng].to_f)
   end
 end

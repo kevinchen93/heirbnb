@@ -86,7 +86,7 @@ class BookingForm extends React.Component {
             <button className="booking-submit-button">Book</button>
           </div>
           <div className="you-wont-be-charged-yet">You won't be charged yet</div>
-          <div className="separator"></div>
+          <div className="separator-24"></div>
           <div className="booking-facts">
             <div>
               <div className="mb-5 fs-14 fw-600">

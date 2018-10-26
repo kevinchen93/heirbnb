@@ -29,14 +29,29 @@
   font-weight: 300;
   color: #484848;
   width: 100%;
-  border: 1px solid #e4e4e4;
+  // border: 1px solid #e4e4e4;
   padding: 11px;
+  // margin-bottom: 16px;
+}
+
+.input-container {
+  display: flex;
+  border: 1px solid #e4e4e4;
   margin-bottom: 16px;
+}
+
+.input-container:focus-within {
+  border: 1px solid #008489;
+}
+
+.icon-container {
+  align-self: center;
+  padding-right: 12px;
 }
 
 .modal-child input:focus {
   // border: 1px solid #00b699;
-  border: 1px solid #008489;
+  // border: 1px solid #008489;
 }
 
 .modal-child button {
@@ -83,10 +98,24 @@
 #demo-user-button {
   // background-color: #00b699;
   background-color: #008489;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#demo-user-button:hover {
+  background-color: #005154;
 }
 
 .form-submit-button {
-  margin-top: 43px;
+  margin-top: 15px;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.form-submit-button:hover {
+  background-color: #d13e43;
 }
 
 .modal-nav-link-text {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchListings } from '../../actions/listing_actions';
-import { updateFilter } from '../../actions/filter_actions';
+import { changeFilter } from '../../actions/filter_actions';
 import Search from './search';
 
 const mapStateToProps = state => ({
@@ -12,7 +12,7 @@ const mapDispatchToProps = dispatch => ({
   logout: () => dispatch(logout()),
   openModal: modal => dispatch(openModal(modal)),
   fetchListings: (filters) => dispatch(fetchListings(filters)),
-  updateFilter: (filter, value) => dispatch(updateFilter(filter, value)),
+  changeFilter: (filter, value) => dispatch(changeFilter(filter, value)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
