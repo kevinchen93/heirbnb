@@ -12,7 +12,7 @@ class ListingForm extends React.Component {
 
   update(field) {
     return (e) => {
-      this.setState( {[field]: e.target.value} );
+      this.setState({ [field]: e.target.value });
     };
   }
 
@@ -61,65 +61,68 @@ class ListingForm extends React.Component {
               </textarea>
             </div>
 
-          <div className="user-listing-params-container">
-            <label>Latitude
-              <input
-                type="text"
-                value={this.state.lat}
-                onChange={this.update('lat')} />
-            </label>
+            <div className="user-listing-params-container">
+              <label>Latitude
+                <input
+                  type="text"
+                  value={this.state.lat}
+                  onChange={this.update('lat')} />
+              </label>
 
-            <label>Longitude
-              <input
-                type="text"
-                value={this.state.lng}
-                onChange={this.update('lng')} />
-            </label>
+              <label>Longitude
+                <input
+                  type="text"
+                  value={this.state.lng}
+                  onChange={this.update('lng')} />
+              </label>
 
-            <label>Guests
-              <input
-                type="text"
-                value={this.state.guests}
-                onChange={this.update('guests')} />
-            </label>
+              <label>Guests
+                <input
+                  type="text"
+                  value={this.state.guests}
+                  onChange={this.update('guests')} />
+              </label>
 
-            <label>Beds
-              <input
-                type="text"
-                value={this.state.beds}
-                onChange={this.update('beds')} />
-            </label>
+              <label>Beds
+                <input
+                  type="text"
+                  value={this.state.beds}
+                  onChange={this.update('beds')} />
+              </label>
 
-            <label>Bedrooms
-              <input
-                type="text"
-                value={this.state.bedrooms}
-                onChange={this.update('bedrooms')} />
-            </label>
+              <label>Bedrooms
+                <input
+                  type="text"
+                  value={this.state.bedrooms}
+                  onChange={this.update('bedrooms')} />
+              </label>
 
-            <label>Baths
-              <input
-                type="text"
-                value={this.state.baths}
-                onChange={this.update('baths')} />
-            </label>
+              <label>Baths
+                <input
+                  type="text"
+                  value={this.state.baths}
+                  onChange={this.update('baths')} />
+              </label>
 
-            <label>Price
-              <input
-                type="text"
-                value={this.state.prices}
-                onChange={this.update('prices')} />
-            </label>
+              <label>Price
+                <input
+                  type="text"
+                  value={this.state.prices}
+                  onChange={this.update('prices')} />
+              </label>
 
-            <label className="listing-form-container-label">Image URL
-              <input
-                type="text"
-                value={this.state.img_url}
-                onChange={this.update('img_url')} />
-            </label>
-          </div>
+              <label className="listing-form-container-label">Image URL
+                <input
+                  type="text"
+                  value={this.state.img_url}
+                  onChange={this.update('img_url')} />
+              </label>
+            </div>
 
-            <button className="listing-submit-button">{this.props.formType}</button>
+            <div className="listing-button">
+              <button className="listing-submit-button">{this.props.formType}</button>
+            </div>
+
           </form>
         </div>
       </div>

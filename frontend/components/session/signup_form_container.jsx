@@ -122,7 +122,7 @@ class SignupForm extends React.Component {
               </div>
             </div>
 
-            <div>
+            <div className="session-buttons">
               <button className="form-submit-button">Sign up</button>
               <button type="button" id="demo-user-button" onClick={() => this.logInDemoUser()}>Log in as a demo user</button>
             </div>

@@ -15,9 +15,9 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     errors: state.errors.reviews,
+    currentBooking: currentBooking,
     review,
     formType,
-    currentBooking: currentBooking
   };
 };
 

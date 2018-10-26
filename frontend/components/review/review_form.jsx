@@ -10,12 +10,12 @@ class ReviewForm extends React.Component {
     this.handleRatingChange = this.handleRatingChange.bind(this);
     this.handleCreateSubmit = this.handleCreateSubmit.bind(this);
     this.handleEditSubmit = this.handleEditSubmit.bind(this);
-    this.state = this.props.formType === "Submit Review" ? this.props.review : this.props.review;
+    this.state = this.props.review;
   }
 
   update(field) {
     return (e) => {
-      this.setState({[field]: e.target.value});
+      this.setState({ 'body': e.target.value});
     };
   }
 
@@ -34,8 +34,7 @@ class ReviewForm extends React.Component {
   handleEditSubmit(e) {
     this.props.clearReviewErrors();
     e.preventDefault();
-    const reviewData = merge({}, this.state);
-    this.props.action(reviewData).then(this.props.closeModal);
+    this.props.action(this.state).then(this.props.closeModal);
   }
 
   renderErrors() {
@@ -75,15 +74,16 @@ class ReviewForm extends React.Component {
           </label>
 
           <div>
-            <br />
             <textarea
-              value={this.state.body}
+              value={ this.state.body }
               onChange={this.update('body')}>
             </textarea>
           </div>
 
-          <button className="listing-submit-button">{this.props.formType}</button>
-          <button className="listing-submit-button" onClick={this.props.closeModal}>Cancel</button>
+          <div className="review-buttons">
+            <button className="listing-submit-button">{this.props.formType}</button>
+            <button className="listing-submit-button" onClick={this.props.closeModal}>Cancel</button>
+          </div>
         </form>
       </div>
     )

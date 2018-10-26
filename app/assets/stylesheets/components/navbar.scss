@@ -67,7 +67,7 @@
   transition: width 200ms ease-in 0s;
 }
 
-.icon-container {
+.search-icon-container {
   margin-top: 5px;
   font-size: 19px;
   text-align: center;
@@ -219,4 +219,12 @@
   fill: #ff5a5f;
   height: 34px;
   width: 34px;
+
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.hero-svg:active {
+  transform: scale(0.8);
 }

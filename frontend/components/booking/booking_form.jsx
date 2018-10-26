@@ -42,7 +42,8 @@ class BookingForm extends React.Component {
       <div className="booking-form-container">
         <form onSubmit={this.handleSubmit}>
           <div className="booking-form-price">
-            ${this.props.prices} <span className="booking-form-text">per night</span>
+            <span className="booking-form-price-text">${this.props.prices}</span>
+            <span className="booking-form-text">per night</span>
           <div className="booking-form-text">{this.props.numReviews === 0 ? "No reviews" :
                                               this.props.numReviews === 1 ? "1" :
                                               this.props.numReviews} REVIEWS</div>

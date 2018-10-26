@@ -20,9 +20,9 @@ const mapStateToProps = (state, ownProps) => {
 
   return {
     errors: state.errors.listings,
+    currentUser: state.entities.users[state.session.currentUserId],
     listing,
     formType,
-    currentUser: state.entities.users[state.session.currentUserId],
   };
 };
 

@@ -29,7 +29,7 @@ class BookingShow extends React.Component {
     if (!this.props.userBookings().every( el => Boolean(el)) ) {
       return <div className="loading-text">Loading...</div>;
     }
-    
+
     let userBookingHeaderInfo;
     if (this.props.userBookings().length > 0) {
       userBookingHeaderInfo = (
@@ -46,9 +46,9 @@ class BookingShow extends React.Component {
     }
 
 
-
     const bookings = this.props.userBookings().map( booking => {
       let reviewButton;
+      
       if (Boolean(booking.review)) {
         reviewButton = (
           <button className="booking-submit-button" onClick={ () => this.handleClickEditAReview(booking) }>Edit Review</button>

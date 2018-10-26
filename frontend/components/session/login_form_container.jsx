@@ -93,7 +93,7 @@ class LoginForm extends React.Component {
               </div>
             </div>
 
-            <div>
+            <div className="session-buttons">
               <button className="form-submit-button">Log in</button>
               <button type="button" id="demo-user-button" onClick={() => this.logInDemoUser()}>Log in as demo user</button>
             </div>

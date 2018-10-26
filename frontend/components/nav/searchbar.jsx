@@ -37,7 +37,7 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className="search-bar-container">
-        <div className="icon-container">
+        <div className="search-icon-container">
           <i className="search-icon fa fa-search" aria-hidden="true"></i>
         </div>
 

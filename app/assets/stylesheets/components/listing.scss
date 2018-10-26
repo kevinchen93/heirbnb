@@ -12,7 +12,7 @@
   // flex-wrap: wrap;
   // justify-content: flex-start;
   grid-template-columns: repeat(4, minmax(307px, 1fr));
-  grid-row-gap: 20px;
+  grid-row-gap: 35px;
   display: inline-grid;
   // margin-right: 345px;
 }
@@ -21,7 +21,7 @@
   // flex-wrap: wrap;
   // justify-content: flex-start;
   grid-template-columns: repeat(5, minmax(307px, 1fr));
-  grid-row-gap: 20px;
+  grid-row-gap: 35px;
   display: inline-grid;
   // margin-right: 345px;
 }
@@ -55,6 +55,7 @@
 .listing-item-title {
   max-width: 95%;
   margin-top: 5px;
+  margin-bottom: 5px;
   font-size: 16px;
   font-weight: 600;
   line-height: 22px;
