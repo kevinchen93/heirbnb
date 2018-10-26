@@ -1,9 +1,8 @@
 # Welcome to Heirbnb
 
-[Live!](https://heirbeenbee.herokuapp.com)
+Heirbnb is a single-page web application inspired by Airbnb. Users can view and book listings and also review their stay! <a href="https://heirbeenbee.herokuapp.com" target="_blank">Visit Heirbnb here!</a>
 
 ## Key Features
-Heirbnb is a single-page web application inspired by Airbnb. It allows users to manage listings and also book listings!
 
 [Heirbnb Design Documents](https://github.com/kevinchen93/heirbnb/wiki/)
 
