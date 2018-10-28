@@ -32,13 +32,18 @@
 }
 
 .footer-icon {
-  align-self: center;
-  height: 17px;
-  width: 17px;
-  background-image: image_url(footer_icon);
-  background-position: center;
-  background-repeat: no-repeat;
-  box-sizing: border-box;
-  background-size: 17px 17px;
-  margin-right: 5px;
+  // align-self: center;
+  // height: 17px;
+  // width: 17px;
+  // background-image: image_url(footer_icon);
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // box-sizing: border-box;
+  // background-size: 17px 17px;
+  margin-right: 12px;
+}
+
+.footer-button {
+  font-size: 14px;
+  font-weight: 500;
 }
