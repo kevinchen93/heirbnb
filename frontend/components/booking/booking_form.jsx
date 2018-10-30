@@ -83,8 +83,14 @@ class BookingForm extends React.Component {
           </div>
 
           <div className="booking-form-text">Guests</div>
+            <input
+              className="guest-input"
+              type="number"
+              defaultValue="1"
+              min="1"
+              max={this.props.guestNum}/>
           <div style={{ textAlign: 'center', marginTop: '15px' }}>
-            <button className="booking-submit-button">Book</button>
+            <button className="booking-submit-button">Request to Book</button>
           </div>
           <div className="you-wont-be-charged-yet">You won't be charged yet</div>
           <div className="separator-24"></div>

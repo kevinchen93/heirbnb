@@ -51,6 +51,14 @@
   padding: 7px;
 }
 
+.guest-input {
+  height: 40px;
+  width: 100%;
+  border: 1px solid #e4e4e4;
+  font-size: 14px;
+  padding: 0 7px;
+}
+
 .booking-form-container .check-in:focus {
   color: #007a87;
   background-color: #99ede6;

@@ -85,7 +85,10 @@ class ListingShow extends React.Component {
     return (
       <div>
         <img className="listing-show-image" src={listing.img_url}></img>
-        <CreateBookingFormContainer prices={listing.prices} numReviews={listing.review_ids.length} />
+        <CreateBookingFormContainer
+          prices={listing.prices}
+          numReviews={listing.review_ids.length}
+          guestNum={listing.guests} />
 
         <div className="listing-show-container">
           <span style={{ color: "#734f21", fontSize: "12px", fontWeight: "800" }}>PRIVATE ROOM IN APARTMENT</span>
