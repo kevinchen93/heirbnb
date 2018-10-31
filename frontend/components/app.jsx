@@ -1,5 +1,12 @@
+import 'react-dates/initialize';
+import 'react-dates/lib/css/_datepicker.css';
+
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import {
+  Route,
+  Switch
+} from 'react-router-dom';
+
 import { AuthRoute, ProtectedRoute, ProtectedRenderRoute } from './../util/route_api_util';
 import Modal from './modal/modal';
 import LoginFormContainer from './session/login_form_container';
