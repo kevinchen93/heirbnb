@@ -64,6 +64,7 @@ class LoginForm extends React.Component {
         }
       }, 125);
     };
+
     this.props.clearSessionErrors();
     demoLoginCallback();
   }
@@ -125,7 +126,10 @@ class LoginForm extends React.Component {
 
             <div className="separator-12"></div>
 
-            <p className="modal-nav-link-text">Don't have an account? <Link to={"/"} onClick={() => this.changeModal()}>Sign up</Link></p>
+            <div className="login-modal-bottom-container">
+              <span className="modal-nav-link-text">Don't have an account? </span>
+              <span className="signup-span" onClick={() => this.changeModal()}>Sign up</span>
+            </div>
           </form>
         </div>
       </div>

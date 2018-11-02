@@ -122,9 +122,27 @@
   background-color: #d13e43;
 }
 
+.login-modal-bottom-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .modal-nav-link-text {
+  margin-right: 3px;
   font-weight: 350;
   font-size: 16px;
+}
+
+.signup-span {
+  font-size: 16px;
+  color: #008489;
+  font-weight: 600;
+}
+
+.signup-span:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .modal-nav-link-text a {

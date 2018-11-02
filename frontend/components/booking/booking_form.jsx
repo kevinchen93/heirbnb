@@ -40,7 +40,7 @@ class BookingForm extends React.Component {
       end_date: this.state.end_date._d,
       listing_id: parseInt(this.props.match.params.listingId),
     };
-    
+
     this.props.action(bookingParams).then( () => this.props.history.push('/trips'));
   }
 
@@ -65,8 +65,8 @@ class BookingForm extends React.Component {
             <span className="booking-form-price-text">${this.props.prices}</span>
             <span className="booking-form-text">per night</span>
           <div className="booking-form-text">{this.props.numReviews === 0 ? "No reviews" :
-                                              this.props.numReviews === 1 ? "1" :
-                                              this.props.numReviews} REVIEWS</div>
+                                              this.props.numReviews === 1 ? "1 review" :
+                                              `${this.props.numReviews} reviews`}</div>
           </div>
           <div className="errors-div">
             {this.renderErrors()}
