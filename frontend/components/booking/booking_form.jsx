@@ -1,6 +1,8 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 import { DateRangePicker } from 'react-dates';
+import momentPropTypes from 'react-moment-proptypes';
+import moment from 'moment';
 
 class BookingForm extends React.Component {
   constructor(props) {
@@ -14,6 +16,18 @@ class BookingForm extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.props.clearBookingErrors();
+  }
+
+  isDayBooked(day) {
+    console.log(day);
+    const formattedDay = day.format('YYYY-MM-DD');
+    console.log(formattedDay);
+    const dates = this.props.listing.booked_dates.map(date => moment(date).format('YYYY-MM-DD'));
+    return dates.includes(formattedDay);
+  }
+
   update(field) {
     return (e) => {
       this.setState({[field]: e.target.value});
@@ -21,9 +35,16 @@ class BookingForm extends React.Component {
   }
 
   handleSubmit(e) {
+    debugger
+    const bookingParams = {
+      start_date: this.state.start_date._d,
+      end_date: this.state.end_date._d,
+      listing_id: parseInt(props.match.params.listingId),
+    };
+
     this.props.clearBookingErrors();
     e.preventDefault();
-    this.props.action(this.state).then( () => this.props.history.push('/trips'));
+    this.props.action(bookingParams).then( () => this.props.history.push('/trips'));
   }
 
   renderErrors() {
@@ -53,26 +74,34 @@ class BookingForm extends React.Component {
           <div className="errors-div">
             {this.renderErrors()}
           </div>
-          <div className="booking-form-text">Dates</div>
-          <DateRangePicker
-            startDate={this.state.start_date}
-            startDateId="booking-form-checkin"
-            endDate={this.state.endDate}
-            endDateId="booking-form-checkout"
-            onDatesChange={({ startDate, endDate }) => this.setState({ start_date: startDate, end_date: endDate })}
-            focusedInput={this.state.focusedInput}
-            onFocusChange={focusedInput => this.setState({ focusedInput })}
-            startDatePlaceholderText="Check In"
-            endDatePlaceholderText="Check Out"
-          />
+          <div className="dates-container">
+            <div className="booking-form-text">Dates</div>
+            <DateRangePicker
+              startDatePlaceholderText="Check In"
+              endDatePlaceholderText="Check Out"
+              startDateId="booking-form-startDate"
+              endDateId="booking-form-endDate"
+              startDate={this.state.start_date}
+              endDate={this.state.end_date}
+              onDatesChange={({ startDate, endDate }) => this.setState({ start_date: startDate, end_date: endDate })}
+              focusedInput={this.state.focusedInput}
+              onFocusChange={focusedInput => this.setState({ focusedInput })}
+              isDayBlocked={day => this.isDayBooked(day)}
+              showClearDates={true}
+              reopenPickerOnClearDates={true}
+              regular={true}
+              />
+          </div>
 
-          <div className="booking-form-text">Guests</div>
+          <div className="guests-container">
+            <div className="booking-form-text">Guests</div>
             <input
               className="guest-input"
               type="number"
               defaultValue="1"
               min="1"
               max={this.props.guestNum}/>
+          </div>
           <div style={{ textAlign: 'center', marginTop: '15px' }}>
             <button className="booking-submit-button">Request to Book</button>
           </div>

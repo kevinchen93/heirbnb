@@ -13,11 +13,12 @@ export const receiveListings = listings => ({
   listings,
 });
 
-export const receiveListing = ( { listing, reviews, users } ) => ({
+export const receiveListing = ( { listing, reviews, users, booked_dates } ) => ({
   type: RECEIVE_LISTING,
   listing,
   reviews,
-  users
+  users,
+  booked_dates
 });
 
 export const receiveNewListing = ( { listing, reviews, users } ) => {
@@ -52,7 +53,7 @@ export const clearListingErrors = errors => {
 // Thunk Actions
 export const fetchListings = (filters) => {
   return dispatch => {
-    console.log('THIS IS THE FILTERS FROM THE THUNK ACTIONNNNN', filters);
+    console.log('THIS IS THE FILTER FROM THE THUNK ACTIONNNNN', filters);
     return ListingAPIUtil.fetchListings(filters).then(payload => {
       return dispatch(receiveListings(payload));
     });

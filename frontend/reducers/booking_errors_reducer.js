@@ -6,7 +6,7 @@ const bookingErrorsReducer = ( state = [], action ) => {
     case RECEIVE_BOOKING_ERRORS:
       return action.errors;
     case CLEAR_BOOKING_ERRORS:
-      return ['Booked!'];
+      return [];
     default:
       return state;
   }

@@ -23,6 +23,23 @@ class Listing < ApplicationRecord
 
   has_many_attached :photos
 
+# helper method
+  def booked_dates
+    result = []
+
+    self.bookings.each do |booking|
+      start = booking.start_date
+      stop = booking.end_date
+
+      while start < stop
+        result << start
+        start += 1
+      end
+    end
+
+    result
+  end
+
   def self.in_bounds(bounds)
     self.where("lat < ?", bounds[:northEast][:lat].to_f)
         .where("lat > ?", bounds[:southWest][:lat].to_f)

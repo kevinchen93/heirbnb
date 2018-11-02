@@ -86,6 +86,7 @@ class ListingShow extends React.Component {
       <div>
         <img className="listing-show-image" src={listing.img_url}></img>
         <CreateBookingFormContainer
+          listing={listing}
           prices={listing.prices}
           numReviews={listing.review_ids.length}
           guestNum={listing.guests} />

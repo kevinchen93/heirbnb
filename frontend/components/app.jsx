@@ -7,6 +7,7 @@ import {
   Switch
 } from 'react-router-dom';
 
+import '../../app/assets/stylesheets/components/react_dates_overrides.css';
 import { AuthRoute, ProtectedRoute, ProtectedRenderRoute } from './../util/route_api_util';
 import Modal from './modal/modal';
 import LoginFormContainer from './session/login_form_container';
