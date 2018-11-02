@@ -16,6 +16,14 @@
   margin-top: 16px;
   margin-bottom: 40px;
   margin-right: 17px;
+
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.user-listing-detail-submit-button:hover {
+  background-color: #d13e43;
 }
 
 .user-edit-delete-buttons-container {

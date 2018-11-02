@@ -40,6 +40,7 @@ class BookingForm extends React.Component {
       end_date: this.state.end_date._d,
       listing_id: parseInt(this.props.match.params.listingId),
     };
+    
     this.props.action(bookingParams).then( () => this.props.history.push('/trips'));
   }
 

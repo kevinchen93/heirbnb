@@ -36,14 +36,6 @@ class SignupForm extends React.Component {
     this.props.otherForm();
   }
 
-  logInDemoUser() {
-    const demoUser = {
-      email: 'demo@demo',
-      password: 'hunter12',
-    };
-    this.props.login(demoUser).then(this.props.closeModal);
-  }
-
   renderErrors() {
     return (
       <ul>
@@ -124,7 +116,6 @@ class SignupForm extends React.Component {
 
             <div className="session-buttons">
               <button className="form-submit-button">Sign up</button>
-              <button type="button" id="demo-user-button" onClick={() => this.logInDemoUser()}>Log in as a demo user</button>
             </div>
 
             <div className="separator-12"></div>
