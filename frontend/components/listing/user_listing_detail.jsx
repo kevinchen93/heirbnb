@@ -86,7 +86,12 @@ class UserListingDetail extends React.Component {
           <button className="user-listing-detail-submit-button" onClick={ () => this.props.deleteListing(this.props.listing).then( () => this.props.history.push('/profile/listings')) }>Delete</button>
         </div>
 
-        <CreateBookingFormContainer prices={listing.prices} numReviews={listing.review_ids.length}/>
+        <CreateBookingFormContainer
+          listing={listing}
+          prices={listing.prices}
+          numReviews={listing.review_ids.length}
+          guestNum={listing.guests}
+        />
 
         <div className="listing-show-container">
           <span style={{ color: "#734f21", fontSize: "12px", fontWeight: "800" }}>PRIVATE ROOM IN APARTMENT</span>

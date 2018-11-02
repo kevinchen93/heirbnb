@@ -23,18 +23,18 @@ class Booking < ApplicationRecord
     class_name: "Review"
 
 # checks if any day from that listing's current booking is already booked
-def ensure_no_conflicts
-  date = self.start_date
+  def ensure_no_conflicts
+    date = self.start_date
 
-  while(date <= self.end_date)
-    if self.listing.booked_dates.include?(date)
-      errors[:Request] << 'conflicts with existing bookings'
-      return
+    while(date <= self.end_date)
+      if self.listing.booked_dates.include?(date)
+        errors[:Request] << 'conflicts with existing bookings'
+        return
+      end
+
+      date += 1
     end
 
-    date += 1
   end
-
-end
 
 end
