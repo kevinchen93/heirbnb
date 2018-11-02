@@ -1,8 +1,9 @@
 .DateInput {
-  padding: 0 8px;
+  padding: 8px;
 }
 
-.DateInput__input {
+.DateInput_input {
+  padding: 0 8px;
   font-size: 17px;
 }
 
@@ -12,17 +13,6 @@
   padding: 0px 6px !important;
   overflow: hidden !important;
   background: rgb(153, 237, 230) !important;
-  background-image: initial !important;
-  background-position-x: initial !important;
-  background-position-y: initial !important;
-  background-size: initial !important;
-  background-repeat-x: initial !important;
-  background-repeat-y: initial !important;
-  background-attachment: initial !important;
-  background-origin: initial !important;
-  background-clip: initial !important;
-  background-color: rgb(153, 237, 230) !important;
   border-color: rgb(153, 237, 230) !important;
   border-radius: 3px !important;
-  border-bottom: none !important;
 }

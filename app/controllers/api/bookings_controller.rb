@@ -7,22 +7,13 @@ class Api::BookingsController < ApplicationController
   end
 
   def create
-    # 1) I can make multiple bookings with the same start and end dates
-    # 2) I can make bookings that overlap
-    #
-    # 1) find a way to check if the pending booking already exists in the booking table
-    # 2) find a way to check if the pending booking has a start date that falls within
-    #    any current booking time period or an end date that falls within any booking time period
-
-    if valid_booking?(booking_params)
-      @booking = Booking.new(booking_params)
-      @booking.guest_id = current_user.id
-      @booking.save
-
-      render json: @booking
+    @booking = Booking.new(booking_params)
+    @booking.guest_id = current_user.id
+    
+    if @booking.save
+      render :show
     else
-      # render json: @booking.errors.full_messages, status: 422
-      render json: ['Invalid booking'], status: 422
+      render json: @booking.errors.full_messages, status: 422
     end
 
   end

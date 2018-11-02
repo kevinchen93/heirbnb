@@ -7,25 +7,23 @@ import moment from 'moment';
 class BookingForm extends React.Component {
   constructor(props) {
     super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       start_date: null,
       end_date: null,
       focusedInput: null,
-      listing_id: parseInt(props.match.params.listingId)
     };
+
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
     this.props.clearBookingErrors();
   }
 
-  isDayBooked(day) {
-    console.log(day);
-    const formattedDay = day.format('YYYY-MM-DD');
-    console.log(formattedDay);
+  isAlreadyBooked(date) {
+    const formattedDate = date.format('YYYY-MM-DD');
     const dates = this.props.listing.booked_dates.map(date => moment(date).format('YYYY-MM-DD'));
-    return dates.includes(formattedDay);
+    return dates.includes(formattedDate);
   }
 
   update(field) {
@@ -35,15 +33,13 @@ class BookingForm extends React.Component {
   }
 
   handleSubmit(e) {
-    debugger
+    e.preventDefault();
+
     const bookingParams = {
       start_date: this.state.start_date._d,
       end_date: this.state.end_date._d,
-      listing_id: parseInt(props.match.params.listingId),
+      listing_id: parseInt(this.props.match.params.listingId),
     };
-
-    this.props.clearBookingErrors();
-    e.preventDefault();
     this.props.action(bookingParams).then( () => this.props.history.push('/trips'));
   }
 
@@ -86,9 +82,8 @@ class BookingForm extends React.Component {
               onDatesChange={({ startDate, endDate }) => this.setState({ start_date: startDate, end_date: endDate })}
               focusedInput={this.state.focusedInput}
               onFocusChange={focusedInput => this.setState({ focusedInput })}
-              isDayBlocked={day => this.isDayBooked(day)}
+              isDayBlocked={date => this.isAlreadyBooked(date)}
               showClearDates={true}
-              reopenPickerOnClearDates={true}
               regular={true}
               />
           </div>
