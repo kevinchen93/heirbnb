@@ -11,7 +11,7 @@ class Api::ReviewsController < ApplicationController
     @review.reviewer_id = current_user.id
     p @review
     if @review.save
-      render 'api/reviews/show'
+      render :show
     else
       render json: @review.errors.full_messages, status: 422
     end
@@ -21,7 +21,7 @@ class Api::ReviewsController < ApplicationController
     @review = Review.find_by(id: params[:id])
 
     if @review
-      render 'api/reviews/show'
+      render :show
     else
       render json:['Review could not be found'], status: 404
     end

@@ -13,14 +13,18 @@ class ReviewForm extends React.Component {
     this.state = this.props.review;
   }
 
+  // componentWillUnmount() {
+  //
+  // }
+
   update(field) {
     return (e) => {
-      this.setState({ 'body': e.target.value});
+      this.setState({ body: e.target.value });
     };
   }
 
   handleRatingChange(newRating) {
-    this.setState({ 'rating': newRating });
+    this.setState({ rating: newRating });
   }
 
   handleCreateSubmit(e) {
@@ -32,6 +36,7 @@ class ReviewForm extends React.Component {
   }
 
   handleEditSubmit(e) {
+    debugger
     this.props.clearReviewErrors();
     e.preventDefault();
     this.props.action(this.state).then(this.props.closeModal);
@@ -69,7 +74,7 @@ class ReviewForm extends React.Component {
               size={20}
               edit={true}
               color2={'#008489'}
-              onChange={this.handleRatingChange} />
+              onChange={ this.handleRatingChange } />
             <br />
           </label>
 

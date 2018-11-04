@@ -10,6 +10,7 @@ const reviewsReducer = (state = {}, action) => {
     case RECEIVE_REVIEWS:
       return action.reviews || {};
     case RECEIVE_REVIEW:
+    debugger
       return merge({}, state, { [action.review.id]: action.review });
     case REMOVE_REVIEW:
       let newState = merge({}, state);

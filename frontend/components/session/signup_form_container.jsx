@@ -120,10 +120,11 @@ class SignupForm extends React.Component {
 
             <div className="separator-12"></div>
 
-              <div className="login-modal-bottom-container">
-                <span className="modal-nav-link-text">Already have an Heirbnb account?</span>
-                <span className="signup-span" onClick={() => this.changeModal()}>Log in</span>
-              </div>
+            <div className="login-modal-bottom-container">
+              <span className="modal-nav-link-text">Already have an Heirbnb account?</span>
+              <span className="signup-span" onClick={() => this.changeModal()}>Log in</span>
+            </div>
+            
           </form>
         </div>
       </div>

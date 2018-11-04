@@ -12,7 +12,7 @@ const mapStateToProps = (state, ownProps) => {
 
   const formType = 'Submit Review';
   const currentBooking = state.ui.modal.currentBooking;
-
+  debugger
   return {
     errors: state.errors.reviews,
     currentBooking: currentBooking,
