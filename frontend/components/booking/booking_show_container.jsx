@@ -13,12 +13,12 @@ const mapStateToProps = (state, ownProps) => {
   };
 };
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchBookings: () => dispatch(fetchBookings()),
   fetchBooking: id => dispatch(fetchBooking(id)),
   deleteBooking: id => dispatch(deleteBooking(id)),
   openCreateModal: () => dispatch(openModal('create review')),
-  openEditModal: () => dispatch(openModal('edit review')),
+  openEditModal: () => dispatch(openModal('edit review', ownProps)),
   createReview: (review) => dispatch(createReview(review)),
   updateReview: (review) => dispatch(updateReview(review)),
   setCurrentBooking: (booking) => dispatch(setCurrentBooking(booking)),

@@ -14,7 +14,8 @@ const mapStateToProps = (state, ownProps) => {
     body: currentBooking.review.body,
     rating: currentBooking.review.rating
   };
-  debugger
+
+
   return {
     errors: state.errors.reviews,
     currentBooking: currentBooking,

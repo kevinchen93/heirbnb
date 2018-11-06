@@ -13,9 +13,9 @@ class ReviewForm extends React.Component {
     this.state = this.props.review;
   }
 
-  // componentWillUnmount() {
-  //
-  // }
+  componentDidMount() {
+    debugger
+  }
 
   update(field) {
     return (e) => {

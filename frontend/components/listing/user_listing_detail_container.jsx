@@ -16,6 +16,7 @@ const mapStateToProps = (state, ownProps) => {
 // /profile/listings/:listingId/edit would be edit_listing_detail_form
 
 const mapDispatchToProps = (dispatch, ownProps) => {
+  debugger
   return {
     fetchListing: id => dispatch(fetchListing(id)),
     updateListing: listing => dispatch(updateListing(listing)),

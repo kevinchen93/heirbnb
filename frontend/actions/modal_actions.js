@@ -21,4 +21,4 @@ export const setCurrentBooking = (booking) => {
     type: SET_CURRENT_BOOKING,
     booking,
   };
-}
+};
