@@ -6,20 +6,19 @@ import { fetchReview, updateReview, clearReviewErrors } from '../../actions/revi
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  const currentBooking = state.ui.modal.currentBooking;
+  const currentReview = state.ui.modal.currentReview;
   debugger
   const review = {
-    id: currentBooking.review.id,
-    booking_id: currentBooking.id,
-    body: currentBooking.review.body,
-    rating: currentBooking.review.rating
+    id: currentReview.id,
+    booking_id: currentReview.booking_id,
+    body: currentReview.body,
+    rating: currentReview.rating
   };
 
   debugger
   return {
     formType: 'Update Review',
-    currentBooking: currentBooking,
-    review: state.entities.reviews[state.ui.modal.currentReview.id],
+    review: review,
     errors: state.errors.reviews,
    };
 };

@@ -39,7 +39,7 @@ function Modal({modal, closeModal}) {
       component = <CreateReviewFormContainer />;
       break;
     case 'edit review':
-      component = <EditReviewFormContainer />;
+      component = <EditReviewFormContainer customProps={modal.currentReview}/>;
       break;
     default:
       return null;

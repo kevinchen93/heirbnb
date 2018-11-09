@@ -5,8 +5,6 @@ import { fetchListings } from '../../actions/listing_actions';
 import { changeFilter } from '../../actions/filter_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state.entities.listings);
-  console.log(userListings(state));
   return {
     userId: ownProps.match.params.userId,
     user: state.entities.users[ownProps.match.params.userId],

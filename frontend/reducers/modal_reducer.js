@@ -12,6 +12,11 @@ export default function modalReducer(state = null, action) {
           type: action.modal,
           props: action.ownProps,
           currentBooking: state.currentBooking,
+        };
+      } else if (state !== null && state.currentReview) {
+        return {
+          type: action.modal,
+          props: action.ownProps,
           currentReview: state.currentReview,
         };
       } else {

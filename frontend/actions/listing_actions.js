@@ -53,7 +53,6 @@ export const clearListingErrors = errors => {
 // Thunk Actions
 export const fetchListings = (filters) => {
   return dispatch => {
-    console.log('THIS IS THE FILTER FROM THE THUNK ACTIONNNNN', filters);
     return ListingAPIUtil.fetchListings(filters).then(payload => {
       return dispatch(receiveListings(payload));
     });
