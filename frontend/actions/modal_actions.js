@@ -1,6 +1,7 @@
 export const OPEN_MODAL = 'OPEN_MODAL';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
 export const SET_CURRENT_BOOKING = 'SET_CURRENT_BOOKING';
+export const SET_CURRENT_REVIEW = 'SET_CURRENT_REVIEW';
 
 export const openModal = (modal, ownProps) => {
   return {
@@ -20,5 +21,12 @@ export const setCurrentBooking = (booking) => {
   return {
     type: SET_CURRENT_BOOKING,
     booking,
+  };
+};
+
+export const setCurrentReview = (review) => {
+  return {
+    type: SET_CURRENT_REVIEW,
+    review,
   };
 };

@@ -15,13 +15,15 @@ class BookingShow extends React.Component {
     this.props.userBookings();
   }
 
-  handleClickLeaveAReview(booking) {
+  handleClickLeaveAReview(booking, review) {
     this.props.setCurrentBooking(booking);
+    this.props.setCurrentReview(review);
     this.props.openCreateModal();
   }
 
-  handleClickEditAReview(booking) {
+  handleClickEditAReview(booking, review) {
     this.props.setCurrentBooking(booking);
+    this.props.setCurrentReview(review);
     this.props.openEditModal();
   }
 
@@ -51,11 +53,11 @@ class BookingShow extends React.Component {
 
       if (Boolean(booking.review)) {
         reviewButton = (
-          <button className="booking-submit-button" onClick={ () => this.handleClickEditAReview(booking) }>Edit Review</button>
+          <button className="booking-submit-button" onClick={ () => this.handleClickEditAReview(booking, booking.review) }>Edit Review</button>
         )
       } else {
         reviewButton = (
-          <button className="booking-submit-button" onClick={ () => this.handleClickLeaveAReview(booking) }>Leave a Review</button>
+          <button className="booking-submit-button" onClick={ () => this.handleClickLeaveAReview(booking, booking.review) }>Leave a Review</button>
         )
       }
 

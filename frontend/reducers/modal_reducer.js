@@ -1,4 +1,8 @@
-import { OPEN_MODAL, CLOSE_MODAL, SET_CURRENT_BOOKING } from '../actions/modal_actions';
+import { OPEN_MODAL,
+         CLOSE_MODAL,
+         SET_CURRENT_BOOKING,
+         SET_CURRENT_REVIEW
+       } from '../actions/modal_actions';
 
 export default function modalReducer(state = null, action) {
   switch (action.type) {
@@ -8,6 +12,7 @@ export default function modalReducer(state = null, action) {
           type: action.modal,
           props: action.ownProps,
           currentBooking: state.currentBooking,
+          currentReview: state.currentReview,
         };
       } else {
         return {
@@ -15,12 +20,17 @@ export default function modalReducer(state = null, action) {
           props: action.ownProps,
         };
       }
-    case CLOSE_MODAL:
-      return null;
+      break;
     case SET_CURRENT_BOOKING:
       return {
         currentBooking: action.booking
       };
+    case SET_CURRENT_REVIEW:
+      return {
+        currentReview: action.review
+      };
+    case CLOSE_MODAL:
+      return null;
     default:
       return state;
   }

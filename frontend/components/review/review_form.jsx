@@ -13,10 +13,6 @@ class ReviewForm extends React.Component {
     this.state = this.props.review;
   }
 
-  componentDidMount() {
-    debugger
-  }
-
   update(field) {
     return (e) => {
       this.setState({ body: e.target.value });
@@ -36,9 +32,9 @@ class ReviewForm extends React.Component {
   }
 
   handleEditSubmit(e) {
-    debugger
     this.props.clearReviewErrors();
     e.preventDefault();
+    debugger
     this.props.action(this.state).then(this.props.closeModal);
   }
 

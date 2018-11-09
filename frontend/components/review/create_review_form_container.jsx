@@ -5,27 +5,26 @@ import { createReview, clearReviewErrors } from '../../actions/review_actions';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
+  const currentBooking = state.ui.modal.currentBooking;
   const review = {
     body: '',
     rating: 0
   };
 
-  const formType = 'Submit Review';
-  const currentBooking = state.ui.modal.currentBooking;
   debugger
   return {
-    errors: state.errors.reviews,
+    formType: 'Submit Review',
     currentBooking: currentBooking,
-    review,
-    formType,
+    review: review,
+    errors: state.errors.reviews,
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     action: review => dispatch(createReview(review)),
-    closeModal: () => dispatch(closeModal()),
     clearReviewErrors: () => dispatch(clearReviewErrors()),
+    closeModal: () => dispatch(closeModal()),
   };
 };
 

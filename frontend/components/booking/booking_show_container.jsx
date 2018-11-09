@@ -3,7 +3,7 @@ import BookingShow from './booking_show';
 import { fetchBookings, fetchBooking, deleteBooking } from '../../actions/booking_actions';
 import { createReview, updateReview } from '../../actions/review_actions';
 import { userBookings } from '../../reducers/selectors';
-import { openModal, closeModal, setCurrentBooking } from '../../actions/modal_actions';
+import { openModal, closeModal, setCurrentBooking, setCurrentReview } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -18,10 +18,11 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   fetchBooking: id => dispatch(fetchBooking(id)),
   deleteBooking: id => dispatch(deleteBooking(id)),
   openCreateModal: () => dispatch(openModal('create review')),
-  openEditModal: () => dispatch(openModal('edit review', ownProps)),
+  openEditModal: () => dispatch(openModal('edit review')),
   createReview: (review) => dispatch(createReview(review)),
   updateReview: (review) => dispatch(updateReview(review)),
   setCurrentBooking: (booking) => dispatch(setCurrentBooking(booking)),
+  setCurrentReview: (review) => dispatch(setCurrentReview(review)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookingShow);
