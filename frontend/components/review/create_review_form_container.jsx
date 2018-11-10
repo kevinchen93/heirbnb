@@ -6,16 +6,11 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
   const currentBooking = state.ui.modal.currentBooking;
-  const review = {
-    body: '',
-    rating: 0
-  };
 
-  debugger
   return {
     formType: 'Submit Review',
     currentBooking: currentBooking,
-    review: review,
+    review: currentBooking.review,
     errors: state.errors.reviews,
   };
 };

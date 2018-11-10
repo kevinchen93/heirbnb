@@ -23,10 +23,3 @@ export const setCurrentBooking = (booking) => {
     booking,
   };
 };
-
-export const setCurrentReview = (review) => {
-  return {
-    type: SET_CURRENT_REVIEW,
-    review,
-  };
-};

@@ -22,7 +22,6 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   createReview: (review) => dispatch(createReview(review)),
   updateReview: (review) => dispatch(updateReview(review)),
   setCurrentBooking: (booking) => dispatch(setCurrentBooking(booking)),
-  setCurrentReview: (review) => dispatch(setCurrentReview(review)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(BookingShow);

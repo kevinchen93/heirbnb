@@ -10,7 +10,7 @@ class ReviewForm extends React.Component {
     this.handleRatingChange = this.handleRatingChange.bind(this);
     this.handleCreateSubmit = this.handleCreateSubmit.bind(this);
     this.handleEditSubmit = this.handleEditSubmit.bind(this);
-    this.state = this.props.review;
+    this.state = this.props.review || {};
   }
 
   update(field) {
@@ -34,7 +34,6 @@ class ReviewForm extends React.Component {
   handleEditSubmit(e) {
     this.props.clearReviewErrors();
     e.preventDefault();
-    debugger
     this.props.action(this.state).then(this.props.closeModal);
   }
 

@@ -65,7 +65,6 @@ export const createReview = review => dispatch => (
 export const updateReview = review => {
   return dispatch => {
     return ReviewAPIUtil.updateReview(review).then(review => {
-      debugger
       return dispatch(receiveReview(review));
     });
   };
