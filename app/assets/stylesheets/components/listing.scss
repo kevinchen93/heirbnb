@@ -88,12 +88,21 @@
 }
 
 .listing-show-container {
-  margin-top: 14px;
-  padding-right: 24px;
-  padding-left: 300px;
-  // margin-left: auto;
-  // margin-right: auto;
-  width: 35%;
+  width: 90%;
+  margin: auto;
+  margin-top: 40px;
+  margin-left: 250px;
+  display: flex;
+  font-size: 13px;
+}
+
+.listing-show-left,
+.listing-show-right {
+  width: 100%;
+}
+
+.listing-show-right {
+  position: relative;
 }
 
 .listing-show-title {
