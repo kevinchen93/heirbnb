@@ -1,5 +1,5 @@
 class Api::BookingsController < ApplicationController
-  before_action :require_logged_in, except: [:index]
+  before_action :require_logged_in
 
   def index
     @bookings = Booking.includes(:listing, :review)
@@ -9,7 +9,7 @@ class Api::BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.guest_id = current_user.id
-    
+
     if @booking.save
       render :show
     else
@@ -18,23 +18,8 @@ class Api::BookingsController < ApplicationController
 
   end
 
-  # airbnb.com has no update booking functionality
-
-  # def update
-  #   @booking = current_user.bookings.find_by(id: params[:id])
-  #
-  #   if own_booking?
-  #     @booking.update(booking_params)
-  #     render 'api/bookings'
-  #   else
-  #     render json: @booking.errors.full_messages, status: 422
-  #   end
-  # end
-
   def destroy
     @booking = Booking.find_by(id: params[:id])
-    p params
-    p @booking
     own_booking = !!(current_user.id == @booking.guest_id)
 
     if own_booking

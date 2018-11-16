@@ -2,12 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import CreateReviewFormContainer from '../review/create_review_form_container';
 import EditReviewFormContainer from '../review/edit_review_form_container';
+import LoadingDots from '../loading_dots';
 
 class BookingShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      loading: false
+    };
+
     this.handleClickLeaveAReview = this.handleClickLeaveAReview.bind(this);
     this.handleClickEditAReview = this.handleClickEditAReview.bind(this);
+    this.handleClickDeleteBooking = this.handleClickDeleteBooking.bind(this);
   }
 
   componentDidMount() {
@@ -25,9 +31,15 @@ class BookingShow extends React.Component {
     this.props.openEditModal();
   }
 
+  handleClickDeleteBooking(booking) {
+    setTimeout(() => this.props.deleteBooking(booking), 1000);
+    setTimeout(() => this.setState({loading: false}), 1500)
+    this.setState({loading: true});
+}
+
   render() {
     if (!this.props.userBookings().every( el => Boolean(el)) ) {
-      return <div className="loading-text">Loading...</div>;
+      return <LoadingDots state={this.state} />;
     }
 
     let userBookingHeaderInfo;
@@ -75,7 +87,7 @@ class BookingShow extends React.Component {
               </div>
               <div className="booking-buttons-container">
                 {reviewButton}
-                <button className="booking-submit-button" onClick={ () => this.props.deleteBooking(booking) }>Cancel</button>
+                <button className="booking-submit-button" onClick={ () => this.handleClickDeleteBooking(booking) }>Cancel</button>
               </div>
             </div>
           </li>

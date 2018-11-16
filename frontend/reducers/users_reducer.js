@@ -31,10 +31,6 @@ const usersReducer = ( state = {}, action ) => {
       return merge({}, state, { [action.booking.guest_id]: newCurrentUser });
     case REMOVE_BOOKING:
       newState = merge({}, state);
-      // have users reducer listen for all create/receive bookings and keep its internal bookings
-      // since only the current user can create/destroy bookings
-      // essentially your bookings slice of state will be inside users reducer
-      // bookings should be a dictionary
 
       newState[action.guestId].booking_ids = newState[action.guestId].booking_ids.filter( id => id !== action.bookingId);
       newState[action.guestId].bookings = newState[action.guestId].bookings.filter( id => id !== action.bookingId);
