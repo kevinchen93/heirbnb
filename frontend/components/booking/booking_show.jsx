@@ -38,7 +38,7 @@ class BookingShow extends React.Component {
 }
 
   render() {
-    if (!this.props.userBookings().every( el => Boolean(el)) ) {
+    if (!this.props.userBookings().every( el => Boolean(el)) || this.state.loading ) {
       return <LoadingDots state={this.state} />;
     }
 

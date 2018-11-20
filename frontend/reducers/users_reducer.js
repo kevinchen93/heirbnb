@@ -31,7 +31,6 @@ const usersReducer = ( state = {}, action ) => {
       return merge({}, state, { [action.booking.guest_id]: newCurrentUser });
     case REMOVE_BOOKING:
       newState = merge({}, state);
-
       newState[action.guestId].booking_ids = newState[action.guestId].booking_ids.filter( id => id !== action.bookingId);
       newState[action.guestId].bookings = newState[action.guestId].bookings.filter( id => id !== action.bookingId);
       return newState;

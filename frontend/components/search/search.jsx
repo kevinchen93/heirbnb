@@ -14,10 +14,6 @@ class Search extends React.Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.props.fetchListings();
-  // }
-
   handleChange(e) {
     e.preventDefault();
     this.setState({
