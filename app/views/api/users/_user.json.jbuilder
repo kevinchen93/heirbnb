@@ -3,3 +3,7 @@ json.extract! user, :id, :email, :first_name, :last_name, :img_url, :booking_ids
 json.listings user.listings.pluck(:id)
 json.bookings user.bookings.pluck(:id)
 json.reviews user.reviews.pluck(:id)
+
+if user.profile_photo.attached?
+  json.photoUrl url_for(user.profile_photo)
+end

@@ -6,15 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# TODO:
-# have demo user host a few listings
-
 User.destroy_all
 Listing.destroy_all
 Booking.destroy_all
 Review.destroy_all
 Photo.destroy_all
 
+#users
 users = User.create!([
   { first_name: 'Oliver', last_name: 'Ball', email: 'oliver@oliver', password: 'password1', img_url: '' },
   { first_name: 'Jack', last_name: 'Jack', email: 'jack@jack', password: 'password2', img_url: '' },
@@ -23,6 +21,9 @@ users = User.create!([
   { first_name: 'Evan', last_name: 'Walsh', email: 'evan@evan', password: 'password5', img_url: '' },
   { first_name: 'Demo', last_name: 'User', email: 'demo@demo', password: 'hunter12', img_url: '' }
 ]);
+
+user_photo_demo = EzDownload.open('https://s3-us-west-1.amazonaws.com/airquq-prod/user_demo.png')
+users[5].profile_photo.attach(io: user_photo_demo, filename: 'demo.png')
 
 listings = Listing.create!([
   { host_id: users[0].id, lat: 40.7827643, lng: -73.968273, title: 'Central Park View with Private Bath', description: 'Enjoy Central Park views from your bedroom window! This is the ideal room for those who like easy access to the high energy city by day, but prefer to come home to a peaceful, tree-lined neighborhood to get a good night of rest. Please read the whole profile, most of your questions will be answered below! :)', guests: 4, bedrooms: 1, beds: 1, baths: 2, prices: 199, img_url: 'https://a0.muscache.com/im/pictures/fb9a3c6f-a826-451a-ba42-23151380a41b.jpg?aki_policy=xx_large' },

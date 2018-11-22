@@ -8,7 +8,7 @@ class Api::UsersController < ApplicationController
     @listings = @user.listings
     @bookings = @user.bookings
     @reviews = @user.reviews
-    
+
     if @user
       render 'api/users/show'
     else
@@ -29,7 +29,7 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :first_name, :last_name, :password)
+    params.require(:user).permit(:email, :first_name, :last_name, :password, :profile_photo)
   end
 
 end
