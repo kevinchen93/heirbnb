@@ -7,7 +7,7 @@ class SearchBar extends React.Component {
     this.state = {
       address: ""
     };
-    
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
   }
@@ -40,7 +40,7 @@ class SearchBar extends React.Component {
 
         this.props.history.push(`/search?lat=${lat}&lng=${lng}`);
       } else {
-        this.props.history.push(`/search?lat=37.7749&lng=-122.4194`);
+        this.props.history.push(`/search?lat=340.7306&lng=-73.9352`);
       }
     });
 
@@ -54,12 +54,12 @@ class SearchBar extends React.Component {
   }
 
   render() {
-    const cities = ['Los Angeles', 'San Francisco', 'New York', 'Seattle'];
+    const cities = ['New York', 'Chicago', 'Los Angeles', 'San Francisco'];
     const randomCity = cities[Math.floor(Math.random() * cities.length)];
 
     return (
       <div className="landing-search">
-        <p id="welcome-message">Book Unique homes around the world.</p>
+        <p className="welcome-message">Book unique homes around the world.</p>
 
         <form onSubmit={this.handleSubmit}>
           <i className="fas fa-search"></i>
@@ -69,7 +69,7 @@ class SearchBar extends React.Component {
             value={this.state.address} placeholder={`Try "${randomCity}"`}
           />
 
-        <p id="landing-nav-bar-button" onClick={this.handleSubmit}>Search</p>
+        <p className="landing-nav-bar-button" onClick={this.handleSubmit}>Search</p>
         </form>
       </div>
     )

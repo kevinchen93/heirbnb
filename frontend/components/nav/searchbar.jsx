@@ -20,6 +20,7 @@ class SearchBar extends React.Component {
       lat: 40.715494,
       lng: -74.002209,
     };
+    
     this.handleChange = this.handleChange.bind(this);
   }
 

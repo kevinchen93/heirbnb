@@ -36,7 +36,7 @@ const Navbar = ({ currentUser, openModal, logout }) => {
       <div className="landing-nav-left">
 
         <Link to="/listings">
-          <div>
+          <div className='splash-logo-container'>
             <a href="#">
               <svg className="hero-svg" viewBox="0 0 1000 1000" role="presentation" aria-hidden="true" focusable="false">
                 <path
