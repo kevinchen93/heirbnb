@@ -1,6 +1,8 @@
 import * as ListingAPIUtil from '../util/listing_api_util';
 
 export const RECEIVE_LISTINGS = 'RECEIVE_LISTINGS';
+export const RECEIVE_SPLASH_LISTINGS = 'RECEIVE_SPLASH_LISTINGS';
+
 export const RECEIVE_LISTING = 'RECEIVE_LISTING';
 export const RECEIVE_NEW_LISTING = 'RECEIVE_NEW_LISTING';
 export const REMOVE_LISTING = 'REMOVE_LISTING';
@@ -11,6 +13,11 @@ export const CLEAR_LISTING_ERRORS = 'CLEAR_LISTING_ERRORS';
 export const receiveListings = listings => ({
   type: RECEIVE_LISTINGS,
   listings,
+});
+
+const receiveSplashListings = (splashListings) => ({
+  type: RECEIVE_SPLASH_LISTINGS,
+  splashListings
 });
 
 export const receiveListing = ( { listing, reviews, users, booked_dates } ) => ({
@@ -58,6 +65,11 @@ export const fetchListings = (filters) => {
     });
   };
 };
+
+export const fetchSplashListings = locations => dispatch => (
+  APIUtil.fetchSplashListings(locations)
+    .then(splashListings => dispatch(receiveSplashListings(splashListings)))
+);
 
 export const fetchListing = id => {
   return dispatch => {
