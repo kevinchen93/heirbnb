@@ -6,6 +6,14 @@ export const fetchListings = data => {
   });
 };
 
+export const fetchSplashListings = locations => (
+  $.ajax({
+    method: 'GET',
+    url: '/api/listings',
+    data: { city: locations }
+  })
+);
+
 export const fetchListing = id => {
   return $.ajax({
     method: 'GET',

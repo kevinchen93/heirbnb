@@ -12,8 +12,8 @@ const mapStateToProps = state => {
   }
 };
 
-const mapDipatchToProps = dispatch => ({
+const mapDispatchToProps = dispatch => ({
   fetchSplashListings: locations => dispatch(fetchSplashListings(locations))
 });
 
-export default connect(mapStateToProps, mapDipatchToProps)(Splash);
+export default connect(mapStateToProps, mapDispatchToProps)(Splash);

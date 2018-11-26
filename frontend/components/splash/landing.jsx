@@ -1,7 +1,7 @@
 import React from 'react';
 import LoadingDots from '../loading_dots';
-import LandingNav from '../navbar/landing_nav';
-import LandingSearchBar from '../navbar/landing_search_bar';
+import LandingNav from '../nav/landing_nav';
+import LandingSearchBar from '../nav/landing_search_bar';
 
 class Landing extends React.Component {
   constructor(props) {
