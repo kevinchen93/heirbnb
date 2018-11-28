@@ -20,7 +20,7 @@ class Landing extends React.Component {
       return (
         <div className="landing-container">
           <LandingNav />
-          <div id="landing-search-container">
+          <div className="landing-search-container">
             <LandingSearchBar />
           </div>
         </div>
