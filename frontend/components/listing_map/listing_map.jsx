@@ -30,6 +30,7 @@ class ListingMap extends React.Component {
         },
         zoom: 14,
       };
+
     } else {
       mapOptions = {
         center: {

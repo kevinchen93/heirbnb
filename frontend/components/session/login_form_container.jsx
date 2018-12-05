@@ -44,7 +44,7 @@ class LoginForm extends React.Component {
 
     const demoUser = {
       email: 'demo@demo',
-      password: 'hunter12',
+      password: 'password',
     };
 
     let password = 'demodemo';
@@ -52,7 +52,7 @@ class LoginForm extends React.Component {
       setTimeout(() => {
         if (password.length > 0) {
           this.setState({
-            email: "demo@demo.co",
+            email: "demo@demo",
             password: this.state.password.concat(password[0])
           });
           password = password.slice(1);

@@ -54,12 +54,11 @@ class ListingShow extends React.Component {
       } else {
         numReviews = listing.review_ids.length;
       }
-
       return (
         <div className="review-container" key={review.id}>
           <div className="review-content-container">
             <div className="review-header">
-              <div className="user-icon"></div>
+              <img src={reviewer.photoUrl} className="user-icon"></img>
               <div className="review-user-date-container">
                 <div>
                   <div className="review-user-text">

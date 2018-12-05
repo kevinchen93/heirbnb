@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_21_153805) do
+ActiveRecord::Schema.define(version: 2018_12_04_082514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2018_10_21_153805) do
     t.date "end_date", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "num_guests", null: false
     t.index ["guest_id"], name: "index_bookings_on_guest_id"
     t.index ["listing_id"], name: "index_bookings_on_listing_id"
   end
@@ -61,6 +62,32 @@ ActiveRecord::Schema.define(version: 2018_10_21_153805) do
     t.string "img_url", default: "", null: false
     t.float "lat"
     t.float "lng"
+    t.string "address", null: false
+    t.string "city", null: false
+    t.string "state", null: false
+    t.string "country", null: false
+    t.string "zip_code", null: false
+    t.boolean "air_conditioning", null: false
+    t.boolean "coffee_maker", null: false
+    t.boolean "bathroom_essentials", null: false
+    t.boolean "indoor_fireplace", null: false
+    t.boolean "first_aid_kit", null: false
+    t.boolean "free_parking", null: false
+    t.boolean "game_console", null: false
+    t.boolean "gym", null: false
+    t.boolean "kitchen", null: false
+    t.boolean "hair_dryer", null: false
+    t.boolean "heating", null: false
+    t.boolean "iron", null: false
+    t.boolean "laptop_friendly_workspace", null: false
+    t.boolean "patio", null: false
+    t.boolean "refrigerator", null: false
+    t.boolean "tv", null: false
+    t.boolean "washer", null: false
+    t.boolean "wifi", null: false
+    t.boolean "self_check_in", null: false
+    t.index ["city"], name: "index_listings_on_city"
+    t.index ["country"], name: "index_listings_on_country"
     t.index ["host_id"], name: "index_listings_on_host_id"
   end
 
@@ -81,7 +108,15 @@ ActiveRecord::Schema.define(version: 2018_10_21_153805) do
     t.integer "rating", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "accuracy", null: false
+    t.integer "communication", null: false
+    t.integer "cleanliness", null: false
+    t.integer "location", null: false
+    t.integer "check_in", null: false
+    t.integer "value", null: false
+    t.integer "listing_id", null: false
     t.index ["booking_id", "reviewer_id"], name: "index_reviews_on_booking_id_and_reviewer_id", unique: true
+    t.index ["reviewer_id"], name: "index_reviews_on_reviewer_id"
   end
 
   create_table "users", force: :cascade do |t|

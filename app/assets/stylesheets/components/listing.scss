@@ -81,17 +81,16 @@
 .listing-show-image {
   max-width: 100vw;
   height: 79vh;
-  background-image: image-url('plant_room.jpeg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   padding: 0;
 }
 
 .listing-show-container {
-  width: 90%;
-  margin: auto;
+  width: 60%;
+  margin: 0 auto;
   margin-top: 40px;
-  margin-left: 250px;
+  // margin-left: 250px;
   display: flex;
   font-size: 13px;
 }
