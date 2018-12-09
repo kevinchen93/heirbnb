@@ -31,7 +31,7 @@ Heirbnb is a single-page, full stack web application inspired by Airbnb. It util
 
 ## Technology Stack
 
-Heirbnb is a single-page application with one backend route responsible for rendering HTML. User interactions in the frontend side trigger AJAX requests to the backend, which are responsible for rendering database information in JSON format.
+Heirbnb is a single-page application with one backend route responsible for rendering HTML. User interactions in the frontend side trigger AJAX requests to the backend, which is responsible for rendering database information in JSON format.
 
 ### Frontend
 
