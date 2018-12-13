@@ -1,0 +1,52 @@
+.splash-container {
+  display: grid;
+  grid-template-columns: 1r;
+  grid-template-rows: auto;
+  color: #484848;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  margin-left: 50px;
+  margin: auto;
+}
+
+.splash-locations {
+  width: 100%;
+  margin: auto;
+  margin-bottom: 25px;
+}
+
+.splash-header {
+  margin: 27px 0 27px;
+  margin-left: 5%;
+}
+
+.splash-text {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.splash-items-container {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 32.5% [col-start]);
+  justify-content: space-between;
+}
+
+.item-text-container {
+  margin-top: 20px;
+}
+
+.item-text-container div {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.city-name {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.description {
+  font-size: 15px;
+  font-weight: 300;
+}
