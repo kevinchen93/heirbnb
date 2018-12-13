@@ -7,10 +7,10 @@ class Landing extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true;
+      loading: true
     }
 
-    setTimeout(() => this.setState({ loading: false }), 1000);
+    setTimeout(() => this.setState({ loading: false }), 2000);
   }
 
   render() {
