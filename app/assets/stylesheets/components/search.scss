@@ -1,0 +1,31 @@
+.pac-container:after {
+  content: none !important;
+}
+
+.pac-container {
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.pac-item {
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+  font-size: 15px;
+  min-height: 45px;
+  color: #484848;
+  display: flex;
+  align-items: center;
+}
+
+.pac-item-query {
+  font-size: 15px;
+  font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
+}
+
+.pac-item:hover,
+.pac-item-selected {
+  background-color: rgba(0, 132, 137, 0.3);
+}
+
+.pac-icon {
+  display: none;
+}

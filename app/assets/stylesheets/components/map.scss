@@ -1,10 +1,7 @@
-.map-container {
-  height: 100%;
+.listing-map-container {
+  height: 370px;
   width: 100%;
-
-  // right: 35px;
-  // top: 182px;
-  // padding: 35px;
+  margin-bottom: 30px;
 }
 
 .splash-page-map {
@@ -19,6 +16,5 @@
 .show-page-map {
   display: block;
   position: relative !important;
-  height: 500px;
   width: 588px;
 }

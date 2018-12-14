@@ -1,0 +1,59 @@
+// whole page
+.search-index-container {
+  height: 100%;
+}
+
+// result and map
+.search-results-and-map {
+  display: flex;
+  margin-top: 25px;
+  margin-left:50px;
+  height: 100vh;
+}
+
+// reuslt
+.search-results-section {
+  width: 64%
+}
+
+.search-results-section h3 {
+  margin: 0;
+  font-size: 40px;
+}
+
+.search-results-section p {
+  margin-top: 0px;
+  font-size: 12px;
+}
+.search-results-section h4 {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.search-result-ul {
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 30% [col-start]);
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+// map
+.map-container {
+  height: 100%;
+  width: 35%;
+  position: fixed;
+  top: 1%;
+  right: 0;
+  margin-top: 77px;
+}
+
+.search-map {
+  height: 85%;
+  width: 100%;
+  position: sticky;
+  top: 5%;
+
+  z-index: 1;
+}
