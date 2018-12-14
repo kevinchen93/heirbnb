@@ -80,7 +80,7 @@ class Footer extends React.Component {
 
               <div className="footer-link-container">
                 <i className="far fa-file-pdf"></i>
-                <a className="footer-link" href="https://kevinnn.co/assets/Kevin%20Chen%20Resume.pdf" target="_blank">
+                <a className="footer-link" href="https://kevinnn.co/" target="_blank">
                   Portfolio
                 </a>
               </div>
