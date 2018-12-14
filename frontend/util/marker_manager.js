@@ -1,17 +1,15 @@
 class MarkerManager {
-  constructor(map, handleClick) {
+  constructor(map) {
     this.map = map;
-    this.handleClick = handleClick;
     this.markers = {};
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
   updateMarkers(listings) {
 
     const listingsObj = {};
-    //let currentListings = Array.from(listings);
-    // if (Object.keys(listings).length === 0) {
-    //   currentListings = [];
-    // }
+
     listings.forEach(listing => listingsObj[listing.id] = listing);
     listings.filter(listing => !this.markers[listing.id]).forEach(newListing => this.createMarkerFromlisting(newListing));
     Object.keys(this.markers).filter(listingId => !listingsObj[listingId]).forEach(listingId => this.removeMarker(this.markers[listingId]));
@@ -27,7 +25,7 @@ class MarkerManager {
       fillOpacity: 1,
       scale: 1.15,
       strokeColor: "grey",
-      strokeWeight: 0.5
+      strokeWeight: 0.5,
     };
 
     this.markers[listing.id] = new google.maps.Marker({
@@ -36,7 +34,8 @@ class MarkerManager {
       title: listing.name,
       listingId: listing.id,
       label: "$" + String(listing.prices),
-      icon: mapIcon
+      icon: mapIcon,
+      animation: google.maps.Animation.DROP
     });
 
     let marker = this.markers[listing.id];
@@ -47,6 +46,10 @@ class MarkerManager {
   removeMarker(marker) {
     this.markers[marker.listingId].setMap(null);
     delete this.markers[marker.listingId];
+  }
+
+  handleClick(listing) {
+    this.props.history.push(`/listings/${listing.id}`);
   }
 }
 
