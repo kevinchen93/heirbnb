@@ -1,13 +1,13 @@
 import React from 'react';
-import { BeatLoader } from 'react-spinners';
+import { PulseLoader } from 'react-spinners';
 
 const LoadingDots = (state) => {
   return (
     <div className="react-spinner-container">
-      <BeatLoader
-        className="beat-loader"
+      <PulseLoader
+        className="loading-dots"
         sizeUnit={"px"}
-        size={20}
+        size={12}
         color={'#008489'}
         loading={state.loading}
       />

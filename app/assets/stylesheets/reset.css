@@ -1,8 +1,9 @@
+
 html, body, header, nav, h1, a,
 ul, li, strong, main, button, i,
-section, img, div, h2, h3, p, form,
+section, img, div, h2, p, form,
 fieldset, label, input, textarea,
-span, article, footer, time, small {
+span, article, time, small {
   margin: 0;
   padding: 0;
   border: 0;
@@ -38,9 +39,18 @@ button {
   */
   -webkit-appearance: none;
   -moz-appearance: none;
+  appearance: none;
 }
 
 button,
 input[type="submit"] {
   cursor: pointer;
+}
+
+/* Clearfix */
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
 }

@@ -36,7 +36,6 @@
 
 .landing-nav-right li,
 .landing-nav-right p {
-  height: 80px;
   margin-left: 7px;
   margin-right: 7px;
   padding-top: 30px;
@@ -46,6 +45,11 @@
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
+  color: #fff;
+
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
 }
 
 .landing-nav-right p {
@@ -53,7 +57,7 @@
 }
 
 .landing-nav-right li:hover {
-  color: white;
+  color: #ff5a5f;
   font-weight: 700;
 }
 
@@ -69,7 +73,6 @@
   position: absolute;
   width: 630px;
   height: 70px;
-  z-index: 1;
 
   background-color: white;
   left: 174px;
@@ -82,6 +85,17 @@
   border: 1px solid #767676;
   border-radius: 4px;
   box-shadow: 2px 2px 6px #ccc;
+
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+
+  z-index: 1;
+}
+
+.landing-search-bar:hover,
+.landing-search-bar:focus {
+  border: 1px solid #008489;
 }
 
 .landing-search i {
@@ -102,19 +116,28 @@
 }
 
 .landing-nav-bar-button {
+  width: 70px;
+  height: 20px;
   position: absolute;
-  left: 690px;
   top: 329px;
+  left: 690px;
+
+  margin-top: 5px;
+  margin-bottom: 17px;
+  padding: 12px;
   background-color: #fd5c63;
   color: white;
   cursor: pointer;
-  padding: 5px;
-  width: 70px;
-  height: 20px;
   border-radius: 5px;
   text-align: center;
-  padding: 12px;
-  margin-top: 5px;
-  margin-bottom: 17px;
-  z-index:2;
+
+  z-index: 2;
+
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.landing-nav-bar-button:hover {
+  background-color: #d13e43;
 }
