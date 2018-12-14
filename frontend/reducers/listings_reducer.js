@@ -1,7 +1,13 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_LISTINGS, RECEIVE_LISTING, RECEIVE_NEW_LISTING, REMOVE_LISTING } from '../actions/listing_actions';
-import { REMOVE_BOOKING } from '../actions/booking_actions';
+import {
+  RECEIVE_LISTINGS,
+  RECEIVE_LISTING,
+  RECEIVE_NEW_LISTING,
+  REMOVE_LISTINGS,
+  REMOVE_LISTING
+} from '../actions/listing_actions';
+
 
 const listingsReducer = (state = {}, action) => {
   Object.freeze(state);
@@ -20,6 +26,8 @@ const listingsReducer = (state = {}, action) => {
       newState = merge({}, state);
       delete newState[action.listingId];
       return newState;
+    case REMOVE_LISTINGS:
+      return {};
     default:
       return state;
   }

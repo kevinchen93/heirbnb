@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import UserListingShow from './user_listing_show';
 import { userListings } from '../../reducers/selectors.js';
 import { fetchListings } from '../../actions/listing_actions';
-import { changeFilter } from '../../actions/filter_actions';
+import { updateFilter } from '../../actions/filter_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -17,7 +17,7 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchListings: () => dispatch(fetchListings()),
-    changeFilter: (filter, value) => dispatch(changeFilter(filter, value)),
+    updateFilter: (filter, value) => dispatch(changeFilter(filter, value)),
   };
 };
 

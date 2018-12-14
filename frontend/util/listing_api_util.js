@@ -6,11 +6,11 @@ export const fetchListings = data => {
   });
 };
 
-export const fetchSplashListings = locations => (
+export const fetchSplashListings = cities => (
   $.ajax({
     method: 'GET',
-    url: '/api/listings',
-    data: { city: locations }
+    url: 'api/listings',
+    data: { city: cities }
   })
 );
 

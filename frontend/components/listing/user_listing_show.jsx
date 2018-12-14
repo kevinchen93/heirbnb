@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ListingMap from '../listing_map/listing_map';
+import SearchMap from '../listing_map/listing_map';
 
 class UserListingShow extends React.Component {
   constructor(props) {
@@ -58,7 +58,6 @@ class UserListingShow extends React.Component {
           <ul className="user-listing-ul">
             { listings }
           </ul>
-          <ListingMap listings={this.props.userListings()} changeFilter={this.props.changeFilter} lat={this.state.lat} lng={this.state.lng}/>
         </div>
       </div>
     )

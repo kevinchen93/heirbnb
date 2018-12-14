@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute, ProtectedRenderRoute } from '../../util/route_api_util';
 import { openModal, closeModal } from '../../actions/modal_actions';
-import CreateBookingFormContainer from '../booking/create_booking_form_container';
+import CreateBookingFormContainer from '../booking/create_booking_form_container.js';
 import ReactStars from 'react-stars';
 
 class UserListingDetail extends React.Component {
@@ -60,7 +60,7 @@ class UserListingDetail extends React.Component {
             <div className="user-icon"></div>
             <div className="review-user-date-container">
               <div className="review-user-text">
-                {reviewer.first_name}
+                {review.first_name}
               </div>
               <div className="review-content-text">{month} {year}</div>
             </div>
@@ -86,13 +86,6 @@ class UserListingDetail extends React.Component {
           <button className="user-listing-detail-submit-button" onClick={ () => this.props.deleteListing(this.props.listing).then( () => this.props.history.push('/profile/listings')) }>Delete</button>
         </div>
 
-        <CreateBookingFormContainer
-          listing={listing}
-          prices={listing.prices}
-          numReviews={listing.review_ids.length}
-          guestNum={listing.guests}
-        />
-
         <div className="listing-show-container">
           <span style={{ color: "#734f21", fontSize: "12px", fontWeight: "800" }}>PRIVATE ROOM IN APARTMENT</span>
           <div className="listing-show-title">{listing.title}</div>
@@ -108,7 +101,7 @@ class UserListingDetail extends React.Component {
               {listing.description}
             </div>
             <div className="separator-24"></div>
-            <div className="house-rules-header">Amenities</div>
+            <div className="listing-content-header">Amenities</div>
             <div className="amenities-container">
               <ul>
                 <li>Elevator</li>
@@ -122,7 +115,7 @@ class UserListingDetail extends React.Component {
               </ul>
             </div>
             <div className="separator-24"></div>
-            <div className="house-rules-header">Accessibility</div>
+            <div className="listing-content-header">Accessibility</div>
             <div className="amenities-container">
               <ul>
                 <li>Well-lit path to entrance</li>
@@ -136,15 +129,20 @@ class UserListingDetail extends React.Component {
             {reviewElements}
           </div>
           <div className="the-neighborhood-header">Policies</div>
-          <div className="house-rules-header">House Rules</div>
+          <div className="listing-content-header">House Rules</div>
           <div className="review-content-text review-content-body">No pets</div>
           <div className="review-content-text review-content-body">No parties or events</div>
           <div className="review-content-text review-content-body">Check-in time is 4PM-7PM</div>
           <div className="review-content-text review-content-body">Check out by noon</div>
           <div className="separator-24"></div>
-          <div className="house-rules-header">Cancellations</div>
-          <div className="strict-text">Strict</div>
-          <div className="review-content-text">Cancel up to 30 days before check-in and get a full refund.</div>
+          <div className="listing-content-header">Cancellations
+            <div className="strict-text">Strict</div>
+            <div className="cancellation-text">Cancel up to 30 days before check-in and get a full refund.</div>
+          </div>
+
+          <div className="listing-show-right">
+            <CreateBookingFormContainer listing={listing} />
+          </div>
 
         </div>
       </div>

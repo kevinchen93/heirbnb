@@ -8,10 +8,9 @@ import reviewsReducer from './reviews_reducer';
 const entitiesReducer = combineReducers({
   users: usersReducer,
   listings: listingsReducer,
-  splash: splashReducer,
+  splashListings: splashReducer,
   bookings: bookingsReducer,
   reviews: reviewsReducer,
-
 });
 
 export default entitiesReducer;
