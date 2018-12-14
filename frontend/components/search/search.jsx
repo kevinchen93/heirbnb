@@ -1,30 +1,44 @@
 import React from 'react';
-import ListingIndexContainer from './../listing/listing_index_container';
-import ListingMap from '../listing_map/listing_map';
+
+import SearchResultsIndex from './search_results_index';
+import SearchMap from './search_map';
 
 class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      body: '',
-      lat: 40.715494,
-      lng: -74.002209,
+      rerender: false
     };
-
-    this.handleChange = this.handleChange.bind(this);
   }
 
-  handleChange(e) {
-    e.preventDefault();
-    this.setState({
-      body: e.target.value
-    });
+  componentWillReceiveProps(nextProps) {
+    if (this.props.location.search !== nextProps.location.search) {
+      this.props.removeListings();
+    }
   }
 
   render(){
+    if (!this.props.listings) {
+      return <div></div>
+    }
+
+    const { listings, updateFilter } = this.props;
+
     return (
-      <div className="splash-page-map" >
-        <ListingMap listings={this.props.listings} changeFilter={this.props.changeFilter} lat={this.state.lat} lng={this.state.lng} />
+      <div className="search-index-container">
+        <div className="search-results-and-map">
+          <div className="search-results-section">
+            <div>
+              <SearchResultsIndex listings={this.props.listings} />
+            </div>
+          </div>
+
+          <div className="map-container">
+            <SearchMap
+              listings={listings}
+              updateFilter={updateFilter} />
+          </div>
+        </div>
       </div>
     );
   }

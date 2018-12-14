@@ -8,11 +8,11 @@
 }
 
 .pac-item {
+  min-height: 43px;
+  display: flex;
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   font-size: 15px;
-  min-height: 45px;
-  color: #484848;
-  display: flex;
+  color: #fff;
   align-items: center;
 }
 
@@ -23,7 +23,8 @@
 
 .pac-item:hover,
 .pac-item-selected {
-  background-color: rgba(0, 132, 137, 0.3);
+  color: #fff;
+  background-color: #008489;
 }
 
 .pac-icon {
