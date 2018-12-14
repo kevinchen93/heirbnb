@@ -2,28 +2,20 @@ class Api::ReviewsController < ApplicationController
   before_action :require_logged_in, except: [:index]
 
   def index
-    @reviews = Review.all
+    listing = Listing.find_by_id(params[:listing_id])
+    @reviews = listings.reviews
+
+    render :index
   end
 
   def create
     @review = Review.new(review_params)
-    p @review
     @review.reviewer_id = current_user.id
-    p @review
+
     if @review.save
       render :show
     else
       render json: @review.errors.full_messages, status: 422
-    end
-  end
-
-  def show
-    @review = Review.find_by(id: params[:id])
-
-    if @review
-      render :show
-    else
-      render json:['Review could not be found'], status: 404
     end
   end
 
@@ -52,7 +44,18 @@ class Api::ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:booking_id, :reviewer_id, :body, :rating)
+    params.require(:review).permit(
+      :booking_id,
+      :reviewer_id,
+      :body,
+      :rating,
+      :accuracy,
+      :communication,
+      :cleanliness,
+      :location,
+      :check_in,
+      :value
+    )
   end
 
   def own_review?

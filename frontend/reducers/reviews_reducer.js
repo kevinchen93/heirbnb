@@ -1,8 +1,12 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_REVIEWS, RECEIVE_REVIEW, REMOVE_REVIEW } from '../actions/review_actions';
+import {
+  RECEIVE_REVIEWS,
+  RECEIVE_REVIEW,
+  REMOVE_REVIEW
+} from '../actions/review_actions';
+
 import { RECEIVE_LISTING } from '../actions/listing_actions';
-import { REMOVE_BOOKING } from '../actions/booking_actions';
 
 const reviewsReducer = (state = {}, action) => {
   Object.freeze(state);

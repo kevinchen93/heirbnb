@@ -1,8 +1,9 @@
-import { OPEN_MODAL,
-         CLOSE_MODAL,
-         SET_CURRENT_BOOKING,
-         SET_CURRENT_REVIEW
-       } from '../actions/modal_actions';
+import {
+  OPEN_MODAL,
+  CLOSE_MODAL,
+  SET_CURRENT_BOOKING,
+  SET_CURRENT_REVIEW
+} from '../actions/modal_actions';
 
 export default function modalReducer(state = null, action) {
   switch (action.type) {
