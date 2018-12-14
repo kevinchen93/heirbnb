@@ -25,7 +25,7 @@ class Footer extends React.Component {
             <path d="m23.25 24c-.19 0-.38-.07-.53-.22l-10.72-10.72-10.72 10.72c-.29.29-.77.29-1.06 0s-.29-.77 0-1.06l10.72-10.72-10.72-10.72c-.29-.29-.29-.77 0-1.06s.77-.29 1.06 0l10.72 10.72 10.72-10.72c.29-.29.77-.29 1.06 0s .29.77 0 1.06l-10.72 10.72 10.72 10.72c.29.29.29.77 0 1.06-.15.15-.34.22-.53.22" fillRule="evenodd">
             </path>
           </svg>
-          <p className="footer-text">Close</p>
+          <p className="footer-text" style={{ fontSize: '16px' }}>Close</p>
         </div>
       )
     } else {
@@ -74,13 +74,13 @@ class Footer extends React.Component {
               <div className="footer-link-container">
                 <i className="fab fa-angellist"></i>
                 <a className="footer-link" href="https://angel.co/kevin-chen-91" target="_blank">
-                  Angellist
+                  AngelList
                 </a>
               </div>
 
               <div className="footer-link-container">
                 <i className="far fa-file-pdf"></i>
-                <a className="footer-link" href="assets/Kevin Chen Resume.pdf" target="_blank">
+                <a className="footer-link" href="https://kevinnn.co/assets/Kevin%20Chen%20Resume.pdf" target="_blank">
                   Portfolio
                 </a>
               </div>

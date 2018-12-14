@@ -9,25 +9,25 @@
 }
 
 .listing-details-text div {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
 
-.listing-city{
+.listing-title {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.listing-city {
   color: #484848;
   font-size: 12px;
   font-weight: 600;
   margin-top: 20px;
 }
 
-.listing-name {
-  font-weight: 500;
-  font-size: 14px;
-}
-
 .listing-price {
-  font-size: 12px;
-  font-weight: 300;
+  font-size: 13px;
+  font-weight: 350;
   margin-bottom: 0;
 }
 
@@ -103,13 +103,13 @@
   margin-top: 20px;
 }
 
-.listing-name {
-  font-weight: 500;
-  font-size: 14px;
+.listing-title {
+  font-weight: 600;
+  font-size: 15px;
 }
 
 .listing-price {
-  font-size: 12px;
-  font-weight: 300;
+  font-size: 13px;
+  font-weight: 350;
   margin-bottom: 0;
 }

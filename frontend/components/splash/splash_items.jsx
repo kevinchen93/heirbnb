@@ -4,7 +4,7 @@ const splashItems = ({ img, numHomes, city, description }) => {
   return(
     <div className="splash-detail-container">
       <div>
-        <img src={img} style={{objectFit: 'contain'}}/>
+        <img src={img} style={{ objectFit: 'contain', borderRadius: '3px' }}/>
       </div>
       <div className="item-text-container">
         <div className="home-number">{numHomes} VERIFIED HOMES</div>
