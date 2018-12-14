@@ -86,6 +86,76 @@
   padding: 0;
 }
 
+.listing-show-photo-container {
+  height: 600px;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  z-index: 2;
+}
+
+.listing-show-photo-container img {
+  max-width: 100%;
+  -moz-transition: all 0.7s;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
+}
+
+.listing-show-photo-container img:hover {
+  transform: scale(1.05);
+}
+
+.listing-show-photo-container:hover img {
+  filter: brightness(55%);
+}
+
+.listing-show-photo-container:hover img:hover {
+  filter: brightness(100%);
+}
+
+.listing-show-photo-left-container {
+  border: 2px solid #000;
+}
+
+.listing-show-photo-left-container,
+.listing-show-photo-middle-container,
+.listing-show-photo-right-container {
+  width: 100%;
+}
+
+.listing-show-photo-left-container {
+  border: 2px solid #000;
+  overflow: hidden;
+}
+
+.listing-show-photo-left-container img,
+.listing-show-photo-middle-container img,
+.listing-show-photo-right-container img {
+  height: 100%
+}
+
+.middle-1,
+.middle-2,
+.right-1,
+.right-2 {
+  border: 2px solid #000;
+  height: 50%;
+  overflow: hidden;
+}
+
+.availability-calendar-container h3 {
+  font-size: 17px;
+  font-weight: 450;
+  margin-bottom: 20px;
+}
+
+.availability-calendar-container {
+  z-index: 1;
+  margin-bottom: 30px;
+}
+
 .listing-show-container {
   width: 60%;
   margin: 0 auto;
@@ -146,6 +216,7 @@
 }
 
 .house-rules-header {
+  margin-top: 17px;
   margin-bottom: 17px;
   font-size: 17px;
   font-weight: 450;
@@ -171,5 +242,12 @@
 }
 
 .strict-text {
+  font-size: 15px;
   font-weight: 450;
+}
+
+.cancellation-text {
+  font-weight: 350;
+  font-size: 15px;
+  margin-bottom: 30px;
 }

@@ -1,0 +1,115 @@
+.listing-details-container img {
+  height: 220px;
+  width: 200px;
+  border-radius: 3px;
+}
+
+.listing-details-text {
+  font-weight: 500;
+}
+
+.listing-details-text div {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.listing-city{
+  color: #484848;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.listing-name {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.listing-price {
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 0;
+}
+
+.listing-detail-rating {
+  font-size: 10px;
+  display: flex;
+  color: #008489;
+  align-items: center;
+  margin-top: 0;
+}
+
+.listing-detail-rating p {
+  margin-right: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #484848;
+  margin-left: 5px;
+}
+
+
+
+
+
+.index-container {
+  width: 90%;
+  margin: auto;
+  color: #484848;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  display: grid;
+  grid-template-rows: 50px auto;
+}
+
+.index-title {
+  font-weight: 500;
+  font-size: 25px;
+  color: #484848;
+}
+
+@media (max-width: 1100px) {
+
+.listings-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 230px [col-start]);
+  justify-content: space-between;
+  margin-bottom: 30px;
+  }
+}
+
+@media (min-width: 1100px) {
+
+.listings-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 24% [col-start]);
+  justify-content: space-between;
+  margin-bottom: 30px;
+  }
+}
+
+.listing-details-container img {
+  height: 220px;
+  border-radius: 3px;
+}
+
+.listing-details-text div {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.listing-city{
+  color: #484848;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+.listing-name {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.listing-price {
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 0;
+}

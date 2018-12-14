@@ -1,6 +1,21 @@
 class Api::ListingsController < ApplicationController
   def index
-    @listings = bounds ? Listing.in_bounds(bounds) : Listing.all
+    if params[:city].is_a?(Array)
+      @listings_hash = {}
+      params[:city].each do |city|
+        @listings_hash[city] = Listing.where(city: city).with_attached_photos
+      end
+
+      render :splash_listings
+    else
+      if bounds
+        @listings = Listing.in_bounds(bounds).with_attached_photos
+      else
+        @listings = Listing.all.with_attached_photos
+      end
+
+      render :index
+    end
   end
 
   def create
@@ -8,7 +23,7 @@ class Api::ListingsController < ApplicationController
     @listing.host_id = current_user.id
 
     if @listing.save
-      render 'api/listings/show'
+      render json: { message: "Listing successfully posted!" }
     else
       render json: @listing.errors.full_messages, status: 422
     end
@@ -90,11 +105,7 @@ class Api::ListingsController < ApplicationController
   end
 
   def bounds
-    if !params[:filters]
-      return nil
-    else
-      return params[:filters][:bounds]
-    end
+    params[:bounds]
   end
 
 end
