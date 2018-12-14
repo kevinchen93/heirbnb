@@ -412,11 +412,11 @@ ny_listing4 = Listing.create!(
   img_url: "https://images.unsplash.com/photo-1519302959554-a75be0afc82a?ixlib=rb-1.2.1&auto=format&fit=crop&w=2124&q=80",
   lat: 40.726583,
   lng: -73.990908,
-  address: "",
+  address: "171 1st Avenue",
   city: "New York",
   state: "New York",
   country: "USA",
-  zip_code: "10010",
+  zip_code: "10003",
   air_conditioning: true,
   coffee_maker: true,
   bathroom_essentials: true,
@@ -1214,7 +1214,7 @@ chicago_review2 = Review.create!(
 
 chicago_review3 = Review.create!(
   reviewer_id: chicago_booking3.guest_id, listing_id: chicago_booking1.listing_id, booking_id: chicago_booking3.id,
-  body: 'The studio was very spacious and clean. Modern finishes and styling. It felt like a hotel room but much larger. There was access to a balcony with a view of some nearby skyscrapers. Stephen was also very communicative and proactively provided check-in instructions ahead of my arrival. There is a front desk person in the lobby at all times. Location was fantastic. Walkable distance to many restaurants and the Navy Pier. There’s also a grocery store right next to the apartment. Overall, I was very pleased with my experience.',
+  body: 'The studio was very spacious and clean. Modern finishes and styling. It felt like a hotel room but much larger. There was access to a balcony with a view of some nearby skyscrapers. Demo was also very communicative and proactively provided check-in instructions ahead of my arrival. There is a front desk person in the lobby at all times. Location was fantastic. Walkable distance to many restaurants and the Navy Pier. There’s also a grocery store right next to the apartment. Overall, I was very pleased with my experience.',
   accuracy: 5, location: 5,communication: 4, check_in: 5, cleanliness: 5, value: 5, rating: 5
 );
 
@@ -1623,11 +1623,11 @@ la_listing8 = Listing.create!(
   img_url: "https://images.unsplash.com/photo-1519302959554-a75be0afc82a?ixlib=rb-1.2.1&auto=format&fit=crop&w=2124&q=80",
   lat: 33.775747,
   lng: -118.375937,
-  address: "",
+  address: "9876 Wilshire Blvd",
   city: "Los Angeles",
   state: "California",
   country: "USA",
-  zip_code: "10010",
+  zip_code: "90210",
   air_conditioning: true,
   coffee_maker: false,
   bathroom_essentials: true,

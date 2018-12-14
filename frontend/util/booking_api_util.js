@@ -28,10 +28,9 @@ export const updateBooking = booking => {
   });
 };
 
-export const deleteBooking = booking => {
+export const deleteBooking = bookingId => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/bookings/${booking.id}`,
-    data: { booking: booking }
+    url: `api/bookings/${bookingId}`,
   });
 };

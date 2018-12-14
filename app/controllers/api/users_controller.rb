@@ -1,11 +1,12 @@
 class Api::UsersController < ApplicationController
   def index
-    @users = User.all
+    @users = User.find_by_id(params[:id]).with_attached_photo
+    render :show
   end
 
   def show
     @user = User.find_by(id: params[:id])
-    @listings = @user.listings
+    @listings = @user.listings.with_attached_photos
     @bookings = @user.bookings
     @reviews = @user.reviews
 
@@ -18,8 +19,9 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.profile_photo.attach(io: File.open('app/assets/images/demo.jpg'), filename: 'demo.jpg')
     if @user.save
-      login!(@user)
+      login(@user)
       render 'api/users/show'
     else
       render json: @user.errors.full_messages, status: 422
@@ -29,7 +31,12 @@ class Api::UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:email, :first_name, :last_name, :password, :profile_photo)
+    params.require(:user).permit(
+      :email,
+      :first_name,
+      :last_name,
+      :password,
+      :profile_photo)
   end
 
 end
