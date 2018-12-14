@@ -53,7 +53,7 @@ class Footer extends React.Component {
               <div className="footer-link-container">
                 <i className="fab fa-github"></i>
                 <a className="footer-link" href="https://github.com/kevinchen93" target="_blank">
-                  Github
+                  GitHub
                 </a>
               </div>
 

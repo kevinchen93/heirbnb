@@ -1,6 +1,6 @@
 # Welcome to Heirbnb
 
-Heirbnb is a single-page, full stack web application inspired by Airbnb. It utilizes Ruby on Rails with a PostgreSQL database on the backend, and React.js and Redux on the frontend. Users can view, create and book listings, and search for listings by location. Users can also review their stay! <a href="https://heirbeenbee.herokuapp.com" target="_blank">Visit Heirbnb here!</a>
+<a href="https://heirbeenbee.herokuapp.com" target="_blank">Heirbnb</a> is a single-page, full stack web application inspired by Airbnb. It utilizes Ruby on Rails with a PostgreSQL database on the backend, and React.js and Redux on the frontend. Users can view, create and book listings, and search for listings by location. Users can also review their stay!
 
 ## Key Features
 
@@ -12,9 +12,8 @@ Heirbnb is a single-page, full stack web application inspired by Airbnb. It util
 
 ### Listings
   * Listings are displayed on the homepage.
-  * A logged in user can create listings.
   * A user is able to edit and delete his or her own listings.
-  * Users will be able to search for listings through listings search (by location and availability) and Google Maps search
+  * Users are able to search for listings through listings search (by location and availability) and Google Maps search
 
 ### Bookings
   * A logged in user is able to view his or her current and past bookings.
@@ -23,11 +22,6 @@ Heirbnb is a single-page, full stack web application inspired by Airbnb. It util
 ### Reviews
   * A logged in user is able to leave a review on a past booking.
   * A logged in user is able to edit an existing review.
-
-### User Profile
-  * A user's profile page will display all of his or her listings and reviews.
-  * A user will be able to edit his or her own profile information from his or her own user page:
-    * Profile photo
 
 ## Technology Stack
 
@@ -56,4 +50,7 @@ Heirbnb uses a [PostgreSQL](https://www.postgresql.org/) database to store its r
 
 ## Future Plans
 
-In the future, I would like to implement the social aspects of Airbnb, such as messaging between users. Also, I have plans to categorize accommodations to include experiences and restaurants.
+  * Implement ability for users to upload profile pictures and edit profile page
+  * Infinite scrolling or pagination on the index pages
+  * Implement ability to interact with friends, i.e. messaging
+  * Additional filters for listings
