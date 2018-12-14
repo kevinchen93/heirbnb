@@ -13,6 +13,7 @@ class SignupForm extends React.Component {
       last_name: '',
       password: '',
     };
+    
     this.handleChange = this.handleChange.bind(this);
     this.changeModal = this.changeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -124,7 +125,7 @@ class SignupForm extends React.Component {
               <span className="modal-nav-link-text">Already have an Heirbnb account?</span>
               <span className="signup-span" onClick={() => this.changeModal()}>Log in</span>
             </div>
-            
+
           </form>
         </div>
       </div>
