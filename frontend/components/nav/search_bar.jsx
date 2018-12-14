@@ -8,12 +8,13 @@ class SearchBar extends React.Component {
       address: ""
     };
 
+    this.setAddress = this.setAddress.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
-    const input = document.getElementsByClassName("landing-search-bar")[0];
+    const input = document.getElementsByClassName("main-search-bar")[0];
     const autocomplete = new google.maps.places.Autocomplete(input);
     google.maps.event.addDomListener(window, "load", autocomplete);
     let address;
@@ -30,9 +31,16 @@ class SearchBar extends React.Component {
     });
   }
 
+  setAddress(address) {
+    this.setState({ address });
+  }
+
+  handleInput(e) {
+    this.setState({ address: e.currentTarget.value });
+  }
+
   handleSubmit(e) {
     const geocoder = new google.maps.Geocoder();
-
     geocoder.geocode({ address: this.state.address }, (results, status) => {
       if (status === google.maps.GeocoderStatus.OK) {
         const lat = results[0].geometry.location.lat();
@@ -40,44 +48,29 @@ class SearchBar extends React.Component {
 
         this.props.history.push(`/search?lat=${lat}&lng=${lng}`);
       } else {
-        this.props.history.push(`/search?lat=40.7306&lng=-73.9352`);
+        this.props.history.push(`/search?lat=40.715494&lng=-74.005057`);
       }
     });
-
-    if (e) {
-      e.preventDefault();
-    }
   }
 
-  handleInput(e) {
-    this.setState({ address: e.currentTarget.value });
-  }
 
   render() {
     const cities = ['New York', 'Chicago', 'Los Angeles', 'San Francisco'];
     const randomCity = cities[Math.floor(Math.random() * cities.length)];
 
     return (
-      <div className="landing-search">
-        <p className="welcome-message">Book unique homes around the world.</p>
-
+      <div>
         <form onSubmit={this.handleSubmit}>
           <i className="fas fa-search"></i>
-
           <input
-            className="landing-search-bar"
+            className="main-search-bar"
             type="text"
             value={this.state.address}
             placeholder={`Try "${randomCity}"`}
-            onChange={this.handleInput}
-          />
-
-        <p
-          className="landing-nav-bar-button"
-          onClick={this.handleSubmit}>Search</p>
+            onChange={this.handleInput} />
         </form>
       </div>
-    )
+    );
   }
 }
 

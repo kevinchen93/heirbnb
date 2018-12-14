@@ -6,7 +6,7 @@ import LoadingDots from '../loading_dots';
 import ListingIndex from '../listing/listing_index';
 import SplashItems from './splash_items';
 
-class Splash extends React.Component {
+class SplashIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -30,10 +30,10 @@ class Splash extends React.Component {
       const sfListings = Object.values(this.props.listings['San Francisco']).slice(0,4);
 
       const cities = [
-        <Link to="/search?lat=40.715494&lng=-74.005057"><SplashItems img={window.a} numHomes="400+" city="New York" description="Check out verified homes and design-minded spaces in a city where looking good is a way of life." /></Link>,
-        <Link to="/search?lat=37.800168&lng=-122.418982"> <SplashItems img={window.d} numHomes="140+" city="Chicago" description="Explore Chicago's stunning architecture from the inside - in homes verified for quality and comfort." /></Link>,
-        <Link to="/search?lat=34.065419&lng=-118.430828"><SplashItems img={window.b} numHomes="780+" city="Los Angeles" description="Find beachside bungalows, mid-century modern cottages, and more verified homes in the City of Angels." /></Link>,
-        <Link to="/search?lat=37.800168&lng=-122.418982"> <SplashItems img={window.c} numHomes="150+" city="San Francisco" description="Discover Victorian flats, SoMa lofts, and more verified homes in a city where invention meets counterculture." /></Link>
+        <Link to="/search?lat=40.715494&lng=-74.005057"><SplashItems key={0} img={window.ny} numHomes="400+" city="New York" description="Check out verified homes and design-minded spaces in a city where looking good is a way of life." /></Link>,
+        <Link to="/search?lat=37.800168&lng=-122.418982"> <SplashItems key={1} img={window.chicago} numHomes="140+" city="Chicago" description="Explore Chicago's stunning architecture from the inside - in homes verified for quality and comfort." /></Link>,
+        <Link to="/search?lat=34.065419&lng=-118.430828"><SplashItems key={2} img={window.la} numHomes="780+" city="Los Angeles" description="Find beachside bungalows, mid-century modern cottages, and more verified homes in the City of Angels." /></Link>,
+        <Link to="/search?lat=37.800168&lng=-122.418982"> <SplashItems key={3} img={window.sf} numHomes="150+" city="San Francisco" description="Discover Victorian flats, SoMa lofts, and more verified homes in a city where invention meets counterculture." /></Link>
       ]
 
       function shuffle(array) {
