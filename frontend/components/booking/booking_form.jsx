@@ -60,7 +60,8 @@ class BookingForm extends React.Component {
       num_guests: this.state.num_guests
     };
 
-    setTimeout(() => this.setState({ loading: false}), 1500);
+    setTimeout(() => this.setState({ loading: false }), 1500);
+    this.setState({ loading: true });
     this.props.action(bookingParams).then( () => this.props.history.push('/trips'));
   }
 
