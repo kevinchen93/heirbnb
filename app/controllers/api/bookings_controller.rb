@@ -2,8 +2,11 @@ class Api::BookingsController < ApplicationController
   before_action :require_logged_in
 
   def index
-    @bookings = Booking.includes(:listing, :review)
+    @bookings = Booking.includes(:listing)
                        .where(guest_id: current_user.id)
+                       .order(start_date: :asc)
+
+    render :index
   end
 
   def create
@@ -19,39 +22,24 @@ class Api::BookingsController < ApplicationController
   end
 
   def destroy
-    @booking = Booking.find_by(id: params[:id])
-    own_booking = !!(current_user.id == @booking.guest_id)
+    @booking = current_user.bookings.find_by(id: params[:id])
+    @booking.destroy
 
-    if own_booking
-      @booking.destroy
-      render 'api/bookings/show'
-    else
-      render json: @booking.errors.full_messages, status: 422
-    end
+    render :show
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:guest_id, :listing_id, :start_date, :end_date, :num_guests)
+    params.require(:booking).permit(
+      :guest_id,
+      :listing_id,
+      :start_date,
+      :end_date,
+      :num_guests)
   end
 
-  # def valid_booking?(params)
-  #   Booking.where(listing_id: params[:listing_id]).each do |booking|
-  #     p params[:start_date]
-  #     p booking.start_date.to_s
-  #
-  #     p params[:start_date].to_s < booking.start_date.to_s
-  #
-  #     return false if (params[:start_date] >= booking.start_date || params[:start_date] <= booking.end_date) &&
-  #                     (params[:end_date] <= booking.end_date || params[:end_date] >= booking.start_date)
-  #   end
-  #
-  #   return true
-  # end
-
   def does_not_overlap?(params)
-
     Booking.where(listing_id: params[:listing_id]).each do |booking|
 
       if (!(params[:start_date].to_s >= booking.end_date.to_s || params[:end_date].to_s <= booking.start_date.to_s))

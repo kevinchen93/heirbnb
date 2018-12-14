@@ -4,20 +4,31 @@ import { DateRangePicker } from 'react-dates';
 import momentPropTypes from 'react-moment-proptypes';
 import moment from 'moment';
 
+import { renderStars } from '../stars_show';
+import LoadingDots from '../loading_dots';
+
 class BookingForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       start_date: null,
       end_date: null,
+      num_guests: 1,
       focusedInput: null,
+
+      loading: false
     };
 
+    this.handleGuestInput = this.handleGuestInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
     this.props.clearBookingErrors();
+  }
+
+  handleGuestInput(e) {
+    this.setState({ num_guests: parseInt(e.currentTarget.value) });
   }
 
   isAlreadyBooked(date) {
@@ -35,12 +46,21 @@ class BookingForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
+    this.props.clearBookingErrors();
+
+    if (!this.props.currentUserId) {
+      scrollTo(0,0);
+      this.props.openModal('login');
+    }
+
     const bookingParams = {
+      listing_id: parseInt(this.props.match.params.listingId),
       start_date: this.state.start_date._d,
       end_date: this.state.end_date._d,
-      listing_id: parseInt(this.props.match.params.listingId),
+      num_guests: this.state.num_guests
     };
 
+    setTimeout(() => this.setState({ loading: false}), 1500);
     this.props.action(bookingParams).then( () => this.props.history.push('/trips'));
   }
 
@@ -57,76 +77,84 @@ class BookingForm extends React.Component {
   }
 
   render() {
-    return (
+    const listing = this.props.listing;
 
-      <div className="booking-form-container">
-        <form onSubmit={this.handleSubmit}>
-          <div className="booking-form-price">
-            <span className="booking-form-price-text">${this.props.prices}</span>
-            <span className="booking-form-text">per night</span>
-          <div className="booking-form-text">{this.props.numReviews === 0 ? "No reviews" :
-                                              this.props.numReviews === 1 ? "1 review" :
-                                              `${this.props.numReviews} reviews`}</div>
-          </div>
-          <div className="errors-div">
-            {this.renderErrors()}
-          </div>
-          <div className="dates-container">
-            <div className="booking-form-text">Dates</div>
-            <DateRangePicker
-              startDatePlaceholderText="Check In"
-              endDatePlaceholderText="Check Out"
-              startDateId="booking-form-startDate"
-              endDateId="booking-form-endDate"
-              startDate={this.state.start_date}
-              endDate={this.state.end_date}
-              onDatesChange={({ startDate, endDate }) => this.setState({ start_date: startDate, end_date: endDate })}
-              focusedInput={this.state.focusedInput}
-              onFocusChange={focusedInput => this.setState({ focusedInput })}
-              isDayBlocked={date => this.isAlreadyBooked(date)}
-              showClearDates={true}
-              regular={true}
-              />
-          </div>
+    if (this.state.loading) {
+      return <LoadingDots state={this.state} />;
+    } else if (!listing) {
+      return <div></div>
+    } else {
 
-          <div className="guests-container">
-            <div className="booking-form-text">Guests</div>
-            <input
-              className="guest-input"
-              type="number"
-              defaultValue="1"
-              min="1"
-              max={this.props.guestNum}/>
-          </div>
-          <div style={{ textAlign: 'center', marginTop: '15px' }}>
-            <button className="booking-submit-button">Request to Book</button>
-          </div>
-          <div className="you-wont-be-charged-yet">You won't be charged yet</div>
-          <div className="separator-24"></div>
-          <div className="booking-facts">
-            <div>
-              <div className="mb-5 fs-14 fw-600">
-                This home is on people's minds.
+      return (
+        <div className="booking-form-container">
+          <form onSubmit={this.handleSubmit}>
+            <div className="booking-form-price">
+              <span className="booking-form-price-text">${listing.prices}</span>
+              <span className="booking-form-text">per night</span>
+              <div className="booking-form-stars">{renderStars(listing.average_rating)}
+                <p>{Object.keys(listing.reviews).length}</p>
               </div>
-              <span className="fs-14 fw-400">
-                It’s been viewed 500+ times in the past week.
-              </span>
             </div>
-            <div className="lightbulb-img"></div>
-          </div>
-        </form>
+            <div className="errors-div">
+              {this.renderErrors()}
+            </div>
+            <div className="dates-container">
+              <div className="booking-form-text">Dates</div>
+              <DateRangePicker
+                startDatePlaceholderText="Check In"
+                endDatePlaceholderText="Check Out"
+                startDateId="booking-form-startDate"
+                endDateId="booking-form-endDate"
+                startDate={this.state.start_date}
+                endDate={this.state.end_date}
+                onDatesChange={({ startDate, endDate }) => this.setState({ start_date: startDate, end_date: endDate })}
+                focusedInput={this.state.focusedInput}
+                onFocusChange={focusedInput => this.setState({ focusedInput })}
+                isDayBlocked={date => this.isAlreadyBooked(date)}
+                showClearDates={true}
+                regular={true}
+                />
+            </div>
 
-        <div className="report-link-container">
-          <a href="https://github.com/kevinchen93">
-            <i className="far fa-flag"></i>
-            <span>
-              <div className="report-link fs-14 fw-300">Report this listing
+            <div className="guests-container">
+              <div className="booking-form-text">Guests</div>
+              <input
+                className="guest-input"
+                type="number"
+                defaultValue="1"
+                min="1"
+                max={listing.guests}/>
+            </div>
+            <div style={{ textAlign: 'center', marginTop: '15px' }}>
+              <button className="booking-submit-button">Request to Book</button>
+            </div>
+            <div className="you-wont-be-charged-yet">You won't be charged yet</div>
+            <div className="separator-24"></div>
+            <div className="booking-facts">
+              <div>
+                <div className="mb-5 fs-14 fw-600">
+                  This home is on people's minds.
+                </div>
+                <span className="fs-14 fw-400">
+                  It’s been viewed 500+ times in the past week.
+                </span>
               </div>
-            </span>
-          </a>
+              <div className="lightbulb-img"></div>
+            </div>
+          </form>
+
+          <div className="report-link-container">
+            <a href="https://github.com/kevinchen93">
+              <i className="far fa-flag"></i>
+              <span>
+                <div className="report-link fs-14 fw-300">Report this listing
+                </div>
+              </span>
+            </a>
+          </div>
         </div>
-      </div>
-    )
+      )
+    }
   }
 }
 

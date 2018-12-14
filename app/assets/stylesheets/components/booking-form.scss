@@ -1,7 +1,7 @@
 .booking-form-container {
   position: sticky;
   width: 375px;
-  top: 35px;
+  top: 105px;
   margin-left: 80px;
   padding: 24px;
   box-sizing: border-box;
@@ -16,7 +16,7 @@
 
 .booking-form-price {
   font-size: 22px;
-  font-weight: 800;
+  font-weight: 700;
   margin-bottom: 17px;
 }
 
@@ -41,6 +41,19 @@
   font-size: 12px;
   font-weight: 500;
   margin-bottom: 5px;
+}
+
+.booking-form-stars {
+  display: flex;
+  margin-bottom: 15px;
+  font-size: 10px;
+  align-items: center;
+}
+
+.booking-form-stars p {
+  color: #484848;
+  font-size: 12px;
+  margin-left: 5px;
 }
 
 .you-wont-be-charged-yet {

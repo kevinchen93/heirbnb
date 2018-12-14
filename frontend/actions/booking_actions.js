@@ -18,11 +18,9 @@ export const receiveBooking = booking => ({
   booking,
 });
 
-export const removeBooking = booking => ({
+export const removeBooking = bookingId => ({
   type: REMOVE_BOOKING,
-  bookingId: booking.id,
-  guestId: booking.guest_id,
-  listingId: booking.listing_id
+  bookingId
 });
 
 export const receiveBookingErrors = errors => {
@@ -69,10 +67,10 @@ export const updateBooking = booking => {
   };
 };
 
-export const deleteBooking = booking => {
+export const deleteBooking = bookingId => {
   return dispatch => {
-    return BookingAPIUtil.deleteBooking(booking).then(booking => {
-      return dispatch(removeBooking(booking));
+    return BookingAPIUtil.deleteBooking(bookingId).then(() => {
+      return dispatch(removeBooking(bookingId));
     });
   };
 };

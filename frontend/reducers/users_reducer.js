@@ -24,16 +24,6 @@ const usersReducer = ( state = {}, action ) => {
       newState[action.hostId].listing_ids = newState[action.hostId].listing_ids.filter( id => id !== action.listingId );
       newState[action.hostId].listings = newState[action.hostId].listings.filter( id => id !== action.listingId );
       return newState;
-    case RECEIVE_BOOKING:
-      newCurrentUser = merge({}, state[action.booking.guest_id]);
-      newCurrentUser.booking_ids.push(action.booking.id);
-      newCurrentUser.bookings.push(action.booking.id);
-      return merge({}, state, { [action.booking.guest_id]: newCurrentUser });
-    case REMOVE_BOOKING:
-      newState = merge({}, state);
-      newState[action.guestId].booking_ids = newState[action.guestId].booking_ids.filter( id => id !== action.bookingId);
-      newState[action.guestId].bookings = newState[action.guestId].bookings.filter( id => id !== action.bookingId);
-      return newState;
     default:
       return state;
   }

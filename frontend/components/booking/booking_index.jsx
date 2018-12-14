@@ -1,7 +1,6 @@
 import React from 'react';
 import BookingIndexContainer from './booking_index_container';
 import BookingIndexItem from './booking_index_item';
-import CreateBookingFormContainer from './create_booking_form_container';
 
 class BookingIndex extends React.Component {
   constructor(props) {

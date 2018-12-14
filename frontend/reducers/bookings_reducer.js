@@ -1,6 +1,11 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_BOOKINGS, RECEIVE_BOOKING, REMOVE_BOOKING } from '../actions/booking_actions';
+import {
+  RECEIVE_BOOKINGS,
+  RECEIVE_BOOKING,
+  REMOVE_BOOKING
+} from '../actions/booking_actions';
+
 import { RECEIVE_REVIEW } from '../actions/review_actions.js';
 
 const bookingsReducer = (state = {}, action) => {

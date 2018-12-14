@@ -1,11 +1,7 @@
 class Booking < ApplicationRecord
 
-  validates :guest_id, :listing_id, :start_date, :end_date, presence: true
+  validates :start_date, :end_date, :num_guests, presence: true
   validate :ensure_no_conflicts
-
-  has_one :host,
-    through: :listing,
-    source: :host
 
   belongs_to :guest,
     primary_key: :id,
