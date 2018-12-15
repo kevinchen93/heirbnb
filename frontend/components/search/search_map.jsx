@@ -19,7 +19,7 @@ class SearchMap extends React.Component {
     }
 
     this.map = new google.maps.Map(this.mapNode, mapOptions);
-    this.MarkerManager = new MarkerManager(this.map);
+    this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
     this.MarkerManager.updateMarkers(this.props.listings);
     this.registerListeners();
   }
@@ -93,6 +93,10 @@ class SearchMap extends React.Component {
 
   componentDidUpdate() {
     this.MarkerManager.updateMarkers(this.props.listings);
+  }
+
+  handleMarkerClick(listing) {
+    this.props.history.push(`/listings/${listing.id}`);
   }
 
   render() {

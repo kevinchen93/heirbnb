@@ -1,13 +1,12 @@
 class MarkerManager {
-  constructor(map) {
+  constructor(map, handleMarkerClick) {
     this.map = map;
     this.markers = {};
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleMarkerClick = handleMarkerClick;
   }
 
   updateMarkers(listings) {
-
     const listingsObj = {};
 
     listings.forEach(listing => listingsObj[listing.id] = listing);
@@ -39,17 +38,13 @@ class MarkerManager {
     });
 
     let marker = this.markers[listing.id];
-    marker.addListener('click', () => this.handleClick(listing))
+    marker.addListener('click', () => this.handleMarkerClick(listing))
     marker.setMap(this.map);
   }
 
   removeMarker(marker) {
     this.markers[marker.listingId].setMap(null);
     delete this.markers[marker.listingId];
-  }
-
-  handleClick(listing) {
-    this.props.history.push(`/listings/${listing.id}`);
   }
 }
 
