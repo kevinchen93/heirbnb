@@ -26,13 +26,13 @@ export const removeBooking = bookingId => ({
 export const receiveBookingErrors = errors => {
   return {
     type: RECEIVE_BOOKING_ERRORS,
-    errors,
+    errors
   };
 };
 
 export const clearBookingErrors = () => {
   return {
-    type: CLEAR_BOOKING_ERRORS,
+    type: CLEAR_BOOKING_ERRORS
   };
 };
 
@@ -54,9 +54,11 @@ export const fetchBooking = id => {
 };
 
 export const createBooking = booking => dispatch => (
-  BookingAPIUtil.createBooking(booking)
-    .then(booking => dispatch(receiveBooking(booking)),
-          err => dispatch(receiveBookingErrors(err.responseJSON)))
+  BookingAPIUtil.createBooking(booking).then(booking => (
+    dispatch(receiveBooking(booking))
+  ), err => (
+    dispatch(receiveBookingErrors(err.responseJSON))
+  ))
 );
 
 export const updateBooking = booking => {

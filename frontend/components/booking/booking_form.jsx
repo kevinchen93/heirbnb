@@ -19,13 +19,15 @@ class BookingForm extends React.Component {
       loading: false,
       redirect: false
     };
-
+    this.renderErrors = this.renderErrors.bind(this);
     this.handleGuestInput = this.handleGuestInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentDidMount() {
-    this.props.clearBookingErrors();
+  componentWillUnMount() {
+    if (this.props.errors) {
+      this.props.clearBookingErrors();
+    }
   }
 
   handleGuestInput(e) {
@@ -35,6 +37,7 @@ class BookingForm extends React.Component {
   isAlreadyBooked(date) {
     const formattedDate = date.format('YYYY-MM-DD');
     const dates = this.props.listing.booked_dates.map(date => moment(date).format('YYYY-MM-DD'));
+
     return dates.includes(formattedDate);
   }
 
@@ -46,8 +49,6 @@ class BookingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
-    this.props.clearBookingErrors();
 
     if (!this.props.currentUserId) {
       scrollTo(0,0);
@@ -100,10 +101,10 @@ class BookingForm extends React.Component {
                 <p>{Object.keys(listing.reviews).length}</p>
               </div>
             </div>
-            <div className="errors-div">
-              {this.renderErrors()}
-            </div>
             <div className="dates-container">
+              <div className="errors-div">
+                {this.renderErrors()}
+              </div>
               <div className="booking-form-text">Dates</div>
               <DateRangePicker
                 startDatePlaceholderText="Check In"

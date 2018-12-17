@@ -26,7 +26,7 @@ export const removeReview = reviewId => ({
 export const receiveReviewErrors = errors => {
   return {
     type: RECEIVE_REVIEW_ERRORS,
-    errors,
+    errors
   };
 };
 
