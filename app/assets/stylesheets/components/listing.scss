@@ -222,16 +222,33 @@
   font-weight: 450;
 }
 
-.amenities-container {
+.amenities-container ul,
+.accessibilities-container ul {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.amenities-container ul li,
+.accessibilities-container ul li {
   display: flex;
-}
-
-.amenities-container ul {
   width: 50%;
+  margin-bottom: 17px;
 }
 
-.amenities-container ul li {
-  margin-bottom: 7px;
+.amenities-container ul li svg,
+.amenities-container ul li i {
+  margin-right: 7px;
+}
+
+.amenities-container ul li img {
+  height: 24px;
+  width: 24px;
+  margin-right: 7px;
+}
+
+.amenities-container ul li p,
+.accessibilities-container ul li {
+  color: #767676;
   font-size: 16px;
 }
 
@@ -241,12 +258,18 @@
   margin-right: 8px;
 }
 
+.accessibilities-container li {
+  font-size: 16px;
+}
+
 .strict-text {
   font-size: 15px;
   font-weight: 450;
+  margin-bottom: 17px;
 }
 
 .cancellation-text {
+  color: #767676;
   font-weight: 350;
   font-size: 15px;
   margin-bottom: 30px;
