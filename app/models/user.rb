@@ -24,11 +24,6 @@ class User < ApplicationRecord
     foreign_key: :reviewer_id,
     class_name: "Review"
 
-  has_many :photos,
-    primary_key: :id,
-    foreign_key: :poster_id,
-    class_name: "Photo"
-
   has_one_attached :profile_photo
 
   def self.find_by_credentials(email, password)

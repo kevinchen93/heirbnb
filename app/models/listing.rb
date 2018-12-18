@@ -41,11 +41,6 @@ class Listing < ApplicationRecord
     through: :bookings,
     source: :review
 
-  has_many :photos,
-    primary_key: :id,
-    foreign_key: :listing_id,
-    class_name: "Photo"
-
   has_many_attached :photos
 
 # helper methods
@@ -66,7 +61,7 @@ class Listing < ApplicationRecord
       rating_array = [
         review.accuracy,
         review.communication,
-        review.cleanliness, 
+        review.cleanliness,
         review.location,
         review.check_in,
         review.value

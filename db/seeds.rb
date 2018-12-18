@@ -10,7 +10,6 @@ User.destroy_all
 Listing.destroy_all
 Booking.destroy_all
 Review.destroy_all
-Photo.destroy_all
 
 # USERS
 
