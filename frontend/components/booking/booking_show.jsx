@@ -61,7 +61,7 @@ class BookingShow extends React.Component {
         </div>
       );
     }
-    
+
     const bookings = this.props.bookings.map( (booking, idx) => {
       let reviewButton;
       if (Boolean(booking.review)) {
@@ -74,6 +74,7 @@ class BookingShow extends React.Component {
         )
       }
 
+      console.log(booking)
       return (
         <li key={idx} className="booking-listing-item-container">
             <Link to={`/listings/${booking.listing_id}`}>

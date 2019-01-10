@@ -143,6 +143,7 @@ const mapStateToProps = ({ errors }) => {
     formType: 'login',
   };
 };
+
 const mapDispatchToProps = dispatch => ({
   processForm: user => dispatch(login(user)),
   otherForm: () => dispatch(openModal('signup')),

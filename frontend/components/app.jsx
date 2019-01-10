@@ -28,7 +28,6 @@ import SplashContainer from './splash/splash_container.js';
 import ListingShowContainer from './listing/listing_show_container';
 import CreateListingFormContainer from './listing/create_listing_form_container';
 
-import BookingIndexContainer from './booking/booking_index_container';
 import BookingShowContainer from './booking/booking_show_container';
 import CreateBookingFormContainer from './booking/create_booking_form_container.js';
 import EditBookingFormContainer from './booking/edit_booking_form_container';
