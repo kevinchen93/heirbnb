@@ -31,7 +31,7 @@ class BookingIndexItem extends React.Component {
 
   handleClickDeleteBooking(bookingId) {
     setTimeout(() => this.props.deleteBooking(bookingId), 1000);
-    setTimeout(() => this.setState({ loading: false }), 1000);
+    setTimeout(() => this.setState({ loading: false }), 1500);
     this.setState({ loading: true });
   }
 
@@ -42,11 +42,11 @@ class BookingIndexItem extends React.Component {
       let reviewButton;
       if (this.props.booking.review) {
         reviewButton = (
-          <button className="booking-submit-button" onClick={ () => this.handleClickEditAReview(booking) }>Edit Review</button>
+          <button className="booking-submit-button" onClick={ () => this.handleClickEditAReview(this.props.booking) }>Edit Review</button>
         )
       } else {
         reviewButton = (
-          <button className="booking-submit-button" onClick={ () => this.handleClickLeaveAReview(booking) }>Leave a Review</button>
+          <button className="booking-submit-button" onClick={ () => this.handleClickLeaveAReview(this.props.booking) }>Leave a Review</button>
         )
       }
 
@@ -71,7 +71,7 @@ class BookingIndexItem extends React.Component {
             </div>
             <div className="booking-buttons-container">
               {reviewButton}
-              <button className="booking-submit-button" onClick={ () => this.handleClickDeleteBooking(booking.id) }>Cancel</button>
+              <button className="booking-submit-button" onClick={ () => this.handleClickDeleteBooking(this.props.booking.id) }>Cancel</button>
             </div>
           </div>
         </li>

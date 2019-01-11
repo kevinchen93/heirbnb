@@ -16,7 +16,7 @@ class BookingIndex extends React.Component {
       loading: true
     };
 
-    setTimeout(() => this.setState({ loading: false }), 1000);
+    setTimeout(() => this.setState({ loading: false }), 1500);
   }
 
   componentDidMount() {
@@ -41,11 +41,14 @@ class BookingIndex extends React.Component {
           <div className="subheading header-background-image-text">Here are your bookings, {this.props.currentUser.first_name}!</div>
         </div>
       );
-      console.log(this.props.bookings);
       const bookings = this.props.bookings.map( (booking, idx) => (
         <BookingIndexItem
           key={idx}
           booking={booking}
+          setCurrentBooking={this.props.setCurrentBooking}
+          openCreateModal={this.props.openCreateModal}
+          openEditModal={this.props.openEditModal}
+          deleteBooking={this.props.deleteBooking}
         />
       ));
 
