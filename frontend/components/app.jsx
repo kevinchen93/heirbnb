@@ -28,7 +28,7 @@ import SplashContainer from './splash/splash_container.js';
 import ListingShowContainer from './listing/listing_show_container';
 import CreateListingFormContainer from './listing/create_listing_form_container';
 
-import BookingShowContainer from './booking/booking_show_container';
+import BookingIndexContainer from './booking/booking_index_container';
 import CreateBookingFormContainer from './booking/create_booking_form_container.js';
 import EditBookingFormContainer from './booking/edit_booking_form_container';
 
@@ -53,7 +53,7 @@ const App = (props) => {
 
       <Switch>
         <Route exact path="/listings/:listingId" component={ListingShowContainer} />
-        <ProtectedRoute exact path="/trips" component={BookingShowContainer} />
+        <ProtectedRoute exact path="/trips" component={BookingIndexContainer} />
         <Route exact path="/listings" component={SplashContainer} />
         <Route path="/search" component={SearchContainer} />
         <Route exact path="/" component={Landing} />
@@ -63,7 +63,6 @@ const App = (props) => {
         <Route exact path="/profile/listings/:listingId/edit" component={EditUserListingFormContainer} />
         <Redirect to="/listings" />
       </Switch>
-
     </div>
   )
 }

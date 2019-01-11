@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
   def require_logged_in
     unless current_user
-      render json: ['invalid credentials'], status: 401
+      render json: ['Need to be logged in!'], status: 401
     end
   end
 

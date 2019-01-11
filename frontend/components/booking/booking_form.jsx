@@ -62,8 +62,9 @@ class BookingForm extends React.Component {
       num_guests: this.state.num_guests
     };
 
-    setTimeout(() => this.setState({ loading: false }), 1500);
+    setTimeout(() => this.setState({ loading: false }), 1000);
     this.setState({ loading: true });
+
     this.props.action(bookingParams).then(
       () => this.setState({ redirect: true }),
       () => this.setState({ redirect: false })
@@ -148,7 +149,9 @@ class BookingForm extends React.Component {
               <div className="lightbulb-img"></div>
             </div>
           </form>
+          
           {this.state.redirect && this.props.history.push("/trips")}
+
           <div className="report-link-container">
             <a href="https://github.com/kevinchen93" target="_blank">
               <i className="far fa-flag"></i>

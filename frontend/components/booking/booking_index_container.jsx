@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import BookingShow from './booking_show';
+import BookingIndex from './booking_index';
 import { fetchBookings, fetchBooking, deleteBooking } from '../../actions/booking_actions';
 import { createReview, updateReview } from '../../actions/review_actions';
 import { userBookings } from '../../reducers/selectors';
@@ -24,4 +24,4 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   setCurrentBooking: (booking) => dispatch(setCurrentBooking(booking)),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(BookingShow);
+export default connect(mapStateToProps, mapDispatchToProps)(BookingIndex);
