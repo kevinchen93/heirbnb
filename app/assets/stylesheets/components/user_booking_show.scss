@@ -1,29 +1,40 @@
 .booking-listing-item-container {
-  width: 375px;
-  margin-right: 10px;
   // margin-left: 10px;
-  margin-bottom: 20px;
   // padding-top: 10px;
   // padding-left: 8px;
   // padding-right: 8px;
   // border: 1px solid #e4e4e4;
-  border-radius: 3px;
-  color: #484848;
+
+  // width: 375px;
+  // margin-right: 10px;
+  // margin-bottom: 20px;
+  // border-radius: 3px;
+  // color: #484848;
+  // text-align: center;
+
   text-align: center;
+  line-height: 30px;
+  box-sizing: border-box;
+}
+
+.booking-listing-item-container img {
+  height: 200px;
 }
 
 .user-booking-ul {
-  justify-items: center;
-  grid-row-gap: 55px;
-  grid-template-columns: repeat(3, minmax(375px, 1fr));
-  grid-column-gap: 80px;
+  width: 90%;
+  margin: auto;
   display: grid;
+  grid-template-columns: repeat(3, 33% [col-start]);
+  grid-column-gap: 30px;
+  grid-row-gap: 50px;
 }
 
 .booking-show-title {
   overflow: hidden;
+  margin-top: 14px;
   margin-bottom: 14px;
-  height: 84px;
+  height: 54px;
   max-width: 95%;
   text-align: left;
   color: #484848;
