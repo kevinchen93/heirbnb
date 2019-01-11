@@ -37,7 +37,11 @@ class BookingIndexItem extends React.Component {
 
   render() {
     if (this.state.loading) {
-      return <LoadingDots state={this.state} />;
+      return (
+      <div>
+        <LoadingDots state={this.state} />;
+      </div>
+      )
     } else {
       let reviewButton;
       if (this.props.booking.review) {

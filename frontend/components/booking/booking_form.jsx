@@ -91,7 +91,6 @@ class BookingForm extends React.Component {
     } else if (!listing) {
       return <div></div>
     } else {
-
       return (
         <div className="booking-form-container">
           <form onSubmit={this.handleSubmit}>
@@ -149,7 +148,7 @@ class BookingForm extends React.Component {
               <div className="lightbulb-img"></div>
             </div>
           </form>
-          
+
           {this.state.redirect && this.props.history.push("/trips")}
 
           <div className="report-link-container">
