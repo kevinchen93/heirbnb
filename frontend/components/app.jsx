@@ -49,20 +49,20 @@ const App = (props) => {
     <div className="main-content-container">
       <Modal />
       <Route path="/(search|listings|trips|profile)" component={NavBarContainer} />
-      <Footer />
 
       <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route path="/search" component={SearchContainer} />
+        <Route exact path="/listings" component={SplashContainer} />
         <Route exact path="/listings/:listingId" component={ListingShowContainer} />
         <ProtectedRoute exact path="/trips" component={BookingIndexContainer} />
-        <Route exact path="/listings" component={SplashContainer} />
-        <Route path="/search" component={SearchContainer} />
-        <Route exact path="/" component={Landing} />
         <ProtectedRoute exact path="/become-a-host" component={CreateListingFormContainer} />
         <ProtectedRoute exact path="/profile/listings" component={UserListingShowContainer} />
         <ProtectedRoute exact path="/profile/listings/:listingId" component={UserListingDetailContainer} />
         <Route exact path="/profile/listings/:listingId/edit" component={EditUserListingFormContainer} />
         <Redirect to="/listings" />
       </Switch>
+
     </div>
   )
 }

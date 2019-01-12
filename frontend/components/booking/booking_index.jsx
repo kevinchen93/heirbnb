@@ -21,6 +21,7 @@ class BookingIndex extends React.Component {
 
   componentDidMount() {
     this.props.fetchBookings();
+    console.log('hello')
   }
 
   render() {
@@ -41,6 +42,7 @@ class BookingIndex extends React.Component {
           <div className="subheading header-background-image-text">Here are your bookings, {this.props.currentUser.first_name}!</div>
         </div>
       );
+      console.log('this.props.bookingsssss', this.props.bookings);
       const bookings = this.props.bookings.map( (booking, idx) => (
         <BookingIndexItem
           key={idx}
