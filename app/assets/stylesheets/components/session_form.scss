@@ -9,11 +9,11 @@
 }
 
 .logout-modal {
+  width: 180px;
   cursor: pointer;
   position: absolute;
   right: 0px;
   top: 81px;
-  width: 180px;
   background-color: white;
   text-align: center;
   padding-top: 14px;
@@ -28,7 +28,6 @@
 .logout-modal p {
   height: 40px;
   border-bottom: 1px solid #ebebeb;
-
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -41,6 +40,6 @@
 
 .logout-parent {
   position: fixed;
-  right: 0px;
+  right: 0;
   z-index: 10;
 }

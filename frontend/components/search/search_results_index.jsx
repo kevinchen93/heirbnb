@@ -15,7 +15,7 @@ class SearchResultsIndex extends React.Component {
     ))
 
     return (
-      <ul className="search-result-ul">
+      <ul className="search-results-ul">
         {listingItems}
       </ul>
     )

@@ -37,37 +37,6 @@ label {
   width: 65%;
 }
 
-.logged-in-index-container {
-  width: 100%;
-  margin-left: 35px;
-  /* margin-top: 40px; */
-}
-
-/* .logged-in-index-container .listing-ul {
-  margin-right: 535px;
-} */
-
-.not-logged-in-index-container {
-  margin: 0 auto;
-  width: 95%;
-}
-
-.header-background {
-  background-image: url('https://a0.muscache.com/4ea/air/r:w3100-h2074-sfit,e:fjpg-c80/pictures/0ffd8594-f123-43f0-85bb-7ef88c6f0624.jpg');
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  box-sizing: border-box;
-  height: 100vh;
-  z-index: -500;
-  margin-top: -82px;
-}
-
-.header-info {
-  margin-top: 32px;
-  margin-bottom: 32px;
-}
-
 .subheading {
   font-size: 24px;
   font-weight: 600;
@@ -78,13 +47,6 @@ label {
 
 .header-background-image-text {
   color: #484848;
-}
-
-.centered-heading {
-  width: 95%;
-  /* padding-left: 8px; */
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .mt-27 {
@@ -107,11 +69,4 @@ label {
   margin-top: 24px;
   margin-bottom: 24px;
   border-bottom: 1px solid #ebebeb;
-}
-
-
-
-/* TODO: fix line under search bar */
-.pac-container {
-  border-top: none;
 }

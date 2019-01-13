@@ -1,31 +1,3 @@
-.listing-index-container {
-  box-sizing: border-box;
-  // margin-left: 135px;
-}
-
-.ml-35 {
-  margin-left: 35px;
-}
-
-.logged-in-listing-ul {
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: flex-start;
-  grid-template-columns: repeat(4, minmax(307px, 1fr));
-  grid-row-gap: 35px;
-  display: inline-grid;
-  // margin-right: 345px;
-}
-.not-logged-in-listing-ul {
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: flex-start;
-  grid-template-columns: repeat(5, minmax(307px, 1fr));
-  grid-row-gap: 35px;
-  display: inline-grid;
-  // margin-right: 345px;
-}
-
 .listing-item-container {
   color: #484848;
   // padding-left: 8px;
@@ -158,10 +130,9 @@
 
 .listing-show-container {
   width: 60%;
+  display: flex;
   margin: 0 auto;
   margin-top: 40px;
-  // margin-left: 250px;
-  display: flex;
   font-size: 13px;
 }
 
@@ -201,18 +172,9 @@
 
 .current-user-listings-container {
   position: absolute;
-  // right: 108px;
   right: 3px;
   top: 105px;
-  // width: 872px;
   width: 996px;
-}
-
-.star {
-  background-image: '★';
-  z-index: 1000;
-  width: 100%;
-  height: 100%;
 }
 
 .house-rules-header {

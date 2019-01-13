@@ -31,7 +31,6 @@
   border-radius: 4px;
   border-width: 1px;
   border-style: solid;
-
   z-index: 500;
 }
 
@@ -51,15 +50,12 @@
   bottom: 0;
   left: 0;
   background: #fff;
-
-
   z-index: 499;
 }
 
 .footer-links {
   display: flex;
-  justify-content:space-around;
-
+  justify-content: space-around;
   margin: 0 auto;
   padding-left: 24px;
   padding-right: 24px;
@@ -91,7 +87,6 @@
 .footer-links i {
   font-size: 27px;
   margin-right: 7px;
-
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;

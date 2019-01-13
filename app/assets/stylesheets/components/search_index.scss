@@ -11,7 +11,7 @@
   height: 100vh;
 }
 
-// reuslt
+// result
 .search-results-section {
   width: 64%
 }
@@ -25,13 +25,14 @@
   margin-top: 0px;
   font-size: 12px;
 }
+
 .search-results-section h4 {
   margin-top: 10px;
   font-size: 16px;
   font-weight: 500;
 }
 
-.search-result-ul {
+.search-results-ul {
   margin-top: 25px;
   display: grid;
   grid-template-columns: repeat(auto-fit, 30% [col-start]);
@@ -54,6 +55,5 @@
   width: 100%;
   position: sticky;
   top: 5%;
-
   z-index: 1;
 }

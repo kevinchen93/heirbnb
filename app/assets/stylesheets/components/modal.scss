@@ -10,7 +10,6 @@
 
 .modal-child {
   width: 568px;
-  // min-height: 600px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -21,6 +20,7 @@
 }
 
 .modal-child input {
+  width: 100%;
   font-size: 16px;
   line-height: 22px;
   letter-spacing: normal;
@@ -28,10 +28,7 @@
   font-family: Circular,-apple-system,BlinkMacSystemFont,Roboto,Helvetica Neue,sans-serif;
   font-weight: 300;
   color: #484848;
-  width: 100%;
-  // border: 1px solid #e4e4e4;
   padding: 11px;
-  // margin-bottom: 16px;
 }
 
 .input-container {
@@ -47,11 +44,6 @@
 .icon-container {
   align-self: center;
   padding-right: 12px;
-}
-
-.modal-child input:focus {
-  // border: 1px solid #00b699;
-  // border: 1px solid #008489;
 }
 
 .modal-child button {
@@ -96,7 +88,6 @@
 }
 
 #demo-user-button {
-  // background-color: #00b699;
   background-color: #008489;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
