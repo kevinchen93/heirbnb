@@ -53,7 +53,6 @@ class BookingIndexItem extends React.Component {
           <button className="booking-submit-button" onClick={ () => this.handleClickLeaveAReview(this.props.booking) }>Leave a Review</button>
         )
       }
-      console.log(this.props);
       return (
         <li className="booking-listing-item-container">
             <Link to={`/listings/${this.props.booking.listing_id}`}>

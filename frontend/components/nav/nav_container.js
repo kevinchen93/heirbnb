@@ -6,7 +6,6 @@ import { logout } from './../../actions/session_actions';
 import { openModal, closeModal } from './../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state, ownProps)
   if (state.session) {
     return ({
       currentUserId: state.session.currentUserId,
