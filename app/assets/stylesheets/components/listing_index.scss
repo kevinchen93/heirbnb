@@ -47,6 +47,15 @@
   margin-left: 5px;
 }
 
+.index-container {
+  width: 90%;
+  margin: auto;
+  display: grid;
+  grid-template-rows: 50px auto;
+  color: #484848;
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+}
+
 .index-title {
   font-weight: 500;
   font-size: 25px;

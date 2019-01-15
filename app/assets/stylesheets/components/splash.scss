@@ -1,6 +1,6 @@
 .splash-container {
   display: grid;
-  grid-template-columns: 1r;
+  grid-template-columns: 1fr;
   grid-template-rows: auto;
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   margin-left: 50px;
@@ -42,7 +42,7 @@
 }
 
 .home-number {
-  color: #1db954
+  color: #1db954;
 }
 
 .city-name {
