@@ -18,7 +18,8 @@
 }
 
 .booking-listing-item-container img {
-  height: 200px;
+  height: 250px;
+  border-radius: 3px;
 }
 
 .user-booking-ul {
@@ -32,16 +33,20 @@
 
 .booking-show-title {
   overflow: hidden;
-  margin-top: 14px;
-  margin-bottom: 14px;
-  height: 54px;
+  height: 60px;
   max-width: 95%;
+  margin-top: 14px;
+  flex-wrap: wrap;
+  text-overflow: ellipsis;
+  margin-bottom: 14px;
   text-align: left;
   color: #484848;
   font-size: 20px;
   font-weight: 700;
-  flex-wrap: wrap;
-  text-overflow: ellipsis;
+}
+
+.booking-text {
+  line-height: 20px;
 }
 
 .booking-image {
@@ -51,8 +56,4 @@
   background-repeat: no-repeat;
   border-radius: 3px;
   border: 1px solid white;
-}
-
-.booking-listing-text {
-  font-size: 20px;
 }

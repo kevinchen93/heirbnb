@@ -67,10 +67,10 @@ class BookingIndexItem extends React.Component {
 
           <div>
             <div className="booking-show-title">{this.props.booking.listing.title}</div>
-            <div className="review-user-this.props.booking-dates-container">
-              <div className="review-user-text">Hosted by {this.props.booking.host.first_name}</div>
-              <div className="review-user-text">Check In: {this.props.booking.start_date}</div>
-              <div className="review-user-text">Check Out: {this.props.booking.end_date}</div>
+            <div className="booking-text-container">
+              <p className="booking-text">Hosted by {this.props.booking.host.first_name}</p>
+              <p className="booking-text">Check In: {this.props.booking.start_date}</p>
+              <p className="booking-text">Check Out: {this.props.booking.end_date}</p>
             </div>
             <div className="booking-buttons-container">
               {reviewButton}

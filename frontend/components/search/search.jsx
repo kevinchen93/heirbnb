@@ -13,6 +13,7 @@ class Search extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.location.search !== nextProps.location.search) {
+      this.props.removeListings();
       this.props.fetchListings();
     }
   }

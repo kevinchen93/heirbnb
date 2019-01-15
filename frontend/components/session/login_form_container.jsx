@@ -124,7 +124,7 @@ class LoginForm extends React.Component {
               <button type="button" id="demo-user-button" onClick={ e => this.logInDemoUser(e)}>Log in as demo user</button>
             </div>
 
-            <div className="separator-12"></div>
+            <div className="separator-16"></div>
 
             <div className="login-modal-bottom-container">
               <span className="modal-nav-link-text">Don't have an account? </span>

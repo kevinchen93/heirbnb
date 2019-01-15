@@ -119,7 +119,7 @@ class SignupForm extends React.Component {
               <button className="form-submit-button">Sign up</button>
             </div>
 
-            <div className="separator-12"></div>
+            <div className="separator-16"></div>
 
             <div className="login-modal-bottom-container">
               <span className="modal-nav-link-text">Already have an Heirbnb account?</span>

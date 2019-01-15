@@ -59,7 +59,7 @@ label {
   color: #ff5a5f;
 }
 
-.separator-12 {
+.separator-16 {
   margin-top: 16px;
   margin-bottom: 16px;
   border-bottom: 1px solid #ebebeb;
@@ -69,4 +69,8 @@ label {
   margin-top: 24px;
   margin-bottom: 24px;
   border-bottom: 1px solid #ebebeb;
+}
+
+.text-centered {
+  text-align: center;
 }

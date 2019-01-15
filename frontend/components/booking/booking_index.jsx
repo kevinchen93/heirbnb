@@ -31,14 +31,14 @@ class BookingIndex extends React.Component {
     } else if (this.props.bookings.length === 0) {
       userBookingsHeaderInfo = (
         <div>
-          <div className="subheading header-background-image-text">Currently, you have no bookings, {this.props.currentUser.first_name}!</div>
+          <div className="subheading header-background-image-text text-centered">Currently, you have no reservations, {this.props.currentUser.first_name}!</div>
         </div>
       );
       return userBookingsHeaderInfo;
     } else {
       userBookingsHeaderInfo = (
         <div>
-          <div className="subheading header-background-image-text">Here are your bookings, {this.props.currentUser.first_name}!</div>
+          <div className="subheading header-background-image-text text-centered">Here are your reservations, {this.props.currentUser.first_name}!</div>
         </div>
       );
       const bookings = this.props.bookings.map( (booking, idx) => (
@@ -55,9 +55,6 @@ class BookingIndex extends React.Component {
       return (
         <div className="user-listing-index-container">
           {userBookingsHeaderInfo}
-          <div className="current-user-bookings-container">
-            <div className="separator-24"></div>
-          </div>
           <ul className="user-booking-ul">
             { bookings }
           </ul>
