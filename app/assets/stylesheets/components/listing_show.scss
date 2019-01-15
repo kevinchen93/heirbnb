@@ -59,7 +59,7 @@
 }
 
 .listing-show-photo-container {
-  height: 600px;
+  height: 100%px;
   width: 100%;
   box-sizing: border-box;
   overflow: hidden;
@@ -69,6 +69,7 @@
 }
 
 .listing-show-photo-container img {
+  max-height: 100%;
   max-width: 100%;
   -moz-transition: all 0.7s;
   -webkit-transition: all 0.7s;

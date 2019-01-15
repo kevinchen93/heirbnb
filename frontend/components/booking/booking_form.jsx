@@ -49,6 +49,7 @@ class BookingForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.clearBookingErrors();
 
     if (!this.props.currentUserId) {
       scrollTo(0,0);

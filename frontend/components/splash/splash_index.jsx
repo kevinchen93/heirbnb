@@ -31,7 +31,7 @@ class SplashIndex extends React.Component {
 
       const cities = [
         <Link to="/search?lat=40.751406&lng=-73.983918"><SplashItems key={0} img={window.ny} numHomes="400+" city="New York" description="Check out verified homes and design-minded spaces in a city where looking good is a way of life." /></Link>,
-        <Link to="/search?lat=37.800168&lng=-122.418982"> <SplashItems key={1} img={window.chicago} numHomes="140+" city="Chicago" description="Explore Chicago's stunning architecture from the inside - in homes verified for quality and comfort." /></Link>,
+        <Link to="/search?lat=41.861236&lng=-87.6382227"> <SplashItems key={1} img={window.chicago} numHomes="140+" city="Chicago" description="Explore Chicago's stunning architecture from the inside - in homes verified for quality and comfort." /></Link>,
         <Link to="/search?lat=34.065419&lng=-118.430828"><SplashItems key={2} img={window.la} numHomes="780+" city="Los Angeles" description="Find beachside bungalows, mid-century modern cottages, and more verified homes in the City of Angels." /></Link>,
         <Link to="/search?lat=37.800168&lng=-122.418982"> <SplashItems key={3} img={window.sf} numHomes="150+" city="San Francisco" description="Discover Victorian flats, SoMa lofts, and more verified homes in a city where invention meets counterculture." /></Link>
       ]
