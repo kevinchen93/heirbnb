@@ -40,7 +40,7 @@ class SearchBar extends React.Component {
 
         this.props.history.push(`/search?lat=${lat}&lng=${lng}`);
       } else {
-        this.props.history.push(`/search?lat=40.7306&lng=-73.9352`);
+        this.props.history.push(`/search?lat=40.751406&lng=-73.983918`);
       }
     });
 

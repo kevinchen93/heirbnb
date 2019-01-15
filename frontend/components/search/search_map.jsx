@@ -15,8 +15,8 @@ class SearchMap extends React.Component {
         lat: this.lat,
         lng: this.lng
       },
-      zoom: 11
-    }
+      zoom: 12
+    };
 
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
@@ -33,7 +33,7 @@ class SearchMap extends React.Component {
       };
 
       this.props.updateFilter("bounds", bounds);
-    })
+    });
   }
 
   componentWillReceiveProps(nextProps) {
@@ -54,9 +54,8 @@ class SearchMap extends React.Component {
       };
 
       this.map = new google.maps.Map(this.mapNode, mapOptions);
-      this.MarkerManager = new MarkerManager(this.map, this.props.openModalWithListing);
+      this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
       this.MarkerManager.updateMarkers(this.props.listings);
-
       this.registerListeners();
     }
   }
@@ -80,8 +79,8 @@ class SearchMap extends React.Component {
         };
 
         this.map = new google.maps.Map(this.mapNode, mapOptions);
-        this.markerManager = new MarkerManager(this.map, this.props.openModalWithListing);
-        this.markerManager.updateMarkers(this.props.listings);
+        this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+        this.MarkerManager.updateMarkers(this.props.listings);
 
         this.registerListeners();
       }
