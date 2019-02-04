@@ -31,7 +31,6 @@ class BookingIndex extends React.Component {
     } else if (this.props.bookings.length === 0) {
       userBookingsHeaderInfo = (
         <div>
-          <div className="subheading header-background-image-text text-centered">Currently, you have no reservations, {this.props.currentUser.first_name}!</div>
         </div>
       );
       return userBookingsHeaderInfo;

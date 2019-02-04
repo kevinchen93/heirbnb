@@ -152,15 +152,6 @@ class BookingForm extends React.Component {
 
           {this.state.redirect && this.props.history.push("/trips")}
 
-          <div className="report-link-container">
-            <a href="https://github.com/kevinchen93" target="_blank">
-              <i className="far fa-flag"></i>
-              <span>
-                <div className="report-link fs-14 fw-300">Report this listing
-                </div>
-              </span>
-            </a>
-          </div>
         </div>
       )
     }
