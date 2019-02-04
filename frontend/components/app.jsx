@@ -63,6 +63,7 @@ const App = (props) => {
         <Redirect to="/listings" />
       </Switch>
 
+      <Footer />
     </div>
   )
 }
