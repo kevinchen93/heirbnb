@@ -42,7 +42,7 @@ class Footer extends React.Component {
 
     return (
       <div id="footer" onClick={ ()=>this.toggleButton() }>
-        <div className="footer-container">
+        <div className="footer-button-container">
           <button className="footer-button">
             {buttonContent}
           </button>
