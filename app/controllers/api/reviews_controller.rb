@@ -47,6 +47,7 @@ class Api::ReviewsController < ApplicationController
     params.require(:review).permit(
       :booking_id,
       :reviewer_id,
+      :listing_id,
       :body,
       :rating,
       :accuracy,

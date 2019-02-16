@@ -7,6 +7,11 @@
   z-index: 5;
 }
 
+.hide {
+  transition: transform .3s,-webkit-transform .3s;
+  transform: translateY(0);
+}
+
 .footer-button-container {
   min-width: 50px;
   align-items: center;

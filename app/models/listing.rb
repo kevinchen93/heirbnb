@@ -43,8 +43,6 @@ class Listing < ApplicationRecord
 
   has_many_attached :photos
 
-# helper methods
-
   def self.in_bounds(bounds)
     self.where("lat < ?", bounds[:northEast][:lat].to_f)
     .where("lat > ?", bounds[:southWest][:lat].to_f)
@@ -66,40 +64,32 @@ class Listing < ApplicationRecord
         review.check_in,
         review.value
       ]
-
       rating_array.each do |category_rating|
         if category_rating
           count += 1
           rating += category_rating
         end
       end
-
       rating = rating.to_f / count if count != 0
-
       if rating != 0
         average_rating += rating
         total_count += 1
       end
     end
-
     average_rating = average_rating / total_count if total_count != 0
-
     return average_rating.round(2)
   end
 
   def booked_dates
     booked = []
-
     self.bookings.each do |booking|
       check_in = booking.start_date
       check_out = booking.end_date
-
       while check_in < check_out
         booked << check_in
         check_in += 1
       end
     end
-
     booked
   end
 

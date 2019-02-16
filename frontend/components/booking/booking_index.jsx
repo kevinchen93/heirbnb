@@ -37,7 +37,7 @@ class BookingIndex extends React.Component {
     } else {
       userBookingsHeaderInfo = (
         <div>
-          <div className="subheading header-background-image-text text-centered">Here are your reservations, {this.props.currentUser.first_name}!</div>
+          <div className="subheading header-background-image-text text-centered">Your trips</div>
         </div>
       );
       const bookings = this.props.bookings.map( (booking, idx) => (

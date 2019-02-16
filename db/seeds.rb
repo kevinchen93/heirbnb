@@ -12,18 +12,16 @@ Booking.destroy_all
 Review.destroy_all
 
 # USERS
-
-demo = User.create!(first_name: 'Demo', last_name: 'User', email: 'demo@demo', password: 'password', img_url: '');
-
-stephen = User.create!(first_name: 'Stephen', last_name: 'Curry', email: 'stephen@stephen', password: 'password', img_url: '');
-kevin = User.create!(first_name: 'Kevin', last_name: 'Curry', email: 'kevin@kevin', password: 'password', img_url: '');
-claire = User.create!(first_name: 'Claire', last_name: 'Kim', email: 'claire@claire', password: 'password', img_url: '');
-andre = User.create!(first_name: 'Andre', last_name: 'Chow', email: 'andre@andre', password: 'password', img_url: '');
-james = User.create!(first_name: 'James', last_name: 'Ham', email: 'james@james', password: 'password', img_url: '');
-kyle = User.create!(first_name: 'Kyle', last_name: 'Shanks', email: 'kyle@kyle', password: 'password', img_url: '');
-klay = User.create!(first_name: 'Klay', last_name: 'Thompson', email: 'klay@klay', password: 'password', img_url: '');
-bosco = User.create!(first_name: 'Bosco', last_name: 'Wong', email: 'bosco@bosco', password: 'password', img_url: '');
-grace = User.create!(first_name: 'Grace', last_name: 'Chan', email: 'grace@grace', password: 'password', img_url: '');
+demo = User.create!(first_name: 'Demo', last_name: 'User', email: 'demo@demo', password: 'password');
+stephen = User.create!(first_name: 'Stephen', last_name: 'Curry', email: 'stephen@stephen', password: 'password');
+kevin = User.create!(first_name: 'Kevin', last_name: 'Curry', email: 'kevin@kevin', password: 'password');
+claire = User.create!(first_name: 'Claire', last_name: 'Kim', email: 'claire@claire', password: 'password');
+andre = User.create!(first_name: 'Andre', last_name: 'Chow', email: 'andre@andre', password: 'password');
+james = User.create!(first_name: 'James', last_name: 'Ham', email: 'james@james', password: 'password');
+kyle = User.create!(first_name: 'Kyle', last_name: 'Shanks', email: 'kyle@kyle', password: 'password');
+klay = User.create!(first_name: 'Klay', last_name: 'Thompson', email: 'klay@klay', password: 'password');
+bosco = User.create!(first_name: 'Bosco', last_name: 'Wong', email: 'bosco@bosco', password: 'password');
+grace = User.create!(first_name: 'Grace', last_name: 'Chan', email: 'grace@grace', password: 'password');
 
 user_photo_demo = EzDownload.open('https://s3.amazonaws.com/heirbnb-prod/users/demo.png');
 
@@ -106,8 +104,6 @@ ny8_2 = EzDownload.open('https://s3.amazonaws.com/heirbnb-prod/new-york-listings
 ny8_3 = EzDownload.open('https://s3.amazonaws.com/heirbnb-prod/new-york-listings/new_york_8-3.jpg');
 ny8_4 = EzDownload.open('https://s3.amazonaws.com/heirbnb-prod/new-york-listings/new_york_8-4.jpg');
 ny8_5 = EzDownload.open('https://s3.amazonaws.com/heirbnb-prod/new-york-listings/new_york_8-5.jpg');
-
-### Airbnb PLUS ###
 
 # CHICAGO PHOTOS
 

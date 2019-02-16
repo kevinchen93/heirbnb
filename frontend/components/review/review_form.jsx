@@ -27,7 +27,9 @@ class ReviewForm extends React.Component {
     this.props.clearReviewErrors();
     e.preventDefault();
     const reviewData = merge({}, this.state);
+    console.log('THIS.PROPS: ', this.props);
     reviewData.booking_id = this.props.currentBooking.id;
+    reviewData.listing_id = this.props.currentBooking.listing_id;
     this.props.action(reviewData).then(this.props.closeModal);
   }
 
