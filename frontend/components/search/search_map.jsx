@@ -15,7 +15,7 @@ class SearchMap extends React.Component {
         lat: this.lat,
         lng: this.lng
       },
-      zoom: 12
+      zoom: 13
     };
 
     this.map = new google.maps.Map(this.mapNode, mapOptions);
@@ -50,7 +50,7 @@ class SearchMap extends React.Component {
           lat: this.lat,
           lng: this.lng
         },
-        zoom: 11
+        zoom: 13
       };
 
       this.map = new google.maps.Map(this.mapNode, mapOptions);
@@ -75,7 +75,7 @@ class SearchMap extends React.Component {
             lat: this.lat,
             lng: this.lng
           },
-          zoom: 11
+          zoom: 13
         };
 
         this.map = new google.maps.Map(this.mapNode, mapOptions);

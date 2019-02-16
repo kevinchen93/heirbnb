@@ -223,7 +223,6 @@
 }
 
 .hero-svg {
-  fill: #5bc2bf;
   height: 34px;
   width: 34px;
   -webkit-transition: 0.3s;
@@ -233,6 +232,14 @@
 
 .hero-svg:active {
   transform: scale(0.9);
+}
+
+.logged-in {
+  fill: #5bc2bf;
+}
+
+.not-logged-in {
+  fill: #fff;
 }
 
 .navbar {
