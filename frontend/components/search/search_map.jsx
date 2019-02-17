@@ -60,32 +60,6 @@ class SearchMap extends React.Component {
     }
   }
 
-  componentWillReceiveProps(nextProps) {
-      const prevLat = this.lat;
-      const prevLng = this.lng;
-
-      const query = this.props.location.search;
-      const search = new URLSearchParams(query);
-      this.lat = parseFloat(search.get('lat'));
-      this.lng = parseFloat(search.get('lng'));
-
-      if (this.lat !== prevLat || this.lng !== prevLng) {
-        const mapOptions = {
-          center: {
-            lat: this.lat,
-            lng: this.lng
-          },
-          zoom: 13
-        };
-
-        this.map = new google.maps.Map(this.mapNode, mapOptions);
-        this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
-        this.MarkerManager.updateMarkers(this.props.listings);
-
-        this.registerListeners();
-      }
-  }
-
   componentWillUpdate() {
     this.MarkerManager.updateMarkers(this.props.listings);
   }
