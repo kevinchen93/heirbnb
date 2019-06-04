@@ -234,12 +234,8 @@
   transform: scale(0.9);
 }
 
-.logged-in {
+.logged-in, .not-logged-in {
   fill: #5bc2bf;
-}
-
-.not-logged-in {
-  fill: #fff;
 }
 
 .navbar {
