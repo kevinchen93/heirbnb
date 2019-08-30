@@ -74,7 +74,6 @@
   position: absolute;
   width: 630px;
   height: 70px;
-
   background-color: white;
   left: 174px;
   top: 320px;;
@@ -83,14 +82,9 @@
   box-sizing: border-box;
   font-size: 19px;
   font-weight: 600;
-  border: 1px solid #767676;
   border-radius: 4px;
   box-shadow: 2px 2px 6px #ccc;
-
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
   transition: 0.3s;
-
   z-index: 1;
 }
 
@@ -122,7 +116,6 @@
   position: absolute;
   top: 329px;
   left: 690px;
-
   margin-top: 5px;
   margin-bottom: 17px;
   padding: 12px;
@@ -131,11 +124,7 @@
   cursor: pointer;
   border-radius: 5px;
   text-align: center;
-
   z-index: 2;
-
-  -webkit-transition: 0.3s;
-  -o-transition: 0.3s;
   transition: 0.3s;
 }
 
