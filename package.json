@@ -10,7 +10,7 @@
     "bootstrap": "^4.3.1",
     "css-loader": "^1.0.1",
     "jquery": "^3.4.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "moment": "^2.22.2",
     "nuka-carousel": "^4.4.3",
     "react": "^16.6.0",
