@@ -12,7 +12,7 @@
     "jquery": "^3.4.0",
     "lodash": "^4.17.15",
     "moment": "^2.22.2",
-    "nuka-carousel": "^4.4.3",
+    "nuka-carousel": "^4.8.4",
     "react": "^16.6.0",
     "react-dates": "^18.2.0",
     "react-dom": "^16.6.0",
